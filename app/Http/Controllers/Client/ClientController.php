@@ -28,7 +28,8 @@ class ClientController extends Controller
         $banners = MainBannerScroll::all();
         $menu_sliders = MenuSlider::all();
         $cartCount = Cart::count();
-
+        $cartItems = Cart::content();
+//        $cartSubTotal = Cart::subtotal($decimals, $decimalSeperator, $thousandSeperator);
         $countProducts = Product::all()
             ->where('status',1)
             ->count();
@@ -48,7 +49,7 @@ class ClientController extends Controller
                 ->where('status',1)
                 ->get();
         }
-        return view('client.client-home',compact('categories','collections','logo','banners','menu_sliders','cartCount','products'));
+        return view('client.client-home',compact('categories','collections','logo','banners','menu_sliders','cartCount','cartItems','products'));
     }
 
     public function category_page($slag)
@@ -65,12 +66,13 @@ class ClientController extends Controller
         $banners = MainBannerScroll::all();
         $menu_sliders = MenuSlider::all();
         $cartCount = Cart::count();
+        $cartItems = Cart::content();
 //        *******
         $category_id = Category::where('category_slag',$slag)->first()->id;
         $category = Category::find($category_id);
         $subCategorise = $category->subcotegorise()->orderBy('index','asc')->get();
 
-        return view('client.category-page',compact('categories','collections','logo','banners','menu_sliders','cartCount','subCategorise','category'));
+        return view('client.category-page',compact('categories','collections','logo','banners','menu_sliders','cartCount','cartItems','subCategorise','category'));
 
     }
 
@@ -88,6 +90,7 @@ class ClientController extends Controller
         $banners = MainBannerScroll::all();
         $menu_sliders = MenuSlider::all();
         $cartCount = Cart::count();
+        $cartItems = Cart::content();
 //        *******
         $subCategory_id = SubCategory::where('sub_category_slag',$slag)->first()->id;
         $subCategory = SubCategory::find($subCategory_id);
@@ -97,7 +100,7 @@ class ClientController extends Controller
             ->paginate(8);
 
 
-        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','cartCount','subCategory','products'));
+        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','cartCount','cartItems','subCategory','products'));
 
     }
 
@@ -115,12 +118,13 @@ class ClientController extends Controller
         $banners = MainBannerScroll::all();
         $menu_sliders = MenuSlider::all();
         $cartCount = Cart::count();
+        $cartItems = Cart::content();
 //        *******
         $product_id = Product::where('slag',$slag)->first()->id;
         $product = Product::find($product_id);
         $subCategory = SubCategory::where('id',$product->sub_category_id)->first();
 //        dd($subcategory->category);
-        return view('client.single-product-page',compact('categories','collections','logo','banners','menu_sliders','cartCount','product','subCategory'));
+        return view('client.single-product-page',compact('categories','collections','logo','banners','menu_sliders','cartCount','cartItems','product','subCategory'));
 
     }
 
@@ -141,5 +145,24 @@ class ClientController extends Controller
         $cartItems = Cart::content();
 //        dd($cartItems);
         return view('client.cart-page',compact('categories','collections','logo','menu_sliders','cartCount','cartItems'));
+    }
+
+    public function checkout_page()
+    {
+//        *******
+        $categories = Category::orderBy('index','asc')->get();
+        if (count( Category::all()) < 3){
+            $collections = null;
+        }else{
+            $collections = Category::all()->random(3);
+        }
+
+        $logo = Gallery::where('name','Logo')->first()->image;
+        $menu_sliders = MenuSlider::all();
+        $cartCount = Cart::count();
+        $cartItems = Cart::content();
+//        *******
+//        dd($cartItems);
+        return view('client.checkout-page',compact('categories','collections','logo','menu_sliders','cartCount','cartItems'));
     }
 }

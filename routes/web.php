@@ -34,8 +34,10 @@ Route::get('/add-to-cart/{rowId}','AddToCartController@destroy')->name('addToCar
 Route::post('/add-to-cart','AddToCartController@addToCart')->name('addToCart.store');
 Route::post('/cart-update/{rowId}','AddToCartController@update')->name('cart.update');
 
+//checkout
+Route::get('/checkout','Client\ClientController@checkout_page')->name('client.checkout');
 
-
+//review
 Route::post('/review/{product}','ReviewController@store')->name('review.store');
 
 Auth::routes(['verify'=>true]);

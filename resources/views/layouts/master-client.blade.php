@@ -1,15 +1,13 @@
-
-<!DOCTYPE html>
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en">
-<!--<![endif]-->
-
-
-<!-- Mirrored from html.lionode.com/healthcare/hc001/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Aug 2020 06:58:40 GMT -->
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>HealthCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- =====  SEO MATE  ===== -->
 {{--    <meta http-equiv="X-UA-Compatible" content="IE=edge" />--}}
 {{--    <meta name="description" content="">--}}

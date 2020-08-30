@@ -9,6 +9,7 @@
 
                 <div class="header-right pull-right mtb_50">
                     <button class="navbar-toggle pull-left" type="button" data-toggle="collapse" data-target=".js-navbar-collapse"> <span class="i-bar"><i class="fa fa-bars"></i></span></button>
+
 {{--                    shopping cart--}}
                     <div class="shopping-icon">
                         <div class="cart-item " data-target="#cart-dropdown" data-toggle="collapse" aria-expanded="true" role="button">Item's : <span class="cart-qty">{{ strlen($cartCount) < 2 ? "0".$cartCount : $cartCount}}</span></div>
@@ -17,52 +18,58 @@
                                 <li>
                                     <table class="table table-striped">
                                         <tbody>
+                                        @foreach($cartItems as $cartItem)
                                         <tr>
-                                            <td class="text-center"><a href="#"><img src="/client-assets/images/product/70x84.jpg" alt="iPod Classic" title="iPod Classic"></a></td>
-                                            <td class="text-left product-name"><a href="#">MacBook Pro</a>
-                                                <span class="text-left price">$20.00</span>
-                                                <input class="cart-qty" name="product_quantity" min="1" value="1" type="number">
+                                            <td class="text-center">
+                                                <a href="{{ route('client.product',$cartItem->options->slag) }}">
+                                                    <img src="{{ asset('upload/images/category_images/'.$cartItem->options->image) }}" alt="iPod Classic" title="iPod Classic">
+                                                </a>
                                             </td>
-                                            <td class="text-center"><a class="close-cart"><i class="fa fa-times-circle"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><a href="#"><img src="/client-assets/images/product/70x84.jpg" alt="iPod Classic" title="iPod Classic"></a></td>
-                                            <td class="text-left product-name"><a href="#">MacBook Pro</a>
-                                                <span class="text-left price">$20.00</span>
-                                                <input class="cart-qty" name="product_quantity" min="1" value="1" type="number">
+
+                                            <td class="text-left product-name">
+                                                <a href="{{ route('client.product',$cartItem->options->slag) }}">{{ substr($cartItem->name,0,10) }}....</a>
+
+                                                <span class="text-left price">{{ $cartItem->price*$cartItem->qty }}.00৳</span>
+
+                                                <input class="cart-qty" name="product_quantity" min="1" value="{{ $cartItem->qty }}" type="number">
                                             </td>
-                                            <td class="text-center"><a class="close-cart"><i class="fa fa-times-circle"></i></a></td>
+                                            <td class="text-center">
+                                                <a href="{{ route('addToCart.delete',$cartItem->rowId) }}" class="close-cart">
+                                                <i class="fa fa-times-circle"></i>
+                                                </a>
+                                            </td>
                                         </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </li>
+
                                 <li>
                                     <table class="table">
                                         <tbody>
                                         <tr>
                                             <td class="text-right"><strong>Sub-Total</strong></td>
-                                            <td class="text-right">$2,100.00</td>
+                                            <td class="text-right">{{ Cart::subtotal() }}৳</td>
                                         </tr>
+
                                         <tr>
-                                            <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                                            <td class="text-right">$2.00</td>
+                                            <td class="text-right"><strong>VAT (15%)</strong></td>
+                                            <td class="text-right">{{ Cart::tax() }}৳</td>
                                         </tr>
-                                        <tr>
-                                            <td class="text-right"><strong>VAT (20%)</strong></td>
-                                            <td class="text-right">$20.00</td>
-                                        </tr>
+
                                         <tr>
                                             <td class="text-right"><strong>Total</strong></td>
-                                            <td class="text-right">$2,122.00</td>
+                                            <td class="text-right">{{ Cart::total() }}৳</td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </li>
+
                                 <li>
                                     <form action="{{ route('client.add-to-cart') }}" method="Get">
                                         <input class="btn pull-left mt_10" value="View cart" type="submit">
                                     </form>
-                                    <form action="http://html.lionode.com/healthcare/hc001/checkout_page.html">
+                                    <form action="{{ route('client.checkout') }}" method="Get">
                                         <input class="btn pull-right mt_10" value="Checkout" type="submit">
                                     </form>
                                 </li>
@@ -72,23 +79,25 @@
 {{--                    shopping cart--}}
 
 {{--                    search --}}
-                    <div class="main-search pull-right">
-                        <div class="search-overlay">
-                            <!-- Close Icon -->
-                            <a href="javascript:void(0)" class="search-overlay-close"></a>
-                            <!-- End Close Icon -->
-                            <div class="container">
-                                <!-- Search Form -->
-                                <form role="search" id="searchform" action="http://html.lionode.com/search" method="get">
-                                    <label class="h5 normal search-input-label">Enter keywords To Search Entire Store</label>
-                                    <input value="" name="q" placeholder="Search here..." type="search">
-                                    <button type="submit"></button>
-                                </form>
-                                <!-- End Search Form -->
-                            </div>
-                        </div>
-                        <div class="header-search"> <a id="search-overlay-btn"></a> </div>
-                    </div>
+
+{{--                    <div class="main-search pull-right">--}}
+{{--                        <div class="search-overlay">--}}
+{{--                            <!-- Close Icon -->--}}
+{{--                            <a href="javascript:void(0)" class="search-overlay-close"></a>--}}
+{{--                            <!-- End Close Icon -->--}}
+{{--                            <div class="container">--}}
+{{--                                <!-- Search Form -->--}}
+{{--                                <form role="search" id="searchform" action="http://html.lionode.com/search" method="get">--}}
+{{--                                    <label class="h5 normal search-input-label">Enter keywords To Search Entire Store</label>--}}
+{{--                                    <input value="" name="q" placeholder="Search here..." type="search">--}}
+{{--                                    <button type="submit"></button>--}}
+{{--                                </form>--}}
+{{--                                <!-- End Search Form -->--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="header-search"> <a id="search-overlay-btn"></a> </div>--}}
+{{--                    </div>--}}
+
 {{--                    search--}}
                 </div>
 
@@ -173,8 +182,9 @@
                             </ul>
                         </li>
                         @endif
-                        <li> <a href="about.html">Track My Order</a></li>
+{{--                        <li> <a href="about.html">Track My Order</a></li>--}}
                         <li> <a href="about.html">About us</a></li>
+                        <li> <a href="about.html">Contact</a></li>
                     </ul>
                 </div>
                 <!-- /.nav-collapse -->
@@ -187,17 +197,19 @@
             <div class="row">
                 <div class="col-sm-4 col-md-4 col-lg-3">
                     @if(count($categories) > 0)
-                    <div class="category">
-                        <div class="menu-bar" data-target="#category-menu,#category-menu-responsive" data-toggle="collapse" aria-expanded="true" role="button">
-                            <h4 class="category_text">All categories</h4>
-                            <span class="i-bar"><i class="fa fa-bars"></i></span></div>
-                    </div>
+                        @if( request()->path() != 'add-to-cart' && request()->path() != 'checkout')
+                            <div class="category">
+                                <div class="menu-bar" data-target="#category-menu,#category-menu-responsive" data-toggle="collapse" aria-expanded="true" role="button">
+                                    <h4 class="category_text">All categories</h4>
+                                    <span class="i-bar"><i class="fa fa-bars"></i></span></div>
+                            </div>
+                        @endif
 {{--                    <div id="category-menu-responsive" class="navbar collapse " aria-expanded="true" style="" role="button">--}}
 {{--                        @include('layouts.client-nav-aside')--}}
 {{--                    </div>--}}
                     @endif
                 </div>
-                <div class="col-sm-8 col-md-8 col-lg-9">
+                <div class="{{ request()->path() != 'add-to-cart' && request()->path() != 'checkout' ? 'col-sm-8 col-md-8 col-lg-9':'col-sm-12 col-md-12 col-lg-12' }}">
                     <div class="header-bottom-right offers">
                         <div class="marquee"><span><i class="fa fa-circle" aria-hidden="true"></i>It's Sexual Health Week!</span>
                             <span><i class="fa fa-circle" aria-hidden="true"></i>Our 5 Tips for a Healthy Summer</span>
