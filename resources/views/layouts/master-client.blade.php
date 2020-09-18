@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="/client-assets/images/apple-touch-icon.html">
     <link rel="apple-touch-icon" sizes="72x72" href="/client-assets/images/apple-touch-icon-72x72.html">
     <link rel="apple-touch-icon" sizes="114x114" href="/client-assets/images/apple-touch-icon-114x114.html">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
     @yield('page-css')
 </head>
 
@@ -143,6 +144,7 @@
 <script src="/client-assets/js/bootstrap.min.js"></script>
 <script src="/client-assets/js/jquery.magnific-popup.js"></script>
 <script src="/client-assets/js/jquery.firstVisitPopup.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 <script src="/client-assets/js/custom.js"></script>
 @yield('page-script')
 </body>

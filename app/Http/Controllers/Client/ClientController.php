@@ -165,4 +165,38 @@ class ClientController extends Controller
 //        dd($cartItems);
         return view('client.checkout-page',compact('categories','collections','logo','menu_sliders','cartCount','cartItems'));
     }
+
+    public function aboutUs()
+    {
+        $categories = Category::orderBy('index','asc')->get();
+        if (count( Category::all()) < 3){
+            $collections = null;
+        }else{
+            $collections = Category::all()->random(3);
+        }
+
+        $logo = Gallery::where('name','Logo')->first()->image;
+        $menu_sliders = MenuSlider::all();
+        $cartCount = Cart::count();
+        $cartItems = Cart::content();
+        $banners = MainBannerScroll::all();
+        return view('client.about-company',compact('categories','collections','logo','menu_sliders','cartCount','cartItems','banners'));
+    }
+
+    public function contactUs()
+    {
+        $categories = Category::orderBy('index','asc')->get();
+        if (count( Category::all()) < 3){
+            $collections = null;
+        }else{
+            $collections = Category::all()->random(3);
+        }
+
+        $logo = Gallery::where('name','Logo')->first()->image;
+        $menu_sliders = MenuSlider::all();
+        $cartCount = Cart::count();
+        $cartItems = Cart::content();
+        $banners = MainBannerScroll::all();
+        return view('client.for-contact',compact('categories','collections','logo','menu_sliders','cartCount','cartItems','banners'));
+    }
 }

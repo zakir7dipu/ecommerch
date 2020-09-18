@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/cart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_30_135952_create_shoppingcart_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/client/checkout-page.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ContactInfo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CustomerSupport.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactInfoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerSupportController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_18_051821_create_contact_infos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_18_051900_create_customer_supports_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598808046xaj749.DAC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/1598808266lswaz1.banner-image1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/contact-info.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/navigation.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client/about-company.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client/for-contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/cart-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/cart-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1598577167cebmq6.banner-image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/client-nav-head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/client-nav-head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -149,18 +160,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\client-assets\css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\admin" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\client" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\layouts" />
-      <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\admin" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\admin-assets\js" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\client-assets\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -194,7 +205,13 @@
       <workItem from="1598677324337" duration="31769000" />
       <workItem from="1598760885772" duration="23511000" />
       <workItem from="1598789990842" duration="10000" />
-      <workItem from="1598793215306" duration="10623000" />
+      <workItem from="1598793215306" duration="10759000" />
+      <workItem from="1598931039737" duration="37000" />
+      <workItem from="1599577411196" duration="649000" />
+      <workItem from="1599713233029" duration="1633000" />
+      <workItem from="1599723893930" duration="712000" />
+      <workItem from="1600056935176" duration="277000" />
+      <workItem from="1600399812728" duration="11718000" />
     </task>
     <servers />
   </component>
@@ -217,10 +234,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1598767720006">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1598931074963">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1598767720006" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1598931074963" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1598332165998">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -229,10 +246,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1598793246346">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1598931050752">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1598793246346" />
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1598931050752" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1598536272073">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -241,5 +258,16 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1598365492566" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin/navigation.blade.php</url>
+          <line>97</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

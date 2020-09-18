@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -18,6 +18,13 @@
     <link rel="stylesheet" type="text/css" href="/admin-assets/css/vendors.css" />
     <!-- app style -->
     <link rel="stylesheet" type="text/css" href="/admin-assets/css/style.css" />
+    <!-- map-box -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+        type="text/css"
+    />
     @yield('page-css')
 </head>
 
@@ -117,7 +124,11 @@
 <script src="{{ asset('js/image-uploader.min.js') }}"></script>
 <!-- custom app -->
 <script src="/admin-assets/js/app.js"></script>
-<!-- image-uploader -->
+<!-- map-box -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 @yield('page-script')
 </body>
 

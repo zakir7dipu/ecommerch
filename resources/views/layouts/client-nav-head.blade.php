@@ -13,68 +13,70 @@
 {{--                    shopping cart--}}
                     <div class="shopping-icon">
                         <div class="cart-item " data-target="#cart-dropdown" data-toggle="collapse" aria-expanded="true" role="button">Item's : <span class="cart-qty">{{ strlen($cartCount) < 2 ? "0".$cartCount : $cartCount}}</span></div>
-                        <div id="cart-dropdown" class="cart-menu collapse">
-                            <ul>
-                                <li>
-                                    <table class="table table-striped">
-                                        <tbody>
-                                        @foreach($cartItems as $cartItem)
-                                        <tr>
-                                            <td class="text-center">
-                                                <a href="{{ route('client.product',$cartItem->options->slag) }}">
-                                                    <img src="{{ asset('upload/images/category_images/'.$cartItem->options->image) }}" alt="iPod Classic" title="iPod Classic">
-                                                </a>
-                                            </td>
+                        @if($cartCount > 0)
+                            <div id="cart-dropdown" class="cart-menu collapse">
+                                <ul>
+                                    <li>
+                                        <table class="table table-striped">
+                                            <tbody>
+                                            @foreach($cartItems as $cartItem)
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <a href="{{ route('client.product',$cartItem->options->slag) }}">
+                                                            <img src="{{ asset('upload/images/category_images/'.$cartItem->options->image) }}" alt="iPod Classic" title="iPod Classic">
+                                                        </a>
+                                                    </td>
 
-                                            <td class="text-left product-name">
-                                                <a href="{{ route('client.product',$cartItem->options->slag) }}">{{ substr($cartItem->name,0,10) }}....</a>
+                                                    <td class="text-left product-name">
+                                                        <a href="{{ route('client.product',$cartItem->options->slag) }}">{{ substr($cartItem->name,0,10) }}....</a>
 
-                                                <span class="text-left price">{{ $cartItem->price*$cartItem->qty }}.00৳</span>
+                                                        <span class="text-left price">{{ $cartItem->price*$cartItem->qty }}.00৳</span>
 
-                                                <input class="cart-qty" name="product_quantity" min="1" value="{{ $cartItem->qty }}" type="number">
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="{{ route('addToCart.delete',$cartItem->rowId) }}" class="close-cart">
-                                                <i class="fa fa-times-circle"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-                                </li>
+                                                        <input class="cart-qty" name="product_quantity" min="1" value="{{ $cartItem->qty }}" type="number">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href="{{ route('addToCart.delete',$cartItem->rowId) }}" class="close-cart">
+                                                            <i class="fa fa-times-circle"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </li>
 
-                                <li>
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td class="text-right"><strong>Sub-Total</strong></td>
-                                            <td class="text-right">{{ Cart::subtotal() }}৳</td>
-                                        </tr>
+                                    <li>
+                                        <table class="table">
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-right"><strong>Sub-Total</strong></td>
+                                                <td class="text-right">{{ Cart::subtotal() }}৳</td>
+                                            </tr>
 
-                                        <tr>
-                                            <td class="text-right"><strong>VAT (15%)</strong></td>
-                                            <td class="text-right">{{ Cart::tax() }}৳</td>
-                                        </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>VAT (15%)</strong></td>
+                                                <td class="text-right">{{ Cart::tax() }}৳</td>
+                                            </tr>
 
-                                        <tr>
-                                            <td class="text-right"><strong>Total</strong></td>
-                                            <td class="text-right">{{ Cart::total() }}৳</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </li>
+                                            <tr>
+                                                <td class="text-right"><strong>Total</strong></td>
+                                                <td class="text-right">{{ Cart::total() }}৳</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
 
-                                <li>
-                                    <form action="{{ route('client.add-to-cart') }}" method="Get">
-                                        <input class="btn pull-left mt_10" value="View cart" type="submit">
-                                    </form>
-                                    <form action="{{ route('client.checkout') }}" method="Get">
-                                        <input class="btn pull-right mt_10" value="Checkout" type="submit">
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
+                                    <li>
+                                        <form action="{{ route('client.add-to-cart') }}" method="Get">
+                                            <input class="btn pull-left mt_10" value="View cart" type="submit">
+                                        </form>
+                                        <form action="{{ route('client.checkout') }}" method="Get">
+                                            <input class="btn pull-right mt_10" value="Checkout" type="submit">
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        @endif
                     </div>
 {{--                    shopping cart--}}
 
@@ -183,8 +185,8 @@
                         </li>
                         @endif
 {{--                        <li> <a href="about.html">Track My Order</a></li>--}}
-                        <li> <a href="about.html">About us</a></li>
-                        <li> <a href="about.html">Contact</a></li>
+                        <li> <a href="{{ route('client.about-us') }}">About us</a></li>
+                        <li> <a href="{{ route('client.contact-us') }}">For Contact</a></li>
                     </ul>
                 </div>
                 <!-- /.nav-collapse -->

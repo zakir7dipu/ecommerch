@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\ContactInfo;
+use App\CustomerSupport;
 use App\Http\Controllers\Controller;
 use App\MainBannerScroll;
 use App\MenuSlider;
@@ -51,5 +53,17 @@ class AdminController extends Controller
     {
         $menu_sliders = MenuSlider::all();
         return view('admin.menu-slider',compact('menu_sliders'));
+    }
+
+    public function contact_info()
+    {
+        $contactInfo = ContactInfo::find(1);
+        $customerSupport = CustomerSupport::find(1);
+        return view('admin.contact-info',compact('contactInfo','customerSupport'));
+    }
+
+    public function navigation()
+    {
+        return view('admin.navigation');
     }
 }

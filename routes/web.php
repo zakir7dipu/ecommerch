@@ -40,6 +40,11 @@ Route::get('/checkout','Client\ClientController@checkout_page')->name('client.ch
 //review
 Route::post('/review/{product}','ReviewController@store')->name('review.store');
 
+//adout us
+Route::get('/about-us','Client\ClientController@aboutUs')->name('client.about-us');
+//contact us
+Route::get('/for-contact','Client\ClientController@contactUs')->name('client.contact-us');
+
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -51,6 +56,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/dash-all-product','Admin\AdminController@all_products')->name('admin.all-product');
     Route::get('/dash-main-slider','Admin\AdminController@main_slider')->name('admin.main-slider');
     Route::get('/dash-menu-slider','Admin\AdminController@menu_slider')->name('admin.menu-slider');
+    Route::get('/contact-info','Admin\AdminController@contact_info')->name('admin.contact-info');
+    Route::get('/navigation','Admin\AdminController@navigation')->name('admin.navigation');
 
     Route::resource('/category','CategoryController', [
         'only' => ['store', 'edit', 'update']
@@ -73,4 +80,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::post('destroy-subcategory/{subCategory}','SubCategoryController@destroy')->name('subcategory.destroy');
     Route::post('update-subcategory-index','SubCategoryController@update_subcategory_index')->name('update.subcategory-index');
     Route::post('/store-in-logo','GalleryController@store_logo')->name('store.logo');
+    Route::post('/modify-contact','ContactInfoController@modifyContact')->name('admin.modify-contact');
+    Route::post('/modify-customer-support','CustomerSupportController@modifyCustomerSupport')->name('admin.modify-customer-support');
 });
