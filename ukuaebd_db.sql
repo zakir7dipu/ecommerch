@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2020 at 07:13 PM
+-- Generation Time: Sep 19, 2020 at 01:18 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -41,11 +41,55 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `index`, `category_slag`, `created_at`, `updated_at`) VALUES
-(1, 'Cosmetics', 1, '1598542157CosmeticsODHEu', '2020-08-27 09:29:17', '2020-08-28 10:36:48'),
-(2, 'Health Care', 2, '1598542194Health_CareqmITH', '2020-08-27 09:29:54', '2020-08-28 11:08:35'),
-(3, 'Men\'s Cloths', 5, '1598542234Men\'s_Cloths0Lly5', '2020-08-27 09:30:34', '2020-08-28 10:36:43'),
-(4, 'Women\'s Cloths', 4, '1598542270Women\'s_ClothsIwU6V', '2020-08-27 09:31:10', '2020-08-28 11:08:35'),
-(5, 'Kids', 3, '1598542293Kids3Q0e4', '2020-08-27 09:31:33', '2020-08-28 11:08:35');
+(1, 'Cosmetics', 1, '1598542157CosmeticsODHEu', '2020-08-27 09:29:17', '2020-09-15 10:35:40'),
+(2, 'Health Care', 4, '1598542194Health_CareqmITH', '2020-08-27 09:29:54', '2020-09-15 10:27:46'),
+(3, 'Men\'s Cloths', 2, '1598542234Men\'s_Cloths0Lly5', '2020-08-27 09:30:34', '2020-09-15 10:35:40'),
+(4, 'Women\'s Cloths', 5, '1598542270Women\'s_ClothsIwU6V', '2020-08-27 09:31:10', '2020-09-15 10:27:46'),
+(5, 'Kids', 3, '1598542293Kids3Q0e4', '2020-08-27 09:31:33', '2020-09-15 10:35:40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_infos`
+--
+
+CREATE TABLE `contact_infos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contact_infos`
+--
+
+INSERT INTO `contact_infos` (`id`, `address`, `phone`, `email`, `created_at`, `updated_at`) VALUES
+(1, '58/6, Dogormura', '01764470022', 'zakir_dipu@yahoo.com', '2020-09-17 23:37:28', '2020-09-17 23:40:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_supports`
+--
+
+CREATE TABLE `customer_supports` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `phone1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `customer_supports`
+--
+
+INSERT INTO `customer_supports` (`id`, `phone1`, `phone2`, `email`, `created_at`, `updated_at`) VALUES
+(1, '01764470022', '01764470012', 'zakir7dipu@gmail.com', '2020-09-17 23:52:54', '2020-09-17 23:53:08');
 
 -- --------------------------------------------------------
 
@@ -103,7 +147,7 @@ CREATE TABLE `main_banner_scrolls` (
 --
 
 INSERT INTO `main_banner_scrolls` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Banner1', '1598577167cebmq6.banner-image1.jpg', NULL, '2020-08-27 19:12:47'),
+(1, 'Banner1', '1598808266lswaz1.banner-image1.jpg', NULL, '2020-08-30 11:24:26'),
 (2, 'Banner2', '1598575383ijfsl3.banner-image2.jpg', NULL, NULL),
 (3, 'Banner3', '1598575383wp8god.banner-image3.png', NULL, NULL);
 
@@ -159,7 +203,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (23, '2020_08_27_233757_create_main_banner_scrolls_table', 9),
 (24, '2020_08_28_013240_create_menu_sliders_table', 10),
 (26, '2020_08_25_060925_create_products_table', 11),
-(27, '2020_08_29_164859_create_reviews_table', 12);
+(27, '2020_08_29_164859_create_reviews_table', 12),
+(28, '2020_08_30_135952_create_shoppingcart_table', 13),
+(29, '2020_09_18_051821_create_contact_infos_table', 13),
+(30, '2020_09_18_051900_create_customer_supports_table', 13),
+(32, '2020_09_19_103326_create_social_share_links_table', 14);
 
 -- --------------------------------------------------------
 
@@ -220,7 +268,8 @@ INSERT INTO `products` (`id`, `sub_category_id`, `image`, `name`, `description`,
 (18, 2, '15985954742t3gsh.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 80.00, NULL, 1, '1598595474.DAC.YadC0K4VME', 'M-6720201238asdasd', NULL, NULL, '2020-08-28 00:17:54'),
 (19, 2, '1598595587rylemo.DAC.png', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 300.00, NULL, 1, '1598595587.DAC.dU0IKxhVsP', 'Eyrsdf1233456', NULL, NULL, '2020-08-28 00:19:48'),
 (20, 2, '1598595681t6y5i9.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 250.00, NULL, 1, '1598595681.DAC.V5lYxHcnk3', 'ZEES280822222', NULL, NULL, '2020-08-28 00:21:21'),
-(21, 1, '1598684490dnubwa.DAC.jpg', 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*301', 'The texture is luxury with forging lights, it is soft and silky. Showing rich colors with creative and leading color technology. It has lasting coloring, which is refreshing and non-sticky, creating rich and attractive lip.', 160.00, NULL, 1, '1598684490.DAC.3RsKSt7Def', 'ZEESEA29802020', NULL, NULL, '2020-08-29 09:16:11');
+(21, 1, '1598684490dnubwa.DAC.jpg', 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*301', 'The texture is luxury with forging lights, it is soft and silky. Showing rich colors with creative and leading color technology. It has lasting coloring, which is refreshing and non-sticky, creating rich and attractive lip.', 160.00, NULL, 1, '1598684490.DAC.3RsKSt7Def', 'ZEESEA29802020', NULL, NULL, '2020-08-29 09:16:11'),
+(22, 1, '1598808046xaj749.DAC.jpg', 'jashkjahsdkjsadljasd asdaskldjalskjdasdas', 'jashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdas', 150.00, NULL, 1, '1598808046.DAC.xNP8cmV2TX', 'zasd24587368479', NULL, NULL, '2020-08-30 11:21:53');
 
 -- --------------------------------------------------------
 
@@ -254,7 +303,8 @@ INSERT INTO `product_colors` (`id`, `product_id`, `color_code`, `color_name`, `c
 (20, 10, '#e11414', '120', NULL, NULL, NULL),
 (42, 21, '#cc3333', '301', NULL, NULL, NULL),
 (49, 1, '#a13a3a', '301', NULL, NULL, NULL),
-(50, 1, '#392fc6', 'blue', NULL, NULL, NULL);
+(50, 1, '#392fc6', 'blue', NULL, NULL, NULL),
+(54, 22, '#9d3939', '02', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -278,7 +328,9 @@ CREATE TABLE `product_sizes` (
 INSERT INTO `product_sizes` (`id`, `product_id`, `size`, `size_price`, `created_at`, `updated_at`) VALUES
 (14, 1, 's', NULL, NULL, NULL),
 (15, 1, 'M', NULL, NULL, NULL),
-(16, 1, 'L', NULL, NULL, NULL);
+(16, 1, 'L', NULL, NULL, NULL),
+(21, 22, 'M', NULL, NULL, NULL),
+(22, 22, 'L', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -306,7 +358,9 @@ INSERT INTO `reviews` (`id`, `product_id`, `rating`, `comment`, `status`, `creat
 (3, 1, 4, NULL, 0, '2020-08-29 11:07:54', '2020-08-29 11:07:54'),
 (4, 1, 4, NULL, 0, '2020-08-29 11:08:04', '2020-08-29 11:08:04'),
 (5, 1, 4, NULL, 0, '2020-08-29 11:08:16', '2020-08-29 11:08:16'),
-(6, 1, 3, NULL, 0, '2020-08-29 11:08:39', '2020-08-29 11:08:39');
+(6, 1, 3, NULL, 0, '2020-08-29 11:08:39', '2020-08-29 11:08:39'),
+(7, 1, 4, 'nice product', 0, '2020-08-30 11:22:51', '2020-08-30 11:22:51'),
+(8, 3, 4, 'nice', 0, '2020-09-15 10:31:47', '2020-09-15 10:31:47');
 
 -- --------------------------------------------------------
 
@@ -331,6 +385,44 @@ INSERT INTO `roles` (`id`, `role`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `shoppingcart`
+--
+
+CREATE TABLE `shoppingcart` (
+  `identifier` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instance` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `social_share_links`
+--
+
+CREATE TABLE `social_share_links` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `social_share_links`
+--
+
+INSERT INTO `social_share_links` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
+(1, 'facebook', 'https://www.facebook.com', '2020-09-19 04:59:03', '2020-09-19 05:04:52'),
+(2, 'instagram', 'https://www.instagram.com', '2020-09-19 04:59:03', '2020-09-19 05:04:59'),
+(3, 'pinterest', 'https://www.pinterest.com', '2020-09-19 04:59:03', '2020-09-19 05:05:06'),
+(4, 'whatsapp', 'https://www.whatsapp.com', '2020-09-19 04:59:03', '2020-09-19 05:05:12');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sub_categories`
 --
 
@@ -349,27 +441,28 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `category_id`, `name`, `index`, `sub_category_slag`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Lipstick', 1, '1598542655Lipstick1xn4A', '2020-08-27 09:37:35', '2020-08-28 11:27:22'),
-(2, 1, 'Eyeliner', 2, '1598542708EyelinerlN5of', '2020-08-27 09:38:28', '2020-08-28 11:27:22'),
-(3, 1, 'Mascara', 3, '1598542730MascaradQ1y7', '2020-08-27 09:38:50', '2020-08-28 11:08:41'),
-(4, 1, 'Beauty Essentials', 4, '1598542780Beauty_EssentialsGkuIt', '2020-08-27 09:39:40', '2020-08-28 11:08:41'),
-(5, 2, 'Home Use Beauty Devices', 5, '1598542941Home_Use_Beauty_DevicesAsI3h', '2020-08-27 09:42:21', '2020-08-28 11:08:41'),
-(6, 2, 'Braces & Supports', 6, '1598542955Braces_&_SupportslKSrH', '2020-08-27 09:42:35', '2020-08-28 11:08:41'),
-(7, 2, 'Patches', 7, '1598542971PatchesbO8MH', '2020-08-27 09:42:51', '2020-08-28 11:08:41'),
-(8, 2, 'Slimming Product', 8, '1598542993Slimming_ProductT0Q5X', '2020-08-27 09:43:13', '2020-08-28 11:08:41'),
-(9, 2, 'Relaxation Treatments', 9, '1598543008Relaxation_TreatmentsIJQ2u', '2020-08-27 09:43:28', '2020-08-28 11:08:41'),
-(10, 3, 'T-Shirts', 18, '1598543143T-ShirtsTxFik', '2020-08-27 09:45:43', '2020-08-28 11:08:41'),
-(11, 3, 'Shirts', 19, '1598543155Shirts2XWK9', '2020-08-27 09:45:55', '2020-08-28 11:08:41'),
-(12, 3, 'Jeans', 20, '1598543166JeansTkLd2', '2020-08-27 09:46:06', '2020-08-28 11:08:41'),
-(13, 3, 'Casual Pants', 21, '1598543180Casual_PantspjKD3', '2020-08-27 09:46:20', '2020-08-28 11:08:41'),
-(14, 5, 'Mother & Kids', 10, '1598543258Mother_&_KidsZJlKz', '2020-08-27 09:47:38', '2020-08-28 11:08:41'),
-(15, 5, 'Baby Clothing', 11, '1598543275Baby_ClothingPM2bN', '2020-08-27 09:47:55', '2020-08-28 11:08:41'),
-(16, 5, 'Kids Food', 12, '1598543341Kids_FoodIsLGd', '2020-08-27 09:49:01', '2020-08-28 11:08:41'),
-(17, 5, 'Toys & Hobbies', 13, '1598543366Toys_&_HobbiesXlYCb', '2020-08-27 09:49:26', '2020-08-28 11:08:41'),
-(18, 4, 'Saree', 15, '1598543588SareeQjHz0', '2020-08-27 09:53:08', '2020-08-28 11:08:41'),
-(19, 4, 'SHALWAR KAMEEZ', 14, '1598543608SHALWAR_KAMEEZ2kbAY', '2020-08-27 09:53:28', '2020-08-28 11:08:41'),
-(20, 4, 'Hijab', 16, '1598543651HijabskDb6', '2020-08-27 09:54:11', '2020-08-28 11:08:41'),
-(21, 4, 'Kaftan', 17, '1598543673KaftanHaZfT', '2020-08-27 09:54:33', '2020-08-28 11:08:41');
+(1, 1, 'Lipstick', 1, '1598542655Lipstick1xn4A', '2020-08-27 09:37:35', '2020-09-15 10:35:59'),
+(2, 1, 'Eyeliner', 4, '1598542708EyelinerlN5of', '2020-08-27 09:38:28', '2020-09-10 09:37:56'),
+(3, 1, 'Mascara', 2, '1598542730MascaradQ1y7', '2020-08-27 09:38:50', '2020-09-15 10:35:59'),
+(4, 1, 'Beauty Essentials', 5, '1598542780Beauty_EssentialsGkuIt', '2020-08-27 09:39:40', '2020-08-30 11:11:21'),
+(5, 2, 'Home Use Beauty Devices', 14, '1598542941Home_Use_Beauty_DevicesAsI3h', '2020-08-27 09:42:21', '2020-09-15 10:35:47'),
+(6, 2, 'Braces & Supports', 15, '1598542955Braces_&_SupportslKSrH', '2020-08-27 09:42:35', '2020-09-15 10:35:47'),
+(7, 2, 'Patches', 16, '1598542971PatchesbO8MH', '2020-08-27 09:42:51', '2020-09-15 10:35:47'),
+(8, 2, 'Slimming Product', 17, '1598542993Slimming_ProductT0Q5X', '2020-08-27 09:43:13', '2020-09-15 10:35:47'),
+(9, 2, 'Relaxation Treatments', 18, '1598543008Relaxation_TreatmentsIJQ2u', '2020-08-27 09:43:28', '2020-09-15 10:35:47'),
+(10, 3, 'T-Shirts', 6, '1598543143T-ShirtsTxFik', '2020-08-27 09:45:43', '2020-09-15 10:35:47'),
+(11, 3, 'Shirts', 7, '1598543155Shirts2XWK9', '2020-08-27 09:45:55', '2020-09-15 10:35:47'),
+(12, 3, 'Jeans', 8, '1598543166JeansTkLd2', '2020-08-27 09:46:06', '2020-09-15 10:35:47'),
+(13, 3, 'Casual Pants', 9, '1598543180Casual_PantspjKD3', '2020-08-27 09:46:20', '2020-09-15 10:35:47'),
+(14, 5, 'Mother & Kids', 10, '1598543258Mother_&_KidsZJlKz', '2020-08-27 09:47:38', '2020-09-15 10:35:47'),
+(15, 5, 'Baby Clothing', 11, '1598543275Baby_ClothingPM2bN', '2020-08-27 09:47:55', '2020-09-15 10:35:47'),
+(16, 5, 'Kids Food', 12, '1598543341Kids_FoodIsLGd', '2020-08-27 09:49:01', '2020-09-15 10:35:47'),
+(17, 5, 'Toys & Hobbies', 13, '1598543366Toys_&_HobbiesXlYCb', '2020-08-27 09:49:26', '2020-09-15 10:35:47'),
+(18, 4, 'Saree', 20, '1598543588SareeQjHz0', '2020-08-27 09:53:08', '2020-09-15 10:35:47'),
+(19, 4, 'SHALWAR KAMEEZ', 19, '1598543608SHALWAR_KAMEEZ2kbAY', '2020-08-27 09:53:28', '2020-09-15 10:35:47'),
+(20, 4, 'Hijab', 21, '1598543651HijabskDb6', '2020-08-27 09:54:11', '2020-09-15 10:35:47'),
+(21, 4, 'Kaftan', 22, '1598543673KaftanHaZfT', '2020-08-27 09:54:33', '2020-09-15 10:35:47'),
+(22, 1, 'XYZ', 3, '1598807470XYZGctbV', '2020-08-30 11:11:10', '2020-09-10 09:37:56');
 
 -- --------------------------------------------------------
 
@@ -406,6 +499,18 @@ INSERT INTO `users` (`id`, `name`, `role_id`, `email`, `email_verified_at`, `pas
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `categories_category_name_unique` (`category_name`);
+
+--
+-- Indexes for table `contact_infos`
+--
+ALTER TABLE `contact_infos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer_supports`
+--
+ALTER TABLE `customer_supports`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -475,6 +580,19 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `shoppingcart`
+--
+ALTER TABLE `shoppingcart`
+  ADD PRIMARY KEY (`identifier`,`instance`);
+
+--
+-- Indexes for table `social_share_links`
+--
+ALTER TABLE `social_share_links`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `social_share_links_name_unique` (`name`);
+
+--
 -- Indexes for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
@@ -495,7 +613,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `contact_infos`
+--
+ALTER TABLE `contact_infos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `customer_supports`
+--
+ALTER TABLE `customer_supports`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -525,31 +655,31 @@ ALTER TABLE `menu_sliders`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `product_colors`
 --
 ALTER TABLE `product_colors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -558,10 +688,16 @@ ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `social_share_links`
+--
+ALTER TABLE `social_share_links`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`

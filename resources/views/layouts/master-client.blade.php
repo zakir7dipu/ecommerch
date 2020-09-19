@@ -53,57 +53,53 @@
                 <div class="col-md-3 footer-block">
                     <div class="content_footercms_right">
                         <div class="footer-contact">
-                            <div class="footer-logo mb_40"> <a href="index-2.html"> <img src="/client-assets/images/footer-logo.png" alt="HealthCare"> </a> </div>
+                            <div class="footer-logo mb_40">
+                                <a href="/">
+                                    <img alt="HealthCared" src="{{ asset('upload/images/defoult_image/'.$logo) }}" style="width: 172px; height: 45px;">
+                                </a>
+                            </div>
                             <ul>
-                                <li>B-14 Collins Street West Victoria 2386</li>
-                                <li>(+123) 456 789 - (+024) 666 888</li>
-                                <li>Contact@yourcompany.com</li>
+                                <li><i class="fa fa-home"></i> {{ $contactInfo->address }}</li>
+                                <li><i class="fa fa-phone"></i> <a href="tel:{{ $contactInfo->phone }}">{{ $contactInfo->phone }}</a></li>
+                                <li><i class="fa fa-envelope"></i> <a href="mailto:{{ $contactInfo->email }}">{{ $contactInfo->email }}</a></li>
                             </ul>
                             <div class="social_icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                    @if($facebook != '')
+                                        <li><a href="{{ $facebook->url }}"><i class="fa fa-facebook"></i></a></li>
+                                    @endif
+
+                                        @if($instagram != '')
+                                            <li><a href="{{ $instagram->url }}"><i class="fa fa-instagram"></i></a></li>
+                                        @endif
+
+                                        @if($pinterest != '')
+                                            <li><a href="{{ $pinterest->url }}"><i class="fa fa-pinterest"></i></a></li>
+                                        @endif
+
+                                        @if($whatsapp != '')
+                                            <li><a href="{{ $whatsapp->url }}"><i class="fa fa-whatsapp"></i></a></li>
+                                        @endif
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-2 footer-block">
                     <h6 class="footer-title ptb_20">Categories</h6>
                     <ul>
-                        <li><a href="#">Medicines</a></li>
-                        <li><a href="#">Healthcare</a></li>
-                        <li><a href="#">Mother & Baby</a></li>
-                        <li><a href="#">Vitamins</a></li>
-                        <li><a href="#">Toiletries</a></li>
-                        <li><a href="#">Skincare</a></li>
+                        @foreach($categories as $category)
+                            <li><a href="{{ route('client.category',$category->category_slag) }}">{{ $category->category_name }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
-                <div class="col-md-2 footer-block">
-                    <h6 class="footer-title ptb_20">Information</h6>
-                    <ul>
-                        <li><a href="contact.html">Specials</a></li>
-                        <li><a href="#">New Products</a></li>
-                        <li><a href="#">Best Sellers</a></li>
-                        <li><a href="#">Our Stores</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">About Us</a></li>
-                    </ul>
+
+                <div class="col-md-4 footer-block">
+                        <h6 class="footer-title ptb_20" style="{{ 'for-contact' != request()->path()?'':'display: none !important;' }}">Location</h6>
+                        <div id="{{ 'for-contact' != request()->path()?'map':'' }}" style="height: 200px;"></div>
                 </div>
-                <div class="col-md-2 footer-block">
-                    <h6 class="footer-title ptb_20">My Account</h6>
-                    <ul>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">My Orders</a></li>
-                        <li><a href="#">My Credit Slips</a></li>
-                        <li><a href="#">My Addresses</a></li>
-                        <li><a href="#">My Personal Info</a></li>
-                    </ul>
-                </div>
+
                 <div class="col-md-3">
                     <h6 class="ptb_20">SIGN UP OUR NEWSLETTER</h6>
                     <p class="mt_10 mb_20">For get offers from our favorite brands & get 20% off for next </p>
@@ -120,18 +116,18 @@
                     <div class="col-sm-6">
                         <div class="copyright-part">@ 2017 All Rights Reserved HealthCare</div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="payment-icon text-right">
-                            <ul>
-                                <li><i class="fa fa-cc-paypal "></i></li>
-                                <li><i class="fa fa-cc-stripe"></i></li>
-                                <li><i class="fa fa-cc-visa"></i></li>
-                                <li><i class="fa fa-cc-discover"></i></li>
-                                <li><i class="fa fa-cc-mastercard"></i></li>
-                                <li><i class="fa fa-cc-amex"></i></li>
-                            </ul>
-                        </div>
-                    </div>
+{{--                    <div class="col-sm-6">--}}
+{{--                        <div class="payment-icon text-right">--}}
+{{--                            <ul>--}}
+{{--                                <li><i class="fa fa-cc-paypal "></i></li>--}}
+{{--                                <li><i class="fa fa-cc-stripe"></i></li>--}}
+{{--                                <li><i class="fa fa-cc-visa"></i></li>--}}
+{{--                                <li><i class="fa fa-cc-discover"></i></li>--}}
+{{--                                <li><i class="fa fa-cc-mastercard"></i></li>--}}
+{{--                                <li><i class="fa fa-cc-amex"></i></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -146,6 +142,7 @@
 <script src="/client-assets/js/jquery.firstVisitPopup.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 <script src="/client-assets/js/custom.js"></script>
+<script src="{{ asset('js/view-map.js') }}"></script>
 @yield('page-script')
 </body>
 

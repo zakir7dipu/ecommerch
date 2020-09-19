@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\MainBannerScroll;
 use App\MenuSlider;
 use App\Product;
+use App\SocialShareLinks;
 use App\SubCategory;
 use Illuminate\Http\Request;
 
@@ -65,5 +66,14 @@ class AdminController extends Controller
     public function navigation()
     {
         return view('admin.navigation');
+    }
+
+    public function setSocialShare(Request $request)
+    {
+        $facebook = SocialShareLinks::where('name', 'facebook')->first();
+        $instagram = SocialShareLinks::where('name', 'instagram')->first();
+        $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
+        $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        return view('admin.social-share',compact('facebook','instagram','pinterest','whatsapp'));
     }
 }

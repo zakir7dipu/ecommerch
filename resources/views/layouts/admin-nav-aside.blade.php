@@ -28,7 +28,7 @@
                 </ul>
             </li>
 
-            <li class="{{ 'admin/dash-main-slider' == request()->path()? 'active':'' }}{{ 'admin/dash-menu-slider' == request()->path()? 'active':'' }}{{ 'admin/contact-info' == request()->path()? 'active':'' }}{{ 'admin/navigation' == request()->path()? 'active':'' }}">
+            <li class="{{ 'admin/dash-main-slider' == request()->path()? 'active':'' }}{{ 'admin/dash-menu-slider' == request()->path()? 'active':'' }}{{ 'admin/contact-info' == request()->path()? 'active':'' }}{{ 'admin/navigation' == request()->path()? 'active':'' }}{{ 'admin/social-share' == request()->path()? 'active':'' }}">
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"> <i class="nav-icon ti ti-layout-grid4-alt"></i> <span class="nav-title">Widgets</span></a>
                 <ul aria-expanded="false" class="collapse">
 
@@ -55,8 +55,8 @@
                         <a href="{{ route('admin.navigation') }}" aria-expanded="false"> <i class="nav-icon fa fa-map-marker"></i> <span class="nav-title">Navigation</span></a>
                     </li>
 
-                    <li>
-                        <a href="javascript:void(0)" aria-expanded="false"> <i class="nav-icon fa fa-share-alt"></i> <span class="nav-title">Social Media Links</span></a>
+                    <li class="{{ 'admin/social-share' == request()->path()? 'active':'' }}">
+                        <a href="{{ route('admin.social-share') }}" aria-expanded="false"> <i class="nav-icon fa fa-share-alt"></i> <span class="nav-title">Social Media Links</span></a>
                     </li>
                 </ul>
             </li>

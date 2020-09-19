@@ -58,6 +58,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/dash-menu-slider','Admin\AdminController@menu_slider')->name('admin.menu-slider');
     Route::get('/contact-info','Admin\AdminController@contact_info')->name('admin.contact-info');
     Route::get('/navigation','Admin\AdminController@navigation')->name('admin.navigation');
+    Route::get('/social-share','Admin\AdminController@setSocialShare')->name('admin.social-share');
 
     Route::resource('/category','CategoryController', [
         'only' => ['store', 'edit', 'update']
@@ -82,4 +83,5 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::post('/store-in-logo','GalleryController@store_logo')->name('store.logo');
     Route::post('/modify-contact','ContactInfoController@modifyContact')->name('admin.modify-contact');
     Route::post('/modify-customer-support','CustomerSupportController@modifyCustomerSupport')->name('admin.modify-customer-support');
+    Route::post('/add-social-share','SocialShareLinksController@socialShareLinks')->name('admin.add-social-share');
 });
