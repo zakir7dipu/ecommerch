@@ -1,7 +1,7 @@
 @extends('layouts.master-admin')
 
 @section('page-css')
-
+    <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
 @endsection
 
 @section('content')
@@ -26,22 +26,9 @@
                                     <li class="breadcrumb-item text-capitalize">
                                         <a href="{{ route('admin.setting') }}">Setting</a>
                                     </li>
-{{--                                    <li class="breadcrumb-item active text-primary text-capitalize page_title" aria-current="page">pins</li>--}}
                                 </ol>
                             </nav>
                         </div>
-                        <div class="ml-auto d-flex align-items-center secondary-menu text-center">
-                            <a href="javascript:void(0);" class="tooltip-wrapper generateUserLicenceBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Generate User Licence">
-                                <i class="fa fa-ravelry btn btn-icon text-primary"></i>
-                            </a>
-                            <a href="javascript:void(0);" class="tooltip-wrapper showActivePinsBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Unused Licences">
-                                <i class="fa fa-map-pin btn btn-icon text-success"></i>
-                            </a>
-                            <a href="javascript:void(0);" class="tooltip-wrapper showUsedPinsBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Used Licences">
-                                <i class="fa fa-plug btn btn-icon text-danger"></i>
-                            </a>
-                        </div>
-
                     </div>
                     <!-- end page title -->
                 </div>
@@ -106,14 +93,14 @@
 
                 <div class="card col-md-8">
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="{{ route('admin.country-select') }}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="companyAbout">Order Excepted Countries:</label>
-                                <select class="form-control" name="" id="">
-                                    <option selected disabled>Select Country</option>
+                                <select class="form-control multipleCountrySelect" name="selected_countries[]" multiple="multiple">
+{{--                                    <option selected disabled>Select Country</option>--}}
                                     @foreach($countries as $country)
-                                        <option value="">{{ $country->name }}</option>
+                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -129,11 +116,12 @@
                         <h4 class="text-muted font-weight-bold text-center">Change Login Info</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="{{ route('admin.user-update',$user->id) }}" method="post">
+                            @method('Put')
                             @csrf
                             <div class="form-group">
                                 <label for="email">Login Email</label>
-                                <input type="email" class="form-control" name="email" id="email" value="">
+                                <input type="email" class="form-control" name="email" id="email" value="{{ $user->email }}">
                             </div>
 
                             <div class="form-group">
@@ -155,6 +143,6 @@
     <!-- end app-main -->
 @endsection
 
-@section('script')
-
+@section('page-script')
+    <script src="{{ asset('js/select2.min.js') }}"></script>
 @endsection

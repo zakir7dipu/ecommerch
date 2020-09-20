@@ -29,4 +29,18 @@ class CompanyController extends Controller
         }
         return back()->withMessage('Company Name Saved Successfully');
     }
+
+    public function countrySelect(Request $request)
+    {
+        $this->validate($request,[
+            'selected_countries' => 'required|min:1'
+        ]);
+        $company = Company::find(1);
+        if ($request->has('selected_countries')) {
+            $company->countries()->sync($request->selected_countries);
+        }else{
+            $company->countries()->sync(array());
+        }
+        return back()->withMessage('Country Selected Successfully');
+    }
 }

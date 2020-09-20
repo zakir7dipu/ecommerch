@@ -37,7 +37,7 @@ class ClientController extends Controller
         $customerCare = CustomerSupport::find(1);
         $cartCount = Cart::count();
         $cartItems = Cart::content();
-        $company_name = Company::find(1)->name;
+        $company = Company::find(1);
         $facebook = SocialShareLinks::where('name', 'facebook')->first();
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
@@ -62,7 +62,7 @@ class ClientController extends Controller
                 ->where('status',1)
                 ->get();
         }
-        return view('client.client-home',compact('categories','collections','logo','banners','menu_sliders','contactInfo','customerCare','cartCount','cartItems','company_name','facebook','instagram','pinterest','whatsapp','products'));
+        return view('client.client-home',compact('categories','collections','logo','banners','menu_sliders','contactInfo','customerCare','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp','products'));
     }
 
     public function category_page($slag)
@@ -81,7 +81,7 @@ class ClientController extends Controller
         $contactInfo = ContactInfo::find(1);
         $cartCount = Cart::count();
         $cartItems = Cart::content();
-        $company_name = Company::find(1)->name;
+        $company = Company::find(1);
         $facebook = SocialShareLinks::where('name', 'facebook')->first();
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
@@ -91,7 +91,7 @@ class ClientController extends Controller
         $category = Category::find($category_id);
         $subCategorise = $category->subcotegorise()->orderBy('index','asc')->get();
 
-        return view('client.category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company_name','whatsapp','pinterest','facebook','instagram','subCategorise','category'));
+        return view('client.category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','whatsapp','pinterest','facebook','instagram','subCategorise','category'));
 
     }
 
@@ -111,7 +111,7 @@ class ClientController extends Controller
         $contactInfo = ContactInfo::find(1);
         $cartCount = Cart::count();
         $cartItems = Cart::content();
-        $company_name = Company::find(1)->name;
+        $company = Company::find(1);
         $facebook = SocialShareLinks::where('name', 'facebook')->first();
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
@@ -125,7 +125,7 @@ class ClientController extends Controller
             ->paginate(8);
 
 
-        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company_name','facebook','instagram','pinterest','whatsapp','subCategory','products'));
+        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp','subCategory','products'));
 
     }
 
@@ -145,7 +145,7 @@ class ClientController extends Controller
         $contactInfo = ContactInfo::find(1);
         $cartCount = Cart::count();
         $cartItems = Cart::content();
-        $company_name = Company::find(1)->name;
+        $company = Company::find(1);
         $facebook = SocialShareLinks::where('name', 'facebook')->first();
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
@@ -155,7 +155,7 @@ class ClientController extends Controller
         $product = Product::find($product_id);
         $subCategory = SubCategory::where('id',$product->sub_category_id)->first();
 //        dd($subcategory->category);
-        return view('client.single-product-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company_name','facebook','instagram','pinterest','whatsapp','product','subCategory'));
+        return view('client.single-product-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp','product','subCategory'));
 
     }
 
@@ -173,7 +173,7 @@ class ClientController extends Controller
         $menu_sliders = MenuSlider::all();
         $contactInfo = ContactInfo::find(1);
         $cartCount = Cart::count();
-        $company_name = Company::find(1)->name;
+        $company = Company::find(1);
         $facebook = SocialShareLinks::where('name', 'facebook')->first();
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
@@ -181,7 +181,7 @@ class ClientController extends Controller
 //        *******
         $cartItems = Cart::content();
 //        dd($cartItems);
-        return view('client.cart-page',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company_name','facebook','instagram','pinterest','whatsapp'));
+        return view('client.cart-page',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp'));
     }
 
     public function checkout_page()
@@ -199,14 +199,14 @@ class ClientController extends Controller
         $contactInfo = ContactInfo::find(1);
         $cartCount = Cart::count();
         $cartItems = Cart::content();
-        $company_name = Company::find(1)->name;
+        $company = Company::find(1);
         $facebook = SocialShareLinks::where('name', 'facebook')->first();
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
 //        *******
 //        dd($cartItems);
-        return view('client.checkout-page',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company_name','facebook','instagram','pinterest','whatsapp'));
+        return view('client.checkout-page',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp'));
     }
 
     public function aboutUs()
@@ -223,14 +223,14 @@ class ClientController extends Controller
         $contactInfo = ContactInfo::find(1);
         $cartCount = Cart::count();
         $cartItems = Cart::content();
-        $company_name = Company::find(1)->name;
+        $company = Company::find(1);
         $facebook = SocialShareLinks::where('name', 'facebook')->first();
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
         $banners = MainBannerScroll::all();
         $aboutCompany = AboutCompany::find(1)->about_us;
-        return view('client.about-company',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company_name','facebook','instagram','pinterest','whatsapp','banners','aboutCompany'));
+        return view('client.about-company',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp','banners','aboutCompany'));
     }
 
     public function contactUs()
@@ -247,13 +247,13 @@ class ClientController extends Controller
         $contactInfo = ContactInfo::find(1);
         $cartCount = Cart::count();
         $cartItems = Cart::content();
-        $company_name = Company::find(1)->name;
+        $company = Company::find(1);
         $facebook = SocialShareLinks::where('name', 'facebook')->first();
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
         $banners = MainBannerScroll::all();
-        return view('client.for-contact',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company_name','banners','facebook','instagram','whatsapp','pinterest'));
+        return view('client.for-contact',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','banners','facebook','instagram','whatsapp','pinterest'));
     }
 
     public function navigationLocation()

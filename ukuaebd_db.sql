@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2020 at 10:17 AM
+-- Generation Time: Sep 20, 2020 at 06:27 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -84,16 +84,24 @@ INSERT INTO `all_countries` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `all_countries_companies`
+-- Table structure for table `all_countries_company`
 --
 
-CREATE TABLE `all_countries_companies` (
+CREATE TABLE `all_countries_company` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `company_id` int(11) NOT NULL,
   `all_countries_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `all_countries_company`
+--
+
+INSERT INTO `all_countries_company` (`id`, `company_id`, `all_countries_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, NULL, NULL),
+(5, 1, 8, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -162,6 +170,43 @@ CREATE TABLE `contact_infos` (
 
 INSERT INTO `contact_infos` (`id`, `address`, `phone`, `email`, `created_at`, `updated_at`) VALUES
 (1, '58/6, Dogormura', '01764470022', 'zakir_dipu@yahoo.com', '2020-09-17 23:37:28', '2020-09-17 23:40:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers_orders`
+--
+
+CREATE TABLE `customers_orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `order_no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address_line1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address_line2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zip` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment_phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_ref` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subtotal` double(8,2) NOT NULL,
+  `tax` double(8,2) NOT NULL,
+  `net_price` double(8,2) NOT NULL,
+  `order_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `order_date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `customers_orders`
+--
+
+INSERT INTO `customers_orders` (`id`, `order_no`, `name`, `email`, `phone`, `address_line1`, `address_line2`, `country`, `city`, `zip`, `payment_type`, `payment_phone`, `payment_ref`, `subtotal`, `tax`, `net_price`, `order_time`, `order_date`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'o16960', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'bKash', NULL, 'Text', 558.00, 83.70, 641.70, '22:07:04', '2020/09/20', '1', '2020-09-20 10:07:33', '2020-09-20 10:07:33');
 
 -- --------------------------------------------------------
 
@@ -326,8 +371,62 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (34, '2020_09_20_041958_create_geolocations_table', 15),
 (35, '2020_09_20_071728_create_all_countries_table', 16),
 (36, '2020_09_20_073519_create_companies_table', 17),
-(37, '2020_09_20_074132_create_all_countries_companies_table', 17),
-(38, '2020_09_20_080420_create_about_companies_table', 18);
+(38, '2020_09_20_080420_create_about_companies_table', 18),
+(39, '2020_09_20_131801_create_all_countries_company_table', 19),
+(52, '2020_09_20_142521_create_customers_orders_table', 20),
+(53, '2020_09_20_142630_create_ordered_products_table', 20),
+(54, '2020_09_20_143845_create_ordered_product_attributes_table', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ordered_products`
+--
+
+CREATE TABLE `ordered_products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `customers_order_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qty` int(11) NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` double(8,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ordered_products`
+--
+
+INSERT INTO `ordered_products` (`id`, `customers_order_id`, `name`, `qty`, `image`, `price`, `created_at`, `updated_at`) VALUES
+(1, 1, 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*301', 2, '15985919150wvf2d.DAC.jpg', 288.00, '2020-09-20 10:07:33', '2020-09-20 10:07:33'),
+(2, 1, 'RtopR Lip Makeup Non-stick Cup Lipstick Lip Gloss', 1, '1598592548s9lahx.DAC.jpg', 150.00, '2020-09-20 10:07:33', '2020-09-20 10:07:33'),
+(3, 1, 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 1, '15985944376q530k.DAC.jpg', 120.00, '2020-09-20 10:07:33', '2020-09-20 10:07:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ordered_product_attributes`
+--
+
+CREATE TABLE `ordered_product_attributes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ordered_product_id` int(11) NOT NULL,
+  `color_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `size` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ordered_product_attributes`
+--
+
+INSERT INTO `ordered_product_attributes` (`id`, `ordered_product_id`, `color_code`, `color_name`, `size`, `created_at`, `updated_at`) VALUES
+(1, 1, '#a13a3a', '301', 's', NULL, NULL),
+(2, 2, '#d96868', 'Caramel R02', NULL, NULL, NULL),
+(3, 3, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -607,7 +706,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `role_id`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'zakir Hossain', 1, 'zakir7dipu@gmail.com', '2020-08-24 23:26:01', '$2y$10$8RLqmhWecg/sIbMiXZU7legXLXnLJSwmAkY0mw0wKfkb9QOvilwh.', NULL, '2020-08-24 22:49:25', '2020-08-24 23:26:01');
+(1, 'zakir Hossain', 1, 'zakir7dipu@gmail.com', '2020-09-20 06:55:29', '$2y$10$8RLqmhWecg/sIbMiXZU7legXLXnLJSwmAkY0mw0wKfkb9QOvilwh.', NULL, '2020-08-24 22:49:25', '2020-09-20 06:55:29');
 
 --
 -- Indexes for dumped tables
@@ -626,9 +725,9 @@ ALTER TABLE `all_countries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `all_countries_companies`
+-- Indexes for table `all_countries_company`
 --
-ALTER TABLE `all_countries_companies`
+ALTER TABLE `all_countries_company`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -648,6 +747,12 @@ ALTER TABLE `companies`
 -- Indexes for table `contact_infos`
 --
 ALTER TABLE `contact_infos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customers_orders`
+--
+ALTER TABLE `customers_orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -691,6 +796,18 @@ ALTER TABLE `menu_sliders`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ordered_products`
+--
+ALTER TABLE `ordered_products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ordered_product_attributes`
+--
+ALTER TABLE `ordered_product_attributes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -772,10 +889,10 @@ ALTER TABLE `all_countries`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `all_countries_companies`
+-- AUTO_INCREMENT for table `all_countries_company`
 --
-ALTER TABLE `all_countries_companies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `all_countries_company`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -793,6 +910,12 @@ ALTER TABLE `companies`
 -- AUTO_INCREMENT for table `contact_infos`
 --
 ALTER TABLE `contact_infos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `customers_orders`
+--
+ALTER TABLE `customers_orders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -835,7 +958,19 @@ ALTER TABLE `menu_sliders`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `ordered_products`
+--
+ALTER TABLE `ordered_products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `ordered_product_attributes`
+--
+ALTER TABLE `ordered_product_attributes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`

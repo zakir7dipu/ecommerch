@@ -10,6 +10,10 @@
             color: #0b0b0b;
             text-decoration: none;
         }
+        .invalid-feedback{
+            color: red;
+            font-weight: bold;
+        }
     </style>
 @endsection
 
@@ -28,29 +32,50 @@
                 <!-- =====  BREADCRUMB END===== -->
                 <div class="row">
                     <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Billing address</h4>
-                        <form class="needs-validation" novalidate>
+                        <h4 class="mb-3">Billing Information</h4>
+
+                        <form action="{{ route('client.order') }}" method="Post" class="needs-validation" novalidate>
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                     <label for="name">Name</label>
                                     <input type="text" name="name" class="form-control" id="lastName" placeholder="Your Name ......." value="" required>
                                 </div>
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="mb-3">
                                 <label for="email">Email <span class="text-muted">(Optional)</span></label>
                                 <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com">
+                                @error('email')
                                 <div class="invalid-feedback">
                                     Please enter a valid email address for shipping updates.
                                 </div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone">Phone</label>
+                                <input type="tel" name="phone" class="form-control" id="phone" placeholder="+xxx xxx xxxxxxxx" required>
+                                @error('phone')
+                                <div class="invalid-feedback">
+                                    Please enter a valid phone number for shipping updates.
+                                </div>
+                                @enderror
                             </div>
 
                             <div class="mb-3">
                                 <label for="address">Address</label>
                                 <input type="text" name="address" class="form-control" id="address" placeholder="1234 Main St" required>
+                                @error('address')
                                 <div class="invalid-feedback">
                                     Please enter your shipping address.
                                 </div>
+                                @enderror
                             </div>
 
                             <div class="mb-3">
@@ -63,21 +88,35 @@
                                     <label for="country">Country</label>
                                     <select name="country" class="form-control" id="country" required>
                                         <option value="">Choose...</option>
-                                        <option value="Bangladesh">Bangladesh</option>
+                                        @foreach($company->countries as $country)
+                                            <option value="{{ $country->name }}">{{ $country->name }}</option>
+                                        @endforeach
                                     </select>
+                                    @error('country')
                                     <div class="invalid-feedback">
                                         Please select a valid country.
                                     </div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-3 mb-3">
                                     <label for="zip">City</label>
                                     <input type="text" class="form-control" name="city" id="city" placeholder="Your City......." required>
+                                    @error('city')
+                                    <div class="invalid-feedback">
+                                        Please select a valid city.
+                                    </div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-3 mb-3">
                                     <label for="zip">Zip</label>
                                     <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip Code ......." required>
+                                    @error('zip')
+                                    <div class="invalid-feedback">
+                                        Please select a valid zip.
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -100,17 +139,16 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phone" placeholder="" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="trxid">TrxID</label>
-                                    <input type="text" class="form-control" id="trxid" placeholder="">
-                                </div>
+                            <div class="row paymentInfo">
+
                             </div>
+                            @error('payment_phone')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                             <hr class="mb-4">
+                            <input type="hidden" name="order_time" class="time">
                             <button class="btn btn-danger btn-lg btn-block" type="submit">Continue to checkout</button>
                         </form>
                     </div>
@@ -157,24 +195,5 @@
 @endsection
 
 @section('page-script')
-
+    <script src="{{ asset('js/payment-info.js') }}"></script>
 @endsection
-{{--<div class="product-grid">--}}
-{{--    <div class="item">--}}
-{{--        <div class="product-thumb">--}}
-{{--            <div class="image product-imageblock"> <a href="product_detail_page.html"> <img data-name="product_image" src="{{ asset('upload/images/category_images/'.$product->image) }}" alt="iPod Classic" title="iPod Classic" class="img-responsive"> <img src="{{ asset('upload/images/category_images/'.$product->image) }}" alt="iPod Classic" title="iPod Classic" class="img-responsive"> </a> </div>--}}
-{{--            <div class="caption product-detail text-left">--}}
-{{--                <h6 data-name="product_name" class="product-name mt_20"><a href="#" title="Casual Shirt With Ruffle Hem">Latin literature from 45 BC, making it over old.</a></h6>--}}
-{{--                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span> </div>--}}
-{{--                <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>--}}
-{{--                              </span>--}}
-{{--                <div class="button-group text-center">--}}
-{{--                    <div class="wishlist"><a href="#"><span>wishlist</span></a></div>--}}
-{{--                    <div class="quickview"><a href="#"><span>Quick View</span></a></div>--}}
-{{--                    <div class="compare"><a href="#"><span>Compare</span></a></div>--}}
-{{--                    <div class="add-to-cart"><a href="#"><span>Add to cart</span></a></div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}

@@ -46,6 +46,8 @@ Route::get('/about-us','Client\ClientController@aboutUs')->name('client.about-us
 Route::get('/for-contact','Client\ClientController@contactUs')->name('client.contact-us');
 //location
 Route::get('/show-location','Client\ClientController@navigationLocation')->name('client.navigation');
+//place order
+Route::post('/customers-order','CustomersOrdersController@storeOrder')->name('client.order');
 
 Auth::routes(['verify'=>true]);
 
@@ -63,6 +65,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/social-share','Admin\AdminController@setSocialShare')->name('admin.social-share');
     Route::get('/show-map-location','GeolocationController@showLocation')->name('admin.show-map-location');
     Route::get('/setting','Admin\AdminController@setting')->name('admin.setting');
+    Route::get('/selected-country','Admin\AdminController@viewSeletedCountry')->name('admin.selected-country');
 
     Route::resource('/category','CategoryController', [
         'only' => ['store', 'edit', 'update']
@@ -91,4 +94,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::post('/add-location','GeolocationController@setGeolocation')->name('admin.location');
     Route::post('/company-name','CompanyController@setCompanyInfo')->name('admin.company');
     Route::post('/add-about','AboutCompanyController@about')->name('admin.about');
+    Route::put('/user-update/{user}','UserController@userEmailUpdate')->name('admin.user-update');
+    Route::post('/country-select','CompanyController@countrySelect')->name('admin.country-select');
 });

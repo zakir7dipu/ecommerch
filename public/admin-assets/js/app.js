@@ -921,84 +921,18 @@
         imagesInputName: 'company_menu_slider',
         maxFiles: 1
     });
-// ****
-//
-//     $('.managerPanelLogoBtn').on('click',function () {
-//         $('#managerPanelLogoInputModel').modal('show');
-//         var active = $(this).closest('li').addClass('active');
-//         $('.closeModalBtn').on('click',function (){
-//             active.removeClass('active');
-//         });
-//     });
-//
-//     $('.cashDeskLogoBtn').on('click',function () {
-//         $('#cashDeskLogoInputModel').modal('show');
-//         var active = $(this).closest('li').addClass('active');
-//         $('.closeModalBtn').on('click',function (){
-//             active.removeClass('active');
-//         });
-//     });
-//
-//     $('.companyLoginPanelBtn').on('click',function () {
-//         $('#LoginPanelBgModel').modal('show');
-//         var active = $(this).closest('li').addClass('active');
-//         $('.closeModalBtn').on('click',function (){
-//             active.removeClass('active');
-//         });
-//     });
-//
-//     $('.registrationPanelBtn').on('click',function () {
-//         $('#registrationPanelBgModel').modal('show');
-//         var active = $(this).closest('li').addClass('active');
-//         $('.closeModalBtn').on('click',function (){
-//             active.removeClass('active');
-//         });
-//     });
-//
-//     $('.cashDeskLoginPanelBtn').on('click',function () {
-//         $('#cashDeskBgModel').modal('show');
-//         var active = $(this).closest('li').addClass('active');
-//         $('.closeModalBtn').on('click',function (){
-//             active.removeClass('active');
-//         });
-//     });
-//
-//     $('.input-company-favicon').imageUploader({
-//         imagesInputName: 'company_favicon',
-//         maxFiles: 1
-//     });
-//
-//     $('.input-owner-panel-logo').imageUploader({
-//         imagesInputName: 'owner_panel_logo',
-//         maxFiles: 1
-//     });
-//
-//     $('.input-manager-panel-logo').imageUploader({
-//         imagesInputName: 'manager_panel_logo',
-//         maxFiles: 1
-//     });
-//
-//     $('.input-cash-desk-logo').imageUploader({
-//         imagesInputName: 'cash_desk_logo',
-//         maxFiles: 1
-//     });
-//
-//     $('.input-login-panel-bg').imageUploader({
-//         imagesInputName: 'login_panel_bg',
-//         maxFiles: 1
-//     });
-//
-//     $('.input-registration-panel-bg').imageUploader({
-//         imagesInputName: 'registration_panel_bg',
-//         maxFiles: 1
-//     });
-//
-//     $('.input-cash-desk-bg').imageUploader({
-//         imagesInputName: 'cash_desk_bg',
-//         maxFiles: 1
-//     });
 
-      // nicEditor
-    // bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+    // select country
+    $('.multipleCountrySelect').select2();
+
+    $.ajax({
+        type: 'Get',
+        url: 'selected-country',
+        success:function (data) {
+            // console.log(data);
+            var selectedCountry = data;
+            $('.multipleCountrySelect').val(selectedCountry).trigger('change');
+        }
+    })
 
 })(window, document, window.jQuery);

@@ -114,7 +114,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="copyright-part">&#169;<span class="copyright-part-year"></span> All Rights Reserved {{ $company_name }}</div>
+                        <div class="copyright-part">&#169;<span class="copyright-part-year"></span> All Rights Reserved {{ $company->name }}</div>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
     </div>
     <!-- =====  FOOTER END  ===== -->
 </div>
-<a id="scrollup">Scroll</a>
+<a id="scrollup" style='background: url("{{ asset('upload/images/defoult_image/up-arrow.png') }}") no-repeat;'></a>
 <script src="/client-assets/js/jQuery_v3.1.1.min.js"></script>
 <script src="/client-assets/js/owl.carousel.min.js"></script>
 <script src="/client-assets/js/bootstrap.min.js"></script>

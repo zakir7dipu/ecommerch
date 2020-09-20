@@ -15,6 +15,7 @@ use App\Product;
 use App\SocialShareLinks;
 use App\SubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -93,6 +94,17 @@ class AdminController extends Controller
         }else{
             $aboutCompany = '';
         }
-        return view('admin.site-setting',compact('countries','company_name','aboutCompany'));
+        $user = Auth::user();
+        return view('admin.site-setting',compact('countries','company_name','aboutCompany','user'));
+    }
+
+    public function viewSeletedCountry()
+    {
+        $company = Company::find(1);
+        $selectedCountries = [];
+        foreach ($company->countries as $country){
+            $selectedCountries[] = $country->id;
+        }
+        return response()->json($selectedCountries);
     }
 }
