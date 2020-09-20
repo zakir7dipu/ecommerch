@@ -2,17 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SocialShareLinksController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/SocialShareLinks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_19_103326_create_social_share_links_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/view-map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/social-share.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/AboutCompany.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/AllCountries.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Geolocation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AboutCompanyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/GeolocationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_041958_create_geolocations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_071728_create_all_countries_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_073519_create_companies_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_074132_create_all_countries_companies_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_080420_create_about_companies_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/add-location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/1600582545qt8w1n.Menu-Slider1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/1600582686vgsp6d.Menu-Slider3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/16005827767oi0ku.Menu-Slider2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/site-setting.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_19_103326_create_social_share_links_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_19_103326_create_social_share_links_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/view-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/view-map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1598580012gnu1ai.menu-slider-image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/15985800586xydbz.Menu-Slider1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1598580090tozyqa.Menu-Slider2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/navigation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/for-contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/for-contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/social-share.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/social-share.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/about-company.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/about-company.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/client-home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/client-home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -152,7 +172,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../order-web" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -204,7 +224,9 @@
       <workItem from="1599723893930" duration="712000" />
       <workItem from="1600056935176" duration="277000" />
       <workItem from="1600399812728" duration="11998000" />
-      <workItem from="1600506747324" duration="7192000" />
+      <workItem from="1600506747324" duration="7681000" />
+      <workItem from="1600517138624" duration="6000" />
+      <workItem from="1600569825849" duration="19470000" />
     </task>
     <servers />
   </component>
@@ -219,18 +241,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="91" key="#Composer/0.0.1600.860@0.0.1600.860" timestamp="1598327312925" />
-    <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600513557464">
+    <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600589755957">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1600513557464" />
+    <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1600589755957" />
     <state x="526" y="32" key="#guzzle/Dockerfile" timestamp="1598327341981">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1598931074963">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1600584997731">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1598931074963" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1600584997731" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1598332165998">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -239,14 +261,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1600506747576">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1600569825360">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1600506747576" />
-    <state x="456" y="195" key="run.anything.popup" timestamp="1598536272073">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1600569825360" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1600570024587">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1598536272073" />
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1600570024587" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1598365492566">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

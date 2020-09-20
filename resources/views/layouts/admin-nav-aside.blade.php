@@ -61,7 +61,9 @@
                 </ul>
             </li>
 
-            <li><a href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ion ion-ios-construct"></i><span class="nav-title"> Settings</span></a> </li>
+            <li class="{{ 'admin/setting' == request()->path()? 'active':'' }}">
+                <a href="{{ route('admin.setting') }}" aria-expanded="false"><i class="nav-icon ion ion-ios-construct"></i><span class="nav-title"> Settings</span></a>
+            </li>
 
             <li>
                 <a  href="{{ route('logout') }}"

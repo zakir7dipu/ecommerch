@@ -44,6 +44,8 @@ Route::post('/review/{product}','ReviewController@store')->name('review.store');
 Route::get('/about-us','Client\ClientController@aboutUs')->name('client.about-us');
 //contact us
 Route::get('/for-contact','Client\ClientController@contactUs')->name('client.contact-us');
+//location
+Route::get('/show-location','Client\ClientController@navigationLocation')->name('client.navigation');
 
 Auth::routes(['verify'=>true]);
 
@@ -59,6 +61,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/contact-info','Admin\AdminController@contact_info')->name('admin.contact-info');
     Route::get('/navigation','Admin\AdminController@navigation')->name('admin.navigation');
     Route::get('/social-share','Admin\AdminController@setSocialShare')->name('admin.social-share');
+    Route::get('/show-map-location','GeolocationController@showLocation')->name('admin.show-map-location');
+    Route::get('/setting','Admin\AdminController@setting')->name('admin.setting');
 
     Route::resource('/category','CategoryController', [
         'only' => ['store', 'edit', 'update']
@@ -84,4 +88,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::post('/modify-contact','ContactInfoController@modifyContact')->name('admin.modify-contact');
     Route::post('/modify-customer-support','CustomerSupportController@modifyCustomerSupport')->name('admin.modify-customer-support');
     Route::post('/add-social-share','SocialShareLinksController@socialShareLinks')->name('admin.add-social-share');
+    Route::post('/add-location','GeolocationController@setGeolocation')->name('admin.location');
+    Route::post('/company-name','CompanyController@setCompanyInfo')->name('admin.company');
+    Route::post('/add-about','AboutCompanyController@about')->name('admin.about');
 });

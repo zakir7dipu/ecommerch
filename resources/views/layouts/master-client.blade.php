@@ -65,21 +65,21 @@
                             </ul>
                             <div class="social_icon">
                                 <ul>
-                                    @if($facebook != '')
+                                    @if($facebook->url != null)
                                         <li><a href="{{ $facebook->url }}"><i class="fa fa-facebook"></i></a></li>
                                     @endif
 
-                                        @if($instagram != '')
-                                            <li><a href="{{ $instagram->url }}"><i class="fa fa-instagram"></i></a></li>
-                                        @endif
+                                    @if($instagram->url != null)
+                                        <li><a href="{{ $instagram->url }}"><i class="fa fa-instagram"></i></a></li>
+                                    @endif
 
-                                        @if($pinterest != '')
-                                            <li><a href="{{ $pinterest->url }}"><i class="fa fa-pinterest"></i></a></li>
-                                        @endif
+                                    @if($pinterest->url != null)
+                                        <li><a href="{{ $pinterest->url }}"><i class="fa fa-pinterest"></i></a></li>
+                                    @endif
 
-                                        @if($whatsapp != '')
-                                            <li><a href="{{ $whatsapp->url }}"><i class="fa fa-whatsapp"></i></a></li>
-                                        @endif
+                                    @if($whatsapp->url != null)
+                                        <li><a href="https://api.whatsapp.com/send?phone={{ $whatsapp->url }}"><i class="fa fa-whatsapp"></i></a></li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -114,20 +114,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="copyright-part">@ 2017 All Rights Reserved HealthCare</div>
+                        <div class="copyright-part">&#169;<span class="copyright-part-year"></span> All Rights Reserved {{ $company_name }}</div>
                     </div>
-{{--                    <div class="col-sm-6">--}}
-{{--                        <div class="payment-icon text-right">--}}
-{{--                            <ul>--}}
-{{--                                <li><i class="fa fa-cc-paypal "></i></li>--}}
-{{--                                <li><i class="fa fa-cc-stripe"></i></li>--}}
-{{--                                <li><i class="fa fa-cc-visa"></i></li>--}}
-{{--                                <li><i class="fa fa-cc-discover"></i></li>--}}
-{{--                                <li><i class="fa fa-cc-mastercard"></i></li>--}}
-{{--                                <li><i class="fa fa-cc-amex"></i></li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -144,6 +132,13 @@
 <script src="/client-assets/js/custom.js"></script>
 <script src="{{ asset('js/view-map.js') }}"></script>
 @yield('page-script')
+<script !src="">
+    $(function () {
+        var date = new Date();
+        var year = date.getFullYear();
+        document.getElementsByClassName('copyright-part-year')[0].innerText = year;
+    })
+</script>
 </body>
 
 

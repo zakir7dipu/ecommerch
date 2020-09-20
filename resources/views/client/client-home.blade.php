@@ -25,7 +25,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="tel:+8801764470022" class="text-black">
+                            <a href="tel:+{{ $customerCare->phone1 }}" class="text-black">
                                 <div class="feature-i-left ptb_40">
                                     <div class="icon-right Order"></div>
                                     <h6>Order On Phone</h6>

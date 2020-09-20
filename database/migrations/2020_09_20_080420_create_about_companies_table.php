@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSocialShareLinksTable extends Migration
+class CreateAboutCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateSocialShareLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('social_share_links', function (Blueprint $table) {
+        Schema::create('about_companies', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('url')->nullable();
+            $table->longText('about_us');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateSocialShareLinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('social_share_links');
+        Schema::dropIfExists('about_companies');
     }
 }

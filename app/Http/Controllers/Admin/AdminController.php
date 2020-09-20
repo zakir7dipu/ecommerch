@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\AboutCompany;
+use App\AllCountries;
 use App\Category;
+use App\Company;
 use App\ContactInfo;
 use App\CustomerSupport;
 use App\Http\Controllers\Controller;
@@ -75,5 +78,21 @@ class AdminController extends Controller
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
         return view('admin.social-share',compact('facebook','instagram','pinterest','whatsapp'));
+    }
+
+    public function setting()
+    {
+        if (count(Company::all()) > 0) {
+            $company_name = Company::find(1)->name;
+        }else{
+            $company_name = '';
+        }
+        $countries = AllCountries::orderBy('name','ASC')->get();
+        if (count(AboutCompany::all()) > 0) {
+            $aboutCompany = AboutCompany::find(1)->about_us;
+        }else{
+            $aboutCompany = '';
+        }
+        return view('admin.site-setting',compact('countries','company_name','aboutCompany'));
     }
 }

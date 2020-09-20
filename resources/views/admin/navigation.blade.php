@@ -21,10 +21,12 @@
             overflow: hidden;
             margin-top: 75px;
         }
+        .mapboxgl-ctrl-geocoder svg {
+            width: 5%!important;
+        }
         .mapboxgl-ctrl-geocoder--icon-search {
             position: absolute;
-            left: -282px;
-            width: 5px;
+            left: 7px;
             height: 23px;
             top: 15px;
         }
@@ -61,6 +63,12 @@
 {{--                                    <li class="breadcrumb-item active text-primary text-capitalize page_title" aria-current="page">pins</li>--}}
                                 </ol>
                             </nav>
+                        </div>
+                        <div class="ml-auto d-flex align-items-center secondary-menu text-center">
+                            <a>
+                                <button type="button" class="btn btn-sm btn-primary saveLocationBtn">Save</button>
+                            </a>
+
                         </div>
                     </div>
                     <!-- end page title -->
@@ -109,26 +117,5 @@
 @endsection
 
 @section('page-script')
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiemFraXI3ZGlwdSIsImEiOiJja2UxM3Z3bGgyYWV1Mnhramd3ZGRncnc5In0.tOjaTLM2AUkKhya3t0BuOA';
-        var map = new mapboxgl.Map({
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-74.0066, 40.7135],
-            zoom: 15.5,
-            pitch: 45,
-            bearing: -17.6,
-            container: 'map',
-            antialias: true
-        });
-
-        // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl());
-
-        var geocoder = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl
-        });
-
-        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-    </script>
+    <script src="{{ asset('js/add-location.js') }}"></script>
 @endsection

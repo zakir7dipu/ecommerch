@@ -73,28 +73,28 @@
                                 <div class="input-group-prepend">
                                     <snap class="h2 mr-3"><i class="fa fa-facebook-square"></i></snap>
                                 </div>
-                                <input type="text" class="form-control" name="facebook" id="facebook" value="{{ $facebook != null?$facebook->url:'' }}" required>
+                                <input type="text" class="form-control" name="facebook" id="facebook" value="{{ $facebook != null?$facebook->url:'' }}" placeholder="Your Facebook Account Link">
                             </div>
 
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <snap class="h2 mr-3"><i class="fa fa-instagram"></i></snap>
                                 </div>
-                                <input type="text" class="form-control" name="instagram" id="instagram" value="{{ $instagram != null?$instagram->url:'' }}" required>
+                                <input type="text" class="form-control" name="instagram" id="instagram" value="{{ $instagram != null?$instagram->url:'' }}" placeholder="Your Instagram Account Link">
                             </div>
 
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <snap class="h2 mr-3"><i class="fa fa-pinterest"></i></snap>
                                 </div>
-                                <input type="text" class="form-control" name="pinterest" id="pinterest" value="{{ $pinterest != null?$pinterest->url:'' }}" required>
+                                <input type="text" class="form-control" name="pinterest" id="pinterest" value="{{ $pinterest != null?$pinterest->url:'' }}" placeholder="Your Pinterest Account Link">
                             </div>
 
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <snap class="h2 mr-3"><i class="fa fa-whatsapp"></i></snap>
                                 </div>
-                                <input type="text" class="form-control" name="whatsapp" id="whatsapp" value="{{ $whatsapp != null?$whatsapp->url:'' }}" required>
+                                <input type="tel" class="form-control" name="whatsapp" id="whatsapp" value="{{ $whatsapp != null?$whatsapp->url:'' }}" placeholder="Your Whatsapp Number">
                             </div>
 
                             <div class="input-group form-group">

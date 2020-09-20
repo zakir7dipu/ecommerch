@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2020 at 01:18 PM
+-- Generation Time: Sep 20, 2020 at 10:17 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -20,6 +20,80 @@ SET time_zone = "+00:00";
 --
 -- Database: `ukuaebd_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_companies`
+--
+
+CREATE TABLE `about_companies` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `about_us` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `about_companies`
+--
+
+INSERT INTO `about_companies` (`id`, `about_us`, `created_at`, `updated_at`) VALUES
+(1, 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2020-09-20 02:14:02', '2020-09-20 02:15:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_countries`
+--
+
+CREATE TABLE `all_countries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `all_countries`
+--
+
+INSERT INTO `all_countries` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Bangladesh', NULL, NULL),
+(2, 'United Kingdom', NULL, NULL),
+(3, 'United States', NULL, NULL),
+(4, 'China', NULL, NULL),
+(5, 'India', NULL, NULL),
+(6, 'Pakistan', NULL, NULL),
+(7, 'Indonesia', NULL, NULL),
+(8, 'Brazil', NULL, NULL),
+(9, 'Nigeria', NULL, NULL),
+(10, 'Japan', NULL, NULL),
+(11, 'United Arab Emirates', NULL, NULL),
+(12, 'Russia', NULL, NULL),
+(13, 'Mexico', NULL, NULL),
+(14, 'Germany', NULL, NULL),
+(15, 'Philippines', NULL, NULL),
+(16, 'Turkey', NULL, NULL),
+(17, 'Vietnam', NULL, NULL),
+(18, 'Iran', NULL, NULL),
+(19, 'France', NULL, NULL),
+(20, 'Italy', NULL, NULL),
+(21, 'Egypt', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_countries_companies`
+--
+
+CREATE TABLE `all_countries_companies` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `all_countries_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -41,11 +115,31 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `index`, `category_slag`, `created_at`, `updated_at`) VALUES
-(1, 'Cosmetics', 1, '1598542157CosmeticsODHEu', '2020-08-27 09:29:17', '2020-09-15 10:35:40'),
+(1, 'Cosmetics', 3, '1598542157CosmeticsODHEu', '2020-08-27 09:29:17', '2020-09-19 06:03:05'),
 (2, 'Health Care', 4, '1598542194Health_CareqmITH', '2020-08-27 09:29:54', '2020-09-15 10:27:46'),
-(3, 'Men\'s Cloths', 2, '1598542234Men\'s_Cloths0Lly5', '2020-08-27 09:30:34', '2020-09-15 10:35:40'),
+(3, 'Men\'s Cloths', 1, '1598542234Men\'s_Cloths0Lly5', '2020-08-27 09:30:34', '2020-09-19 06:03:05'),
 (4, 'Women\'s Cloths', 5, '1598542270Women\'s_ClothsIwU6V', '2020-08-27 09:31:10', '2020-09-15 10:27:46'),
-(5, 'Kids', 3, '1598542293Kids3Q0e4', '2020-08-27 09:31:33', '2020-09-15 10:35:40');
+(5, 'Kids', 2, '1598542293Kids3Q0e4', '2020-08-27 09:31:33', '2020-09-19 06:03:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `companies`
+--
+
+CREATE TABLE `companies` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `companies`
+--
+
+INSERT INTO `companies` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'HealthCare', '2020-09-20 01:53:47', '2020-09-20 01:54:22');
 
 -- --------------------------------------------------------
 
@@ -131,6 +225,27 @@ INSERT INTO `galleries` (`id`, `name`, `image`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `geolocations`
+--
+
+CREATE TABLE `geolocations` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `lng` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `geolocations`
+--
+
+INSERT INTO `geolocations` (`id`, `lng`, `lat`, `created_at`, `updated_at`) VALUES
+(1, '90.26381220000002', '23.852894200227', '2020-09-19 23:48:05', '2020-09-20 00:00:43');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `main_banner_scrolls`
 --
 
@@ -170,9 +285,9 @@ CREATE TABLE `menu_sliders` (
 --
 
 INSERT INTO `menu_sliders` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Menu-Slider1', '15985800586xydbz.Menu-Slider1.jpg', NULL, '2020-08-27 20:00:58'),
-(2, 'Menu-Slider2', '1598580090tozyqa.Menu-Slider2.jpg', NULL, '2020-08-27 20:01:30'),
-(3, 'Menu-Slider3', '1598580012gnu1ai.menu-slider-image3.jpg', NULL, NULL);
+(1, 'Menu-Slider1', '1600582545qt8w1n.Menu-Slider1.jpg', NULL, '2020-09-20 00:15:45'),
+(2, 'Menu-Slider2', '16005827767oi0ku.Menu-Slider2.jpg', NULL, '2020-09-20 00:19:36'),
+(3, 'Menu-Slider3', '1600582686vgsp6d.Menu-Slider3.jpeg', NULL, '2020-09-20 00:18:06');
 
 -- --------------------------------------------------------
 
@@ -207,7 +322,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (28, '2020_08_30_135952_create_shoppingcart_table', 13),
 (29, '2020_09_18_051821_create_contact_infos_table', 13),
 (30, '2020_09_18_051900_create_customer_supports_table', 13),
-(32, '2020_09_19_103326_create_social_share_links_table', 14);
+(33, '2020_09_19_103326_create_social_share_links_table', 14),
+(34, '2020_09_20_041958_create_geolocations_table', 15),
+(35, '2020_09_20_071728_create_all_countries_table', 16),
+(36, '2020_09_20_073519_create_companies_table', 17),
+(37, '2020_09_20_074132_create_all_countries_companies_table', 17),
+(38, '2020_09_20_080420_create_about_companies_table', 18);
 
 -- --------------------------------------------------------
 
@@ -248,7 +368,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `sub_category_id`, `image`, `name`, `description`, `price`, `discount`, `status`, `slag`, `sku`, `tag_id`, `created_at`, `updated_at`) VALUES
-(1, 1, '15985919150wvf2d.DAC.jpg', 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*301', 'The texture is luxury with forging lights, it is soft and silky. Showing rich colors with creative and leading color technology. It has lasting coloring, which is refreshing and non-sticky, creating rich and attractive lip.', 160.00, 10.00, 1, '1598591915.DAC.gGi4QeVtja', 'ZEES28082020', NULL, NULL, '2020-08-29 09:51:29'),
+(1, 1, '15985919150wvf2d.DAC.jpg', 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*301', 'The texture is luxury with forging lights, it is soft and silky. Showing rich colors with creative and leading color technology. It has lasting coloring, which is refreshing and non-sticky, creating rich and attractive lip.', 160.00, 10.00, 1, '1598591915.DAC.gGi4QeVtja', 'ZEES28082020', NULL, NULL, '2020-09-20 00:50:07'),
 (2, 1, '1598592279bt0ckf.DAC.jpg', 'RtopR Lip Makeup Non-stick Cup Lipstick Lip Gloss', 'Rich color lock, outline the lip contour in one stroke, release the color with a touch, velvety smooth, melt on the lips, showing rich color, delicate and delicate, matte texture, light and silky, moisturizing and moisturizing light makeup.', 150.00, NULL, 1, '1598592279.DAC.a1Sl0CG2VZ', 'Rtop28082020', NULL, NULL, '2020-08-27 23:24:39'),
 (3, 1, '1598592417514963.DAC.jpg', 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*302', 'The texture is luxury with forging lights, it is soft and silky. Showing rich colors with creative and leading color technology. It has lasting coloring, which is refreshing and non-sticky, creating rich and attractive lips.', 160.00, NULL, 1, '1598592417.DAC.ke1yQ2Suws', 'ZEES27082020', NULL, NULL, '2020-08-27 23:26:57'),
 (4, 1, '1598592548s9lahx.DAC.jpg', 'RtopR Lip Makeup Non-stick Cup Lipstick Lip Gloss', 'Rich color lock, outline the lip contour in one stroke, release the color with a touch, velvety smooth, melt on the lips, showing rich color, delicate and delicate, matte texture, light and silky, moisturizing and moisturizing light makeup.', 150.00, NULL, 1, '1598592548.DAC.M2AeuvkPRq', 'RtopR28082020', NULL, NULL, '2020-08-27 23:29:08'),
@@ -302,9 +422,9 @@ INSERT INTO `product_colors` (`id`, `product_id`, `color_code`, `color_name`, `c
 (19, 9, '#c84141', '302', NULL, NULL, NULL),
 (20, 10, '#e11414', '120', NULL, NULL, NULL),
 (42, 21, '#cc3333', '301', NULL, NULL, NULL),
-(49, 1, '#a13a3a', '301', NULL, NULL, NULL),
-(50, 1, '#392fc6', 'blue', NULL, NULL, NULL),
-(54, 22, '#9d3939', '02', NULL, NULL, NULL);
+(54, 22, '#9d3939', '02', NULL, NULL, NULL),
+(57, 1, '#a13a3a', '301', NULL, NULL, NULL),
+(58, 1, '#392fc6', 'blue', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -326,11 +446,11 @@ CREATE TABLE `product_sizes` (
 --
 
 INSERT INTO `product_sizes` (`id`, `product_id`, `size`, `size_price`, `created_at`, `updated_at`) VALUES
-(14, 1, 's', NULL, NULL, NULL),
-(15, 1, 'M', NULL, NULL, NULL),
-(16, 1, 'L', NULL, NULL, NULL),
 (21, 22, 'M', NULL, NULL, NULL),
-(22, 22, 'L', NULL, NULL, NULL);
+(22, 22, 'L', NULL, NULL, NULL),
+(26, 1, 's', NULL, NULL, NULL),
+(27, 1, 'M', NULL, NULL, NULL),
+(28, 1, 'L', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -405,7 +525,7 @@ CREATE TABLE `shoppingcart` (
 CREATE TABLE `social_share_links` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -415,10 +535,10 @@ CREATE TABLE `social_share_links` (
 --
 
 INSERT INTO `social_share_links` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
-(1, 'facebook', 'https://www.facebook.com', '2020-09-19 04:59:03', '2020-09-19 05:04:52'),
-(2, 'instagram', 'https://www.instagram.com', '2020-09-19 04:59:03', '2020-09-19 05:04:59'),
-(3, 'pinterest', 'https://www.pinterest.com', '2020-09-19 04:59:03', '2020-09-19 05:05:06'),
-(4, 'whatsapp', 'https://www.whatsapp.com', '2020-09-19 04:59:03', '2020-09-19 05:05:12');
+(1, 'facebook', 'https://www.facebook.com/', '2020-09-19 20:48:11', '2020-09-19 20:57:34'),
+(2, 'instagram', 'https://www.instagram.com/', '2020-09-19 20:48:11', '2020-09-19 20:57:34'),
+(3, 'pinterest', 'https://www.pinterest.com/', '2020-09-19 20:48:11', '2020-09-19 20:57:34'),
+(4, 'whatsapp', '01764470022', '2020-09-19 20:48:11', '2020-09-19 20:57:34');
 
 -- --------------------------------------------------------
 
@@ -494,11 +614,35 @@ INSERT INTO `users` (`id`, `name`, `role_id`, `email`, `email_verified_at`, `pas
 --
 
 --
+-- Indexes for table `about_companies`
+--
+ALTER TABLE `about_companies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `all_countries`
+--
+ALTER TABLE `all_countries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `all_countries_companies`
+--
+ALTER TABLE `all_countries_companies`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `categories_category_name_unique` (`category_name`);
+
+--
+-- Indexes for table `companies`
+--
+ALTER TABLE `companies`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `contact_infos`
@@ -522,6 +666,12 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `galleries`
 --
 ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `geolocations`
+--
+ALTER TABLE `geolocations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -610,10 +760,34 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `about_companies`
+--
+ALTER TABLE `about_companies`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `all_countries`
+--
+ALTER TABLE `all_countries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `all_countries_companies`
+--
+ALTER TABLE `all_countries_companies`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `companies`
+--
+ALTER TABLE `companies`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `contact_infos`
@@ -640,6 +814,12 @@ ALTER TABLE `galleries`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `geolocations`
+--
+ALTER TABLE `geolocations`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `main_banner_scrolls`
 --
 ALTER TABLE `main_banner_scrolls`
@@ -655,7 +835,7 @@ ALTER TABLE `menu_sliders`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -667,13 +847,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `product_colors`
 --
 ALTER TABLE `product_colors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `reviews`
