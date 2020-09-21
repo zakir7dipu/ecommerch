@@ -20,10 +20,10 @@
                 </ul>
             </li>
 
-            <li class="">
+            <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}">
                 <a class="has-arrow" href="javascript:void (0)" aria-expanded="false"><i class="nav-icon fa fa-ship"></i><span class="nav-title">Orders</span></a>
                 <ul>
-                    <li class=""><a href='javascript:void (0)'>New Orders</a></li>
+                    <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}"><a href='{{ route('admin.new-order') }}'>New Orders</a></li>
                     <li class=""><a href='javascript:void (0)'>All Orders</a></li>
                 </ul>
             </li>

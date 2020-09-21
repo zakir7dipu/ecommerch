@@ -7,6 +7,7 @@ use App\AllCountries;
 use App\Category;
 use App\Company;
 use App\ContactInfo;
+use App\CustomersOrders;
 use App\CustomerSupport;
 use App\Http\Controllers\Controller;
 use App\MainBannerScroll;
@@ -106,5 +107,17 @@ class AdminController extends Controller
             $selectedCountries[] = $country->id;
         }
         return response()->json($selectedCountries);
+    }
+
+    public function newOrders()
+    {
+        $orders = CustomersOrders::where('status',1)
+            ->orderBy('id','desc')
+            ->get();
+        $orderCount = CustomersOrders::where('status',1)
+            ->orderBy('id','desc')
+            ->count();
+
+        return view('admin.new-order',compact('orders','orderCount'));
     }
 }

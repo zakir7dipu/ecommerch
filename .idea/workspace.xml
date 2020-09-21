@@ -2,29 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/CustomersOrders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomersOrdersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderedProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/OrderedProduct.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/OrderedProductAttribute.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_142521_create_customers_orders_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_142630_create_ordered_products_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_143845_create_ordered_product_attributes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/payment-info.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/select2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/up-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/invoice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/new-order.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/master-invoice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_20_074132_create_all_countries_companies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_131801_create_all_countries_company_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/client-assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/client-assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/site-setting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/site-setting.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomersOrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomersOrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/OrderedProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/OrderedProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_20_142521_create_customers_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_142521_create_customers_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_20_142630_create_ordered_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_142630_create_ordered_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/payment-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/payment-info.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/client/checkout-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/checkout-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,14 +155,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/upload/images/defoult_image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\admin" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\upload\images\defoult_image" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\js" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\css" />
-      <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\admin" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -218,7 +210,10 @@
       <workItem from="1600506747324" duration="7681000" />
       <workItem from="1600517138624" duration="6000" />
       <workItem from="1600569825849" duration="19702000" />
-      <workItem from="1600605097976" duration="13021000" />
+      <workItem from="1600605097976" duration="13251000" />
+      <workItem from="1600662311783" duration="10714000" />
+      <workItem from="1600688951931" duration="2104000" />
+      <workItem from="1600699934141" duration="6377000" />
     </task>
     <servers />
   </component>
@@ -257,10 +252,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1600605097966">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1600699933868">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1600605097966" />
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1600699933868" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1600616536451">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

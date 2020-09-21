@@ -13,7 +13,7 @@ $(function () {
     $('#নগদ').on('click',function () {
         $('.paymentInfo').empty().append('<div class="col-md-6 mb-3">\n' +
             '    <label for="paymentPhone">Phone Number</label>\n' +
-            '    <input type="tel" name="paymentPhone" class="form-control" id="paymentPhone" placeholder="" required>\n' +
+            '    <input type="tel" name="payment_phone" class="form-control" id="paymentPhone" placeholder="" required>\n' +
             '</div>')
     });
 

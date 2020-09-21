@@ -12,6 +12,7 @@ class CustomersOrdersController extends Controller
 {
     public function storeOrder(Request $request)
     {
+//        dd($request);
         $this->validate($request, [
             'name' => 'required',
             'phone' => 'required|min:11|max:14',
@@ -31,14 +32,14 @@ class CustomersOrdersController extends Controller
 
         if ($request->paymentMethod == 'bKash') {
             $this->validate($request, [
-                'payment_phone' => 'required|min:11',
+                'payment_phone' => 'required',
                 'trxid' => 'required',
             ]);
         }
 
         if ($request->paymentMethod == 'নগদ') {
             $this->validate($request, [
-                'payment_phone' => 'required|min:11',
+                'payment_phone' => 'required',
             ]);
         }
 
@@ -64,7 +65,7 @@ class CustomersOrdersController extends Controller
             'city' => $request->city,
             'zip' => $request->zip,
             'payment_type' => $request->paymentMethod,
-            'payment_phone' => $request->paymentPhone,
+            'payment_phone' => $request->payment_phone,
             'payment_ref' => $request->trxid,
             'subtotal' => $cartSubtotal,
             'tax' => $cartTax,
@@ -73,11 +74,12 @@ class CustomersOrdersController extends Controller
             'order_date' => date('Y/m/d', time()),
         ];
 
+//        dd($orderInfo);
         $orderID = CustomersOrders::create($orderInfo)->id;
 
         foreach ($carts as $cart) {
             $orderedProduct = [
-            'customers_order_id' => $orderID,
+            'customers_orders_id' => $orderID,
                 'name' => $cart->name,
                 'qty' => $cart->qty,
                 'image' => $cart->options->image,
@@ -94,6 +96,7 @@ class CustomersOrdersController extends Controller
             OrderedProductAttribute::insert($orderedProductsAttribute);
         }
         Cart::destroy();
-        return back();
+        $order = $order = CustomersOrders::find($orderID);
+        return redirect()->route('client.invoice',$order->order_no);
     }
 }

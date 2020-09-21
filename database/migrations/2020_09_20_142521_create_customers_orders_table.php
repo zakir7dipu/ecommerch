@@ -32,6 +32,7 @@ class CreateCustomersOrdersTable extends Migration
             $table->float('net_price');
             $table->string('order_time');
             $table->string('order_date');
+            $table->string('action_date')->nullable();
             $table->string('status')->default(1);
             $table->timestamps();
         });

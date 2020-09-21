@@ -1,7 +1,7 @@
 @extends('layouts.master-client')
 
 @section('page-css')
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <style>
         a{
             color: rgba(0,0,0,.6);

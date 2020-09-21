@@ -6,6 +6,7 @@ use App\AboutCompany;
 use App\Category;
 use App\Company;
 use App\ContactInfo;
+use App\CustomersOrders;
 use App\CustomerSupport;
 use App\Gallery;
 use App\Geolocation;
@@ -260,5 +261,15 @@ class ClientController extends Controller
     {
         $locationCount = Geolocation::find(1);
         return response()->json($locationCount);
+    }
+
+    public function invoice($orderNo)
+    {
+        $logo = Gallery::where('name','Logo')->first()->image;
+        $order = CustomersOrders::where('order_no',$orderNo)->first();
+        $company = Company::find(1);
+        $contactInfo = ContactInfo::find(1);
+//        dd($order);
+        return view('client.invoice',compact('logo','order','company','contactInfo'));
     }
 }

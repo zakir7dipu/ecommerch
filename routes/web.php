@@ -48,6 +48,8 @@ Route::get('/for-contact','Client\ClientController@contactUs')->name('client.con
 Route::get('/show-location','Client\ClientController@navigationLocation')->name('client.navigation');
 //place order
 Route::post('/customers-order','CustomersOrdersController@storeOrder')->name('client.order');
+//invoice
+Route::get('/invoice/{orderNo}','Client\ClientController@invoice')->name('client.invoice');
 
 Auth::routes(['verify'=>true]);
 
@@ -66,6 +68,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/show-map-location','GeolocationController@showLocation')->name('admin.show-map-location');
     Route::get('/setting','Admin\AdminController@setting')->name('admin.setting');
     Route::get('/selected-country','Admin\AdminController@viewSeletedCountry')->name('admin.selected-country');
+    Route::get('/all-new-orders','Admin\AdminController@newOrders')->name('admin.new-order');
 
     Route::resource('/category','CategoryController', [
         'only' => ['store', 'edit', 'update']
