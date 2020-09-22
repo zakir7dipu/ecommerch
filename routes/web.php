@@ -103,4 +103,5 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::post('/add-about','AboutCompanyController@about')->name('admin.about');
     Route::put('/user-update/{user}','UserController@userEmailUpdate')->name('admin.user-update');
     Route::post('/country-select','CompanyController@countrySelect')->name('admin.country-select');
+    Route::post('/update-status/{orderNo}','OrderActionController@updateStatus')->name('admin.order-status');
 });

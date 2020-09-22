@@ -60,10 +60,11 @@
                 <div class="col-sm-12">
                     <div class="card card-statistics">
                         <div class="row no-gutters">
+
                             <div class="col-xxl-3 col-lg-3">
                                 <div class="p-20">
                                     <div class="d-flex m-b-10">
-                                        <p class="mb-0 font-regular text-muted font-weight-bold">Total Registered Business</p>
+                                        <p class="mb-0 font-regular text-muted font-weight-bold">Total Orders</p>
                                         <a class="mb-0 ml-auto font-weight-bold" href="javascript:void (0)"><i class="ti ti-more-alt"></i> </a>
                                     </div>
                                     <div class="d-block d-sm-flex h-100 align-items-center">
@@ -72,15 +73,16 @@
                                         </div>
                                         <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
                                             <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>5</h3>
-                                            <p>Monthly Registered</p>
+                                            <p>Monthly</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-xxl-3 col-lg-3">
                                 <div class="p-20">
                                     <div class="d-flex m-b-10">
-                                        <p class="mb-0 font-regular text-muted font-weight-bold">Total Active Business</p>
+                                        <p class="mb-0 font-regular text-muted font-weight-bold">Total Delivered Orders</p>
                                         <a class="mb-0 ml-auto font-weight-bold" href="javascript:void(0)"><i class="ti ti-more-alt"></i> </a>
                                     </div>
                                     <div class="d-block d-sm-flex h-100 align-items-center">
@@ -89,7 +91,7 @@
                                         </div>
                                         <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
                                             <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>3</h3>
-                                            <p>This Month Active Business</p>
+                                            <p>Monthly</p>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +99,7 @@
                             <div class="col-xxl-3 col-lg-3">
                                 <div class="p-20">
                                     <div class="d-flex m-b-10">
-                                        <p class="mb-0 font-regular text-muted font-weight-bold">Total Deactivated Business</p>
+                                        <p class="mb-0 font-regular text-muted font-weight-bold">Total Canceled Orders</p>
                                         <a class="mb-0 ml-auto font-weight-bold" href="javascript:void(0)"><i class="ti ti-more-alt"></i> </a>
                                     </div>
                                     <div class="d-block d-sm-flex h-100 align-items-center">
@@ -106,7 +108,7 @@
                                         </div>
                                         <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
                                             <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>6</h3>
-                                            <p>This Month Deactivated Business</p>
+                                            <p>Monthly</p>
                                         </div>
                                     </div>
                                 </div>
@@ -121,8 +123,9 @@
                                             <ul class="list-style-none p-0">
                                                 <li class="d-flex py-1">
                                                     <span class="font-regular text-muted font-weight-bold">Business Position</span></li>
-                                                <li class="d-flex py-1"><span><i class="fa fa-circle text-success pr-2"></i> Actives</span> <span class="pl-2 font-weight-bold">34</span></li>
-                                                <li class="d-flex py-1"><span><i class="fa fa-circle text-danger pr-2"></i> Deactivates</span> <span class="pl-2 font-weight-bold">15</span></li>
+                                                <li class="d-flex py-1"><span><i class="fa fa-circle text-success pr-2"></i> Orders</span> <span class="pl-2 font-weight-bold">34</span></li>
+                                                <li class="d-flex py-1"><span><i class="fa fa-circle text-danger pr-2"></i> Delivered</span> <span class="pl-2 font-weight-bold">15</span></li>
+                                                <li class="d-flex py-1"><span><i class="fa fa-circle text-danger pr-2"></i> Canceled</span> <span class="pl-2 font-weight-bold">15</span></li>
                                             </ul>
                                         </div>
                                     </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2020 at 06:27 PM
+-- Generation Time: Sep 22, 2020 at 06:58 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -101,7 +101,7 @@ CREATE TABLE `all_countries_company` (
 
 INSERT INTO `all_countries_company` (`id`, `company_id`, `all_countries_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, NULL, NULL),
-(5, 1, 8, NULL, NULL);
+(6, 1, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -196,6 +196,8 @@ CREATE TABLE `customers_orders` (
   `net_price` double(8,2) NOT NULL,
   `order_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `order_date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `action_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `delivery_day` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -205,8 +207,10 @@ CREATE TABLE `customers_orders` (
 -- Dumping data for table `customers_orders`
 --
 
-INSERT INTO `customers_orders` (`id`, `order_no`, `name`, `email`, `phone`, `address_line1`, `address_line2`, `country`, `city`, `zip`, `payment_type`, `payment_phone`, `payment_ref`, `subtotal`, `tax`, `net_price`, `order_time`, `order_date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'o16960', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'bKash', NULL, 'Text', 558.00, 83.70, 641.70, '22:07:04', '2020/09/20', '1', '2020-09-20 10:07:33', '2020-09-20 10:07:33');
+INSERT INTO `customers_orders` (`id`, `order_no`, `name`, `email`, `phone`, `address_line1`, `address_line2`, `country`, `city`, `zip`, `payment_type`, `payment_phone`, `payment_ref`, `subtotal`, `tax`, `net_price`, `order_time`, `order_date`, `action_date`, `delivery_day`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'g700mo', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'bKash', '01764470022', 'Text', 600.00, 90.00, 690.00, '22:09:21', '2020/09/21', NULL, NULL, '1', '2020-09-21 10:09:30', '2020-09-21 10:09:30'),
+(2, '0o0ba7', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'নগদ', NULL, NULL, 280.00, 42.00, 322.00, '22:36:30', '2020/09/21', NULL, NULL, '0', '2020-09-21 10:36:36', '2020-09-22 09:34:18'),
+(3, '7uhp00', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'নগদ', '01764470022', NULL, 390.00, 58.50, 448.50, '22:52:44', '2020/09/21', '2020/09/22', '3', '3', '2020-09-21 10:52:53', '2020-09-22 09:58:09');
 
 -- --------------------------------------------------------
 
@@ -286,7 +290,7 @@ CREATE TABLE `geolocations` (
 --
 
 INSERT INTO `geolocations` (`id`, `lng`, `lat`, `created_at`, `updated_at`) VALUES
-(1, '90.26381220000002', '23.852894200227', '2020-09-19 23:48:05', '2020-09-20 00:00:43');
+(1, '-0.041716', '51.447501', '2020-09-19 23:48:05', '2020-09-21 09:59:24');
 
 -- --------------------------------------------------------
 
@@ -373,9 +377,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (36, '2020_09_20_073519_create_companies_table', 17),
 (38, '2020_09_20_080420_create_about_companies_table', 18),
 (39, '2020_09_20_131801_create_all_countries_company_table', 19),
-(52, '2020_09_20_142521_create_customers_orders_table', 20),
-(53, '2020_09_20_142630_create_ordered_products_table', 20),
-(54, '2020_09_20_143845_create_ordered_product_attributes_table', 20);
+(61, '2020_09_20_142521_create_customers_orders_table', 20),
+(62, '2020_09_20_142630_create_ordered_products_table', 20),
+(63, '2020_09_20_143845_create_ordered_product_attributes_table', 20);
 
 -- --------------------------------------------------------
 
@@ -385,7 +389,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `ordered_products` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `customers_order_id` int(11) NOT NULL,
+  `customers_orders_id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `qty` int(11) NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -398,10 +402,15 @@ CREATE TABLE `ordered_products` (
 -- Dumping data for table `ordered_products`
 --
 
-INSERT INTO `ordered_products` (`id`, `customers_order_id`, `name`, `qty`, `image`, `price`, `created_at`, `updated_at`) VALUES
-(1, 1, 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*301', 2, '15985919150wvf2d.DAC.jpg', 288.00, '2020-09-20 10:07:33', '2020-09-20 10:07:33'),
-(2, 1, 'RtopR Lip Makeup Non-stick Cup Lipstick Lip Gloss', 1, '1598592548s9lahx.DAC.jpg', 150.00, '2020-09-20 10:07:33', '2020-09-20 10:07:33'),
-(3, 1, 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 1, '15985944376q530k.DAC.jpg', 120.00, '2020-09-20 10:07:33', '2020-09-20 10:07:33');
+INSERT INTO `ordered_products` (`id`, `customers_orders_id`, `name`, `qty`, `image`, `price`, `created_at`, `updated_at`) VALUES
+(1, 1, 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*302', 2, '1598592417514963.DAC.jpg', 320.00, '2020-09-21 10:09:30', '2020-09-21 10:09:30'),
+(2, 1, 'Makeup Lipstick Professional Matte Lipsticks Waterproof Long Lasting Sexy Red Lips Gloss', 1, '1598593540sqeojw.DAC.jpg', 210.00, '2020-09-21 10:09:30', '2020-09-21 10:09:30'),
+(3, 1, 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 1, '1598594713t893l6.DAC.jpg', 70.00, '2020-09-21 10:09:30', '2020-09-21 10:09:30'),
+(4, 2, 'RtopR Lip Makeup Non-stick Cup Lipstick Lip Gloss', 1, '1598592279bt0ckf.DAC.jpg', 150.00, '2020-09-21 10:36:36', '2020-09-21 10:36:36'),
+(5, 2, 'Lipstick Temperature Color Change Lady Lip Moisturizer Jelly Balm Cream Aloe Moisturizing Long Lasting Lip stick makeup TSLM1', 1, '1598593191ri1wxn.DAC.jpg', 130.00, '2020-09-21 10:36:36', '2020-09-21 10:36:36'),
+(6, 3, 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 1, '1598594063l4mepo.DAC.jpg', 100.00, '2020-09-21 10:52:53', '2020-09-21 10:52:53'),
+(7, 3, 'Black Eyeliner Waterproof Liquid Eye Liner', 1, '1598594570byzjfn.DAC.jpg', 150.00, '2020-09-21 10:52:53', '2020-09-21 10:52:53'),
+(8, 3, 'HANDAIYAN Moisturize Matte Lipstick', 1, '1598593855rb8im0.DAC.jpg', 140.00, '2020-09-21 10:52:53', '2020-09-21 10:52:53');
 
 -- --------------------------------------------------------
 
@@ -424,9 +433,14 @@ CREATE TABLE `ordered_product_attributes` (
 --
 
 INSERT INTO `ordered_product_attributes` (`id`, `ordered_product_id`, `color_code`, `color_name`, `size`, `created_at`, `updated_at`) VALUES
-(1, 1, '#a13a3a', '301', 's', NULL, NULL),
-(2, 2, '#d96868', 'Caramel R02', NULL, NULL, NULL),
-(3, 3, NULL, NULL, NULL, NULL, NULL);
+(1, 1, '#e40c0c', '302', NULL, NULL, NULL),
+(2, 2, '#c85656', '301', NULL, NULL, NULL),
+(3, 3, NULL, NULL, NULL, NULL, NULL),
+(4, 4, '#880c0c', 'Caramel R01', NULL, NULL, NULL),
+(5, 5, '#125917', 'Green', NULL, NULL, NULL),
+(6, 6, NULL, NULL, NULL, NULL, NULL),
+(7, 7, NULL, NULL, NULL, NULL, NULL),
+(8, 8, '#e11414', '120', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -892,7 +906,7 @@ ALTER TABLE `all_countries`
 -- AUTO_INCREMENT for table `all_countries_company`
 --
 ALTER TABLE `all_countries_company`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -916,7 +930,7 @@ ALTER TABLE `contact_infos`
 -- AUTO_INCREMENT for table `customers_orders`
 --
 ALTER TABLE `customers_orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `customer_supports`
@@ -958,19 +972,19 @@ ALTER TABLE `menu_sliders`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `ordered_products`
 --
 ALTER TABLE `ordered_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `ordered_product_attributes`
 --
 ALTER TABLE `ordered_product_attributes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products`

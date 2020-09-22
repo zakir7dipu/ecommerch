@@ -63,7 +63,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col  col-sm-6 ml-sm-auto text-center text-sm-right">
-                    <p><a target="_blank" href="https://www.templateshub.net">DAC--E-commerce-store--V-1.0.00</a></p>
+                    <p><a href="mailto:zakir7dipu@gmail.com">DAC--E-commerce-store--V-1.0.00</a></p>
                 </div>
             </div>
         </footer>

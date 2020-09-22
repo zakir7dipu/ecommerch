@@ -264,8 +264,8 @@
                             width: 140,
                             type: 'donut',
                         },
-                        colors: ['#8CDB19', '#EE4242'],
-                        labels: ['Actives', 'Deactivates',],
+                        colors: ['#1F99EF', '#8CDB19', '#EE4242'],
+                        labels: ['Order', 'Delivered', 'Canceled'],
                         series: series_data,
                         legend: {
                             show: false
@@ -699,7 +699,7 @@
                 'subcategory_id': subcategory_id_array,
             },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $('.successMessageFormJavascript').removeClass('d-none');
                 var message = document.getElementsByClassName('successMessageFormJavascript')[0];
                 message.getElementsByTagName('span');
@@ -851,7 +851,7 @@
             type: 'Get',
             url: '/admin/product/'+ productId,
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 var productName = data['name'];
                 console.log(productName);
                 document.getElementsByClassName('deleteProductIitleForShow')[0].innerText = 'are you sure! you want to delete ('+ productName + ')';
@@ -923,16 +923,19 @@
     });
 
     // select country
-    $('.multipleCountrySelect').select2();
+    var pathname = window.location.pathname;
+    if (pathname == '/admin/setting') {
+        $('.multipleCountrySelect').select2();
 
-    $.ajax({
-        type: 'Get',
-        url: 'selected-country',
-        success:function (data) {
-            // console.log(data);
-            var selectedCountry = data;
-            $('.multipleCountrySelect').val(selectedCountry).trigger('change');
-        }
-    })
+        $.ajax({
+            type: 'Get',
+            url: 'selected-country',
+            success: function (data) {
+                // console.log(data);
+                var selectedCountry = data;
+                $('.multipleCountrySelect').val(selectedCountry).trigger('change');
+            }
+        });
+    }
 
 })(window, document, window.jQuery);

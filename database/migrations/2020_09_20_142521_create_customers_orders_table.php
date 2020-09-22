@@ -33,6 +33,7 @@ class CreateCustomersOrdersTable extends Migration
             $table->string('order_time');
             $table->string('order_date');
             $table->string('action_date')->nullable();
+            $table->string('delivery_day')->nullable();
             $table->string('status')->default(1);
             $table->timestamps();
         });

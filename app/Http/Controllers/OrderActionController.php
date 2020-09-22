@@ -21,7 +21,20 @@ class OrderActionController extends Controller
     public function edit($id)
     {
         $order = CustomersOrders::find($id);
-        dd($order);
+        $newOrderCount = CustomersOrders::where('status',1)
+            ->count();
+//        dd($order);
+        return view('admin.single-order',compact('order','newOrderCount'));
+    }
+
+    public function updateStatus(Request $request, $orderNo)
+    {
+        $order = CustomersOrders::where('order_no',$orderNo)->first();
+        if ($request->status == 1 || $request->status == 2 || $request->status == 0 ) {
+            $order->status = $request->status;
+            $order->save();
+        }
+        return response()->json('success');
     }
 
     /**
@@ -33,7 +46,13 @@ class OrderActionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = CustomersOrders::find($id);
+//        dd($order);
+        $order->status = $request->status;
+        $order->action_date = date('Y/m/d',time());
+        $order->delivery_day = $request->delivery_time;
+        $order->save();
+        return back()->withMessage('Order Status in Updated Successfully');
     }
 
     /**

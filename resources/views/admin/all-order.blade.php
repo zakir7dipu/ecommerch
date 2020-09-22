@@ -95,6 +95,21 @@
                                 </tr>
                             @elseif($order->status == 2)
                                 <tr>
+                                    <td class="text-center"><span style="color: orange; font-weight: bold;"><i class="fa fa-dot-circle-o"></i></span> </td>
+                                    <td>{{ $order->order_no }}</td>
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->phone }}</td>
+                                    <td>{{ $order->address_line1 }}{{ $order->address_line2!=null? ', ' . $order->address_line2:'' }}{{ ', '. $order->city .', '. $order->country .'-'. $order->zip }}</td>
+                                    <td>{{ $order->payment_type }}</td>
+                                    <td>{{ $order->payment_phone }}</td>
+                                    <td>
+                                        <a href="{{ route('viewOrder.edit',$order->id) }}">
+                                            <button type="button" class="btn btn-info btn-sm">View Order</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @elseif($order->status == 3)
+                                <tr>
                                     <td class="text-center"><span style="color: green; font-weight: bold;"><i class="fa fa-dot-circle-o"></i></span> </td>
                                     <td>{{ $order->order_no }}</td>
                                     <td>{{ $order->name }}</td>
