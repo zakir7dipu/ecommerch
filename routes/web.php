@@ -69,6 +69,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/setting','Admin\AdminController@setting')->name('admin.setting');
     Route::get('/selected-country','Admin\AdminController@viewSeletedCountry')->name('admin.selected-country');
     Route::get('/all-new-orders','Admin\AdminController@newOrders')->name('admin.new-order');
+    Route::get('/all-orders','Admin\AdminController@allOrders')->name('admin.all-order');
 
     Route::resource('/category','CategoryController', [
         'only' => ['store', 'edit', 'update']
@@ -84,6 +85,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     ]);
     Route::resource('/menuSlider','MenuSliderController', [
         'only' => ['store', 'update']
+    ]);
+    Route::resource('/viewOrder','OrderActionController', [
+        'only' => ['edit', 'update', 'destroy']
     ]);
 
     Route::post('destroy-category/{category}','CategoryController@destroy')->name('category.destroy');

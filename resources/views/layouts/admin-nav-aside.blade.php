@@ -14,17 +14,17 @@
             <li class="{{ 'admin/dash-category' == request()->path()? 'active':'' }}{{ 'admin/dash-store-product' == request()->path()? 'active':'' }}{{ 'admin/dash-all-product' == request()->path()? 'active':'' }}">
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon fa fa-shopping-basket"></i><span class="nav-title">Products</span></a>
                 <ul aria-expanded="false">
-                    <li class="{{ 'admin/dash-store-product' == request()->path()? 'active':'' }}"> <a href='{{ route('admin.store-product') }}'>New Products</a> </li>
-                    <li class="{{ 'admin/dash-all-product' == request()->path()? 'active':'' }}"> <a href='{{ route('admin.all-product') }}'>All Products</a> </li>
-                    <li class="{{ 'admin/dash-category' == request()->path()? 'active':'' }}"> <a href='{{ route('admin.category') }}'>Categories</a> </li>
+                    <li class="{{ 'admin/dash-store-product' == request()->path()? 'active':'' }}"> <a href='{{ route('admin.store-product') }}'><span class="nav-title">New Products</span></a> </li>
+                    <li class="{{ 'admin/dash-all-product' == request()->path()? 'active':'' }}"> <a href='{{ route('admin.all-product') }}'><span class="nav-title">All Products</span></a> </li>
+                    <li class="{{ 'admin/dash-category' == request()->path()? 'active':'' }}"> <a href='{{ route('admin.category') }}'><span class="nav-title">Categories</span></a> </li>
                 </ul>
             </li>
 
-            <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}">
-                <a class="has-arrow" href="javascript:void (0)" aria-expanded="false"><i class="nav-icon fa fa-ship"></i><span class="nav-title">Orders</span></a>
+            <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}{{ 'admin/all-orders' == request()->path()? 'active':'' }}">
+                <a class="has-arrow" href="javascript:void (0)" aria-expanded="false"><i class="nav-icon fa fa-ship"></i><span class="nav-title">Orders</span> <span class="nav-label label label-danger">{{ $newOrderCount }}</span></a>
                 <ul>
-                    <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}"><a href='{{ route('admin.new-order') }}'>New Orders</a></li>
-                    <li class=""><a href='javascript:void (0)'>All Orders</a></li>
+                    <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}"><a href='{{ route('admin.new-order') }}'><span class="nav-title">New Orders</span> <span class="nav-label label label-danger">{{ $newOrderCount }}</span></a></li>
+                    <li class="{{ 'admin/all-orders' == request()->path()? 'active':'' }}"><a href='{{ route('admin.all-order') }}'><span class="nav-title">All Orders</span></a></li>
                 </ul>
             </li>
 

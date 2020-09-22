@@ -15,7 +15,7 @@
                     <!-- begin page title -->
                     <div class="d-block d-lg-flex flex-nowrap align-items-center">
                         <div class="page-title mr-4 pr-4 border-right">
-                            <h1 class="text-capitalize">New Orders</h1>
+                            <h1 class="text-capitalize">All Orders</h1>
                         </div>
                         <div class="breadcrumb-bar align-items-center">
                             <nav>
@@ -24,7 +24,7 @@
                                         <a href="{{ route('admin.dashboard') }}"><i class="ti ti-home"></i></a>
                                     </li>
                                     <li class="breadcrumb-item text-capitalize">
-                                        <a href="{{ route('admin.new-order') }}">New Orders</a>
+                                        <a href="{{ route('admin.all-order') }}">All Orders</a>
                                     </li>
                                 </ol>
                             </nav>
@@ -61,35 +61,69 @@
             <!-- end row -->
             <!-- begin row -->
             <div class="row">
-                @if($newOrderCount > 0)
+                @if($orderCount > 0)
                 <div class="col-sm-12">
                     <table class="table table-striped table-hover" id="allProducts">
                         <thead>
                         <tr>
-                            <th scope="col">Invoice NO</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Shipping Address</th>
-                            <th scope="col">Payment Method</th>
-                            <th scope="col">Payment Number</th>
-                            <th scope="col">Action</th>
+                            <th class="text-center" scope="col">status</th>
+                            <th class="text-center" scope="col">Invoice NO</th>
+                            <th class="text-center" scope="col">Name</th>
+                            <th class="text-center" scope="col">Phone</th>
+                            <th class="text-center" scope="col">Shipping Address</th>
+                            <th class="text-center" scope="col">Payment Method</th>
+                            <th class="text-center" scope="col">Payment Number</th>
+                            <th class="text-center" scope="col">Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($orders as $order)
-                            <tr>
-                                <td>{{ $order->order_no }}</td>
-                                <td>{{ $order->name }}</td>
-                                <td>{{ $order->phone }}</td>
-                                <td>{{ $order->address_line1 }}{{ $order->address_line2!=null? ', ' . $order->address_line2:'' }}{{ ', '. $order->city .', '. $order->country .'-'. $order->zip }}</td>
-                                <td>{{ $order->payment_type }}</td>
-                                <td>{{ $order->payment_phone }}</td>
-                                <td>
-                                    <a href="{{ route('viewOrder.edit',$order->id) }}">
-                                        <button type="button" class="btn btn-info btn-sm">View Order</button>
-                                    </a>
-                                </td>
-                            </tr>
+                            @if($order->status == 1)
+                                <tr>
+                                    <td class="text-center"><span style="color: orange; font-weight: bold;"><i class="fa fa-dot-circle-o"></i></span> </td>
+                                    <td>{{ $order->order_no }}</td>
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->phone }}</td>
+                                    <td>{{ $order->address_line1 }}{{ $order->address_line2!=null? ', ' . $order->address_line2:'' }}{{ ', '. $order->city .', '. $order->country .'-'. $order->zip }}</td>
+                                    <td>{{ $order->payment_type }}</td>
+                                    <td>{{ $order->payment_phone }}</td>
+                                    <td>
+                                        <a href="{{ route('viewOrder.edit',$order->id) }}">
+                                            <button type="button" class="btn btn-info btn-sm">View Order</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @elseif($order->status == 2)
+                                <tr>
+                                    <td class="text-center"><span style="color: green; font-weight: bold;"><i class="fa fa-dot-circle-o"></i></span> </td>
+                                    <td>{{ $order->order_no }}</td>
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->phone }}</td>
+                                    <td>{{ $order->address_line1 }}{{ $order->address_line2!=null? ', ' . $order->address_line2:'' }}{{ ', '. $order->city .', '. $order->country .'-'. $order->zip }}</td>
+                                    <td>{{ $order->payment_type }}</td>
+                                    <td>{{ $order->payment_phone }}</td>
+                                    <td>
+                                        <a href="{{ route('viewOrder.edit',$order->id) }}">
+                                            <button type="button" class="btn btn-info btn-sm">View Order</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @else
+                                <tr>
+                                    <td class="text-center"><span style="color: red; font-weight: bold;"><i class="fa fa-dot-circle-o"></i></span> </td>
+                                    <td>{{ $order->order_no }}</td>
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->phone }}</td>
+                                    <td>{{ $order->address_line1 }}{{ $order->address_line2!=null? ', ' . $order->address_line2:'' }}{{ ', '. $order->city .', '. $order->country .'-'. $order->zip }}</td>
+                                    <td>{{ $order->payment_type }}</td>
+                                    <td>{{ $order->payment_phone }}</td>
+                                    <td>
+                                        <a href="{{ route('viewOrder.edit',$order->id) }}">
+                                            <button type="button" class="btn btn-info btn-sm">View Order</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>
