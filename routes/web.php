@@ -1,5 +1,8 @@
 <?php
 
+use App\Company;
+use App\CustomersOrders;
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route::get('/', function () {
-//    return view('welcome');
+//    return view('welcome'));
 //});
 
 Route::get('/','Client\ClientController@index')->name('client.home');
@@ -48,6 +51,8 @@ Route::get('/for-contact','Client\ClientController@contactUs')->name('client.con
 Route::get('/show-location','Client\ClientController@navigationLocation')->name('client.navigation');
 //place order
 Route::post('/customers-order','CustomersOrdersController@storeOrder')->name('client.order');
+//send order notification email
+Route::get('/new-order/{orderNo}','MailController@sendOrderNotification')->name('mail.order-notification');
 //invoice
 Route::get('/invoice/{orderNo}','Client\ClientController@invoice')->name('client.invoice');
 

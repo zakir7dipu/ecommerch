@@ -21,9 +21,22 @@
             </li>
 
             <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}{{ 'admin/all-orders' == request()->path()? 'active':'' }}">
-                <a class="has-arrow" href="javascript:void (0)" aria-expanded="false"><i class="nav-icon fa fa-ship"></i><span class="nav-title">Orders</span> <span class="nav-label label label-danger">{{ $newOrderCount }}</span></a>
+                <a class="has-arrow" href="javascript:void (0)" aria-expanded="false">
+                    <i class="nav-icon fa fa-ship"></i>
+                    <span class="nav-title">Orders</span>
+                    @if($newOrderCount != 0)
+                        <span class="nav-label label label-danger">{{ $newOrderCount }}</span>
+                    @endif
+                </a>
                 <ul>
-                    <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}"><a href='{{ route('admin.new-order') }}'><span class="nav-title">New Orders</span> <span class="nav-label label label-danger">{{ $newOrderCount }}</span></a></li>
+                    <li class="{{ 'admin/all-new-orders' == request()->path()? 'active':'' }}">
+                        <a href='{{ route('admin.new-order') }}'>
+                            <span class="nav-title">New Orders</span>
+                            @if($newOrderCount != 0)
+                                <span class="nav-label label label-danger">{{ $newOrderCount }}</span>
+                            @endif
+                        </a>
+                    </li>
                     <li class="{{ 'admin/all-orders' == request()->path()? 'active':'' }}"><a href='{{ route('admin.all-order') }}'><span class="nav-title">All Orders</span></a></li>
                 </ul>
             </li>

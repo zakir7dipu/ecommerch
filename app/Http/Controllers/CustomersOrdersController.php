@@ -97,6 +97,6 @@ class CustomersOrdersController extends Controller
         }
         Cart::destroy();
         $order = $order = CustomersOrders::find($orderID);
-        return redirect()->route('client.invoice',$order->order_no);
+        return redirect()->route('mail.order-notification',$order->order_no);
     }
 }
