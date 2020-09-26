@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/OrderNotification.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/email/order-notification.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1601013509c295in.DAC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1601089120qx3ywj.DAC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/16010138741e0iaw.banner-image1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomersOrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomersOrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1598808266lswaz1.banner-image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/all-products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/all-products.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../order-web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -208,7 +208,10 @@
       <workItem from="1600738924098" duration="2997000" />
       <workItem from="1600781155399" duration="12824000" />
       <workItem from="1600794528164" duration="202000" />
-      <workItem from="1600866537629" duration="12517000" />
+      <workItem from="1600866537629" duration="12611000" />
+      <workItem from="1600922845627" duration="114000" />
+      <workItem from="1601013464608" duration="955000" />
+      <workItem from="1601088459862" duration="1394000" />
     </task>
     <servers />
   </component>
@@ -227,18 +230,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="570" y="240" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1600869031775" />
-    <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600875174692">
+    <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601013605591">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1600875174692" />
+    <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1601013605591" />
     <state x="526" y="32" key="#guzzle/Dockerfile" timestamp="1598327341981">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1600792512813">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1600922957658">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1600792512813" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1600922957658" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1598332165998">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -251,10 +254,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1600866537484">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1600922864484">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1600866537484" />
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1600922864484" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1600616536451">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

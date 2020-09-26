@@ -72,9 +72,9 @@
                             <th scope="col">Price</th>
                             <th scope="col">Discount</th>
                             <th scope="col">Product Name</th>
-                            <th scope="col">Status</th>
                             <th scope="col">Color</th>
                             <th scope="col">Size</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
                         </thead>
@@ -97,15 +97,28 @@
                                 <td><img src="{{ asset('upload/images/category_images/'.$product->image) }}" alt="{{ $product->name }}" style="width: 60px; height: 40px;" class="img-fluid"></td>
                                 <td>{{ $product->price }}.00/-৳</td>
                                 <td>{{ $product->discount }}{{ $product->discount != null? '%':'Not Added' }}</td>
-                                <td>{{ substr($product->name,0,20) }}</td>
+                                <td>
+                                    {{ substr($product->name,0,20) }}
+                                </td>
                                 <td style="background-color: #ECEEF3;">
                                     @foreach($product->product_colors as $color)
                                         <i class="fa fa-square h4 mx-1 tooltip-wrapper" style="color: {{ $color->color_code }};" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ $color->color_name }}"></i>
                                     @endforeach
                                 </td>
                                 <td>
+                                    @php
+                                        $i=0;
+                                    @endphp
                                     @foreach($product->product_sizes as $size)
-                                        <span>{{ $size->name }} </span>
+                                        @php
+                                            $i++;
+                                        @endphp
+                                        @if($i > 0)
+                                            <span class="text-uppercase">{{ $size->size }} </span>
+                                            @if(count($product->product_sizes) != $i)
+                                                {{ ', ' }}
+                                            @endif
+                                        @endif
                                     @endforeach
                                 </td>
                                 <td class="{{ $product->status == 0? "text-danger": "text-success" }}">{{ $product->status == 0? "Hidden":"Published" }}</td>

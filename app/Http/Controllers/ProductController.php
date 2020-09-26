@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\CustomersOrders;
 use App\Product;
 use App\productColor;
 use App\productSize;
@@ -45,7 +46,7 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'subcategory_id' => 'required|max:1',
+            'subcategory_id' => 'required',
             'status' => 'required|max:1',
             'product_image' => 'required|max:1',
             'sku' => 'required|unique:products',
@@ -164,7 +165,9 @@ class ProductController extends Controller
     {
         $categories = Category::orderBy('index','asc')->get();
         $product_category = SubCategory::find($product->sub_category_id);
-        return view('admin.product-edit',compact('categories','product','product_category'));
+        $newOrderCount = CustomersOrders::where('status',1)
+            ->count();
+        return view('admin.product-edit',compact('categories','product','product_category','newOrderCount'));
     }
 
     /**
@@ -205,7 +208,7 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'subcategory_id' => 'required|max:1',
+            'subcategory_id' => 'required',
             'status' => 'required|max:1',
         ]);
         if($request->status == 1 || $request->status == 0) {
