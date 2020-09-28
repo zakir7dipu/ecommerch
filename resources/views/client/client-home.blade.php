@@ -14,7 +14,20 @@
                 </div>
                 <!-- end menu aside -->
 
-                <div class="left_banner left-sidebar-widget mt_30 mb_50"> <a href="#"><img src="/client-assets/images/left1.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+                <div class="left_banner left-sidebar-widget mt_30 mb_50">
+{{--                    <a href="javascript:void(0)">--}}
+                    @foreach($ads as $ad)
+                        @if($ad->name == 'add1')
+                            @if($ad->image != null)
+                                <img src="{{ asset('upload/images/advertise_image/'.$ad->image) }}" alt="Left Banner" class="img-responsive" />
+                            @else
+                                <p>{!! $ad->embed_code !!}</p>
+                            @endif
+                        @endif
+                    @endforeach
+{{--                    </a> --}}
+                </div>
+
                 <div class="left-cms left-sidebar-widget mb_50">
                     <ul>
                         <li>
@@ -246,7 +259,19 @@
                     </div>
                 </div>
 
-                <div class="left_banner left-sidebar-widget mb_50"> <a href="#"><img src="/client-assets/images/left2.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+                <div class="left_banner left-sidebar-widget mb_50">
+{{--                    <a href="#">--}}
+                    @foreach($ads as $ad)
+                        @if($ad->name == 'add2')
+                            @if($ad->image != null)
+                                <img src="{{ asset('upload/images/advertise_image/'.$ad->image) }}" alt="Left Banner" class="img-responsive" />
+                            @else
+                                <p>{!! $ad->embed_code !!}</p>
+                            @endif
+                        @endif
+                    @endforeach
+{{--                    </a> --}}
+                </div>
 
             </div>
             <div id="column-right" class="col-sm-8 col-md-8 col-lg-9 mtb_30">
@@ -330,7 +355,18 @@
                 <div class="row">
                     <div class="cms_banner mt_60 mb_50">
                         <div class="col-xs-12">
-                            <div id="subbanner4" class="banner sub-hover"> <a href="#"><img src="/client-assets/images/sub4.jpg" alt="Sub Banner4" class="img-responsive"></a>
+                            <div id="subbanner4" class="banner sub-hover">
+{{--                                <a href="#">--}}
+                                    @foreach($ads as $ad)
+                                        @if($ad->name == 'add3')
+                                            @if($ad->image != null)
+                                                <img src="{{ asset('upload/images/advertise_image/'.$ad->image) }}" alt="Left Banner" class="img-responsive" />
+                                            @else
+                                                <p>{!! $ad->embed_code !!}</p>
+                                            @endif
+                                        @endif
+                                    @endforeach
+{{--                                </a>--}}
                                 <div class="bannertext"> </div>
                             </div>
                         </div>

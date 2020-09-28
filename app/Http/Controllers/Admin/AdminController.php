@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\AboutCompany;
+use App\Advertisement;
 use App\AllCountries;
 use App\Category;
 use App\Company;
@@ -29,7 +30,8 @@ class AdminController extends Controller
     {
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.admin-dashboard',compact('newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.admin-dashboard',compact('newOrderCount','company'));
     }
 
     public function product_category()
@@ -37,7 +39,8 @@ class AdminController extends Controller
         $categories = Category::orderBy('index','asc')->get();
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.catrgory',compact('categories','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.catrgory',compact('categories','newOrderCount','company'));
     }
 
     public function store_product()
@@ -45,7 +48,8 @@ class AdminController extends Controller
         $categories = Category::orderBy('index','asc')->get();
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.product',compact('categories','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.product',compact('categories','newOrderCount','company'));
     }
 
     public function all_products()
@@ -54,7 +58,8 @@ class AdminController extends Controller
         $products_count = Product::all()->count();
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.all-products',compact('categories','products_count','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.all-products',compact('categories','products_count','newOrderCount','company'));
     }
 
     public function main_slider()
@@ -62,7 +67,8 @@ class AdminController extends Controller
         $banner_sliders = MainBannerScroll::all();
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.main-slider',compact('banner_sliders','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.main-slider',compact('banner_sliders','newOrderCount','company'));
     }
 
     public function menu_slider()
@@ -70,7 +76,8 @@ class AdminController extends Controller
         $menu_sliders = MenuSlider::all();
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.menu-slider',compact('menu_sliders','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.menu-slider',compact('menu_sliders','newOrderCount','company'));
     }
 
     public function contact_info()
@@ -79,14 +86,16 @@ class AdminController extends Controller
         $customerSupport = CustomerSupport::find(1);
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.contact-info',compact('contactInfo','customerSupport','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.contact-info',compact('contactInfo','customerSupport','newOrderCount','company'));
     }
 
     public function navigation()
     {
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.navigation',compact('newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.navigation',compact('newOrderCount','company'));
     }
 
     public function setSocialShare(Request $request)
@@ -97,7 +106,8 @@ class AdminController extends Controller
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.social-share',compact('facebook','instagram','pinterest','whatsapp','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.social-share',compact('facebook','instagram','pinterest','whatsapp','newOrderCount','company'));
     }
 
     public function setting()
@@ -116,7 +126,8 @@ class AdminController extends Controller
         $user = Auth::user();
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.site-setting',compact('countries','company_name','aboutCompany','user','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.site-setting',compact('countries','company_name','aboutCompany','user','newOrderCount','company'));
     }
 
     public function viewSeletedCountry()
@@ -136,7 +147,8 @@ class AdminController extends Controller
             ->get();
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.new-order',compact('orders','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.new-order',compact('orders','newOrderCount','company'));
     }
 
     public function allOrders()
@@ -146,6 +158,16 @@ class AdminController extends Controller
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
         $orderCount = CustomersOrders::count();
-        return view('admin.all-order',compact('orders','orderCount','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.all-order',compact('orders','orderCount','newOrderCount','company'));
+    }
+
+    public function advertisement()
+    {
+        $newOrderCount = CustomersOrders::where('status',1)
+            ->count();
+        $company = Company::find(1);
+        $ads = Advertisement::all();
+        return view('admin.advertisement',compact('company','newOrderCount','ads'));
     }
 }

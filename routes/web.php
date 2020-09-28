@@ -75,6 +75,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/selected-country','Admin\AdminController@viewSeletedCountry')->name('admin.selected-country');
     Route::get('/all-new-orders','Admin\AdminController@newOrders')->name('admin.new-order');
     Route::get('/all-orders','Admin\AdminController@allOrders')->name('admin.all-order');
+    Route::get('/ad','Admin\AdminController@advertisement')->name('admin.ad');
 
     Route::resource('/category','CategoryController', [
         'only' => ['store', 'edit', 'update']
@@ -109,4 +110,5 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::put('/user-update/{user}','UserController@userEmailUpdate')->name('admin.user-update');
     Route::post('/country-select','CompanyController@countrySelect')->name('admin.country-select');
     Route::post('/update-status/{orderNo}','OrderActionController@updateStatus')->name('admin.order-status');
+    Route::post('/set-ad','AdvertisementController@setAdvertisement')->name('admin.setAd');
 });

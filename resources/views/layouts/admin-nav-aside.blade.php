@@ -56,8 +56,8 @@
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="javascript:void(0)" aria-expanded="false"> <i class="nav-icon dashicons dashicons-format-gallery"></i> <span class="nav-title">Advertisements</span></a>
+                    <li class="{{ 'admin/ad' == request()->path()? 'active':'' }}">
+                        <a href="{{ route('admin.ad') }}" aria-expanded="false"> <i class="nav-icon dashicons dashicons-format-gallery"></i> <span class="nav-title">Advertisements</span></a>
                     </li>
 
                     <li class="{{ 'admin/contact-info' == request()->path()? 'active':'' }}">

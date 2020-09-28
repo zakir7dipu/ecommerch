@@ -28,7 +28,19 @@
                     @include('layouts.client-nav-sub-category-aside')
                 </div>
 
-                <div class="left_banner left-sidebar-widget mt_30 mb_50"> <a href="#"><img src="/client-assets/images/left1.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+                <div class="left_banner left-sidebar-widget mt_30 mb_50">
+{{--                    <a href="#">--}}
+                    @foreach($ads as $ad)
+                        @if($ad->name == 'add5')
+                            @if($ad->image != null)
+                                <img src="{{ asset('upload/images/advertise_image/'.$ad->image) }}" alt="Left Banner" class="img-responsive" />
+                            @else
+                                <p>{!! $ad->embed_code !!}</p>
+                            @endif
+                        @endif
+                    @endforeach
+{{--                    </a> --}}
+                </div>
             </div>
 
             <div class="col-sm-8 col-md-8 col-lg-9 mtb_30">

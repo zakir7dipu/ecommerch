@@ -13,7 +13,13 @@
     <!-- begin navigation -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navigation d-flex">
-
+            <ul class="navbar-nav nav-right ml-auto">
+                @if($company->status == 0)
+                    <a href="tel:+8801764470022"> To active your licence, please contract with DAC developer. <br> Phone: +8801764470022</a>
+                @else
+                    {{ 'Expire Date: ' . date('d-M-Y',strtotime($company->expire_date)) }}
+                @endif
+            </ul>
         </div>
     </div>
     <!-- end navigation -->

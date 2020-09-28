@@ -65,7 +65,21 @@
                 <div id="category-menu" class="navbar collapse in  mb_40" aria-expanded="true" style="" role="button">
                     @include('layouts.client-nav-home-aside')
                 </div>
-                <div class="left_banner left-sidebar-widget mt_30 mb_40"> <a href="#"><img src="/client-assets/images/left2.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+
+                <div class="left_banner left-sidebar-widget mt_30 mb_40">
+{{--                    <a href="#">--}}
+                    @foreach($ads as $ad)
+                        @if($ad->name == 'add6')
+                            @if($ad->image != null)
+                                <img src="{{ asset('upload/images/advertise_image/'.$ad->image) }}" alt="Left Banner" class="img-responsive" />
+                            @else
+                                <p>{!! $ad->embed_code !!}</p>
+                            @endif
+                        @endif
+                    @endforeach
+{{--                    </a> --}}
+                </div>
+
                 <div class="left-special left-sidebar-widget mb_50">
                     <div class="heading-part mb_20 ">
                         <h2 class="main_title">Top Products</h2>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2020 at 06:58 PM
+-- Generation Time: Sep 28, 2020 at 08:14 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,6 +40,35 @@ CREATE TABLE `about_companies` (
 
 INSERT INTO `about_companies` (`id`, `about_us`, `created_at`, `updated_at`) VALUES
 (1, 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2020-09-20 02:14:02', '2020-09-20 02:15:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `advertisements`
+--
+
+CREATE TABLE `advertisements` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `embed_code` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `advertisements`
+--
+
+INSERT INTO `advertisements` (`id`, `name`, `image`, `embed_code`, `created_at`, `updated_at`) VALUES
+(1, 'add1', '16013134167i90cy.DAC-ad.jpg', NULL, '2020-09-28 10:33:30', '2020-09-28 11:16:56'),
+(9, 'add2', NULL, '<iframe width=\"300\" height=\"400\" src=\"https://www.youtube.com/embed/NFnmfsNe_nk\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', NULL, '2020-09-28 11:34:43'),
+(10, 'add3', '1601313592deh1t6.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:19:52'),
+(11, 'add4', '1601313617boz9kx.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:20:17'),
+(12, 'add5', '1601313689y1pebv.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:21:30'),
+(13, 'add6', '160131375409kr4a.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:22:34'),
+(14, 'add7', '16013138058gtc0v.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:23:26'),
+(15, 'add8', '1601313869gz86xy.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:24:29');
 
 -- --------------------------------------------------------
 
@@ -123,11 +152,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `index`, `category_slag`, `created_at`, `updated_at`) VALUES
-(1, 'Cosmetics', 3, '1598542157CosmeticsODHEu', '2020-08-27 09:29:17', '2020-09-19 06:03:05'),
+(1, 'Cosmetics', 1, '1598542157CosmeticsODHEu', '2020-08-27 09:29:17', '2020-09-28 06:32:08'),
 (2, 'Health Care', 4, '1598542194Health_CareqmITH', '2020-08-27 09:29:54', '2020-09-15 10:27:46'),
-(3, 'Men\'s Cloths', 1, '1598542234Men\'s_Cloths0Lly5', '2020-08-27 09:30:34', '2020-09-19 06:03:05'),
+(3, 'Men\'s Cloths', 2, '1598542234Men\'s_Cloths0Lly5', '2020-08-27 09:30:34', '2020-09-28 06:32:08'),
 (4, 'Women\'s Cloths', 5, '1598542270Women\'s_ClothsIwU6V', '2020-08-27 09:31:10', '2020-09-15 10:27:46'),
-(5, 'Kids', 2, '1598542293Kids3Q0e4', '2020-08-27 09:31:33', '2020-09-19 06:03:05');
+(5, 'Kids', 3, '1598542293Kids3Q0e4', '2020-08-27 09:31:33', '2020-09-28 06:32:08');
 
 -- --------------------------------------------------------
 
@@ -138,6 +167,8 @@ INSERT INTO `categories` (`id`, `category_name`, `index`, `category_slag`, `crea
 CREATE TABLE `companies` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expire_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -146,8 +177,8 @@ CREATE TABLE `companies` (
 -- Dumping data for table `companies`
 --
 
-INSERT INTO `companies` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'HealthCare', '2020-09-20 01:53:47', '2020-09-20 01:54:22');
+INSERT INTO `companies` (`id`, `name`, `expire_date`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'HealthCare', '2020/10/28', 1, '2020-09-20 01:53:47', '2020-09-28 08:29:54');
 
 -- --------------------------------------------------------
 
@@ -311,9 +342,9 @@ CREATE TABLE `main_banner_scrolls` (
 --
 
 INSERT INTO `main_banner_scrolls` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Banner1', '1598808266lswaz1.banner-image1.jpg', NULL, '2020-08-30 11:24:26'),
-(2, 'Banner2', '1598575383ijfsl3.banner-image2.jpg', NULL, NULL),
-(3, 'Banner3', '1598575383wp8god.banner-image3.png', NULL, NULL);
+(1, 'Banner1', '1601297474hypc40.banner-image1.jpg', NULL, '2020-09-28 06:51:15'),
+(2, 'Banner2', '16012974877i182a.banner-image2.jpg', NULL, '2020-09-28 06:51:27'),
+(3, 'Banner3', '16012974956cuwj9.banner-image3.jpg', NULL, '2020-09-28 06:51:35');
 
 -- --------------------------------------------------------
 
@@ -334,7 +365,7 @@ CREATE TABLE `menu_sliders` (
 --
 
 INSERT INTO `menu_sliders` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Menu-Slider1', '1600582545qt8w1n.Menu-Slider1.jpg', NULL, '2020-09-20 00:15:45'),
+(1, 'Menu-Slider1', '1601297509t5pbhu.Menu-Slider1.jpg', NULL, '2020-09-28 06:51:51'),
 (2, 'Menu-Slider2', '16005827767oi0ku.Menu-Slider2.jpg', NULL, '2020-09-20 00:19:36'),
 (3, 'Menu-Slider3', '1600582686vgsp6d.Menu-Slider3.jpeg', NULL, '2020-09-20 00:18:06');
 
@@ -379,7 +410,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (39, '2020_09_20_131801_create_all_countries_company_table', 19),
 (61, '2020_09_20_142521_create_customers_orders_table', 20),
 (62, '2020_09_20_142630_create_ordered_products_table', 20),
-(63, '2020_09_20_143845_create_ordered_product_attributes_table', 20);
+(63, '2020_09_20_143845_create_ordered_product_attributes_table', 20),
+(65, '2020_09_28_155550_create_advertisements_table', 21);
 
 -- --------------------------------------------------------
 
@@ -676,7 +708,7 @@ CREATE TABLE `sub_categories` (
 INSERT INTO `sub_categories` (`id`, `category_id`, `name`, `index`, `sub_category_slag`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Lipstick', 1, '1598542655Lipstick1xn4A', '2020-08-27 09:37:35', '2020-09-15 10:35:59'),
 (2, 1, 'Eyeliner', 4, '1598542708EyelinerlN5of', '2020-08-27 09:38:28', '2020-09-10 09:37:56'),
-(3, 1, 'Mascara', 2, '1598542730MascaradQ1y7', '2020-08-27 09:38:50', '2020-09-15 10:35:59'),
+(3, 1, 'Mascara', 3, '1598542730MascaradQ1y7', '2020-08-27 09:38:50', '2020-09-28 06:32:20'),
 (4, 1, 'Beauty Essentials', 5, '1598542780Beauty_EssentialsGkuIt', '2020-08-27 09:39:40', '2020-08-30 11:11:21'),
 (5, 2, 'Home Use Beauty Devices', 14, '1598542941Home_Use_Beauty_DevicesAsI3h', '2020-08-27 09:42:21', '2020-09-15 10:35:47'),
 (6, 2, 'Braces & Supports', 15, '1598542955Braces_&_SupportslKSrH', '2020-08-27 09:42:35', '2020-09-15 10:35:47'),
@@ -695,7 +727,7 @@ INSERT INTO `sub_categories` (`id`, `category_id`, `name`, `index`, `sub_categor
 (19, 4, 'SHALWAR KAMEEZ', 19, '1598543608SHALWAR_KAMEEZ2kbAY', '2020-08-27 09:53:28', '2020-09-15 10:35:47'),
 (20, 4, 'Hijab', 21, '1598543651HijabskDb6', '2020-08-27 09:54:11', '2020-09-15 10:35:47'),
 (21, 4, 'Kaftan', 22, '1598543673KaftanHaZfT', '2020-08-27 09:54:33', '2020-09-15 10:35:47'),
-(22, 1, 'XYZ', 3, '1598807470XYZGctbV', '2020-08-30 11:11:10', '2020-09-10 09:37:56');
+(22, 1, 'XYZ', 2, '1598807470XYZGctbV', '2020-08-30 11:11:10', '2020-09-28 06:32:20');
 
 -- --------------------------------------------------------
 
@@ -731,6 +763,13 @@ INSERT INTO `users` (`id`, `name`, `role_id`, `email`, `email_verified_at`, `pas
 --
 ALTER TABLE `about_companies`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `advertisements`
+--
+ALTER TABLE `advertisements`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `advertisements_name_unique` (`name`);
 
 --
 -- Indexes for table `all_countries`
@@ -897,6 +936,12 @@ ALTER TABLE `about_companies`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `advertisements`
+--
+ALTER TABLE `advertisements`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `all_countries`
 --
 ALTER TABLE `all_countries`
@@ -972,7 +1017,7 @@ ALTER TABLE `menu_sliders`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `ordered_products`

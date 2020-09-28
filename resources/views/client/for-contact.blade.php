@@ -14,7 +14,20 @@
                 </div>
                 <!-- end menu aside -->
 
-                <div class="left_banner left-sidebar-widget mt_30 mb_50"> <a href="#"><img src="/client-assets/images/left1.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+                <div class="left_banner left-sidebar-widget mt_30 mb_50">
+{{--                    <a href="#">--}}
+                    @foreach($ads as $ad)
+                        @if($ad->name == 'add8')
+                            @if($ad->image != null)
+                                <img src="{{ asset('upload/images/advertise_image/'.$ad->image) }}" alt="Left Banner" class="img-responsive" />
+                            @else
+                                <p>{!! $ad->embed_code !!}</p>
+                            @endif
+                        @endif
+                    @endforeach
+{{--                    </a> --}}
+                </div>
+
             </div>
 
             <div id="column-right" class="col-sm-8 col-md-8 col-lg-9 mtb_30">
@@ -33,20 +46,38 @@
                         <div class="location mb_50 d-inline-block float-left col-md-4 col-xs-12">
                             <h5 class="capitalize mb_20">Our Location</h5>
                             <div class="address">Office address
-                                <br> 124,Lorem Ipsum has been
-                                <br> text ever since the 1500</div>
-                            <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>+91-9987-654-321</div>
+                                <br> {{ $contactInfo->address }}</div>
+
+                            <a href="tel:{{ $contactInfo->phone }}">
+                                <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
+                            </a>
+
+                            <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{ $contactInfo->email }}" target="_top">{{ $contactInfo->email }}</a></div>
                         </div>
+
                         <div class="Career mb_50 d-inline-block float-left col-md-4 col-xs-12">
-                            <h5 class="capitalize mb_20">Careers</h5>
-                            <div class="address">dummy text ever since the 1500s, simply dummy text of the typesetting industry. </div>
-                            <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:careers@yourdomain.com" target="_top">careers@yourdomain.com</a></div>
+                            <h5 class="capitalize mb_20">Customer Care</h5>
+                            @if($customerSupport->phone1 != null)
+                                <a href="tel:{{ $customerSupport->phone1 }}">
+                                    <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
+                                </a>
+                            @endif
+
+                            @if($customerSupport->phone2 != null)
+                                <a href="tel:{{ $customerSupport->phone2 }}">
+                                    <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
+                                </a>
+                            @endif
+
+                            @if($customerSupport->email != null)
+                                <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{ $customerSupport->email }}" target="_top">{{ $customerSupport->email }}</a></div>
+                            @endif
                         </div>
-                        <div class="Hello mb_50 d-inline-block float-left col-md-4 col-xs-12">
-                            <h5 class="capitalize mb_20">Say Hello</h5>
-                            <div class="address">simply dummy text of the printing and typesetting industry.</div>
-                            <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@yourdomailname.com" target="_top">info@yourdomailname.com</a></div>
-                        </div>
+{{--                        <div class="Hello mb_50 d-inline-block float-left col-md-4 col-xs-12">--}}
+{{--                            <h5 class="capitalize mb_20">Say Hello</h5>--}}
+{{--                            <div class="address">simply dummy text of the printing and typesetting industry.</div>--}}
+{{--                            <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@yourdomailname.com" target="_top">info@yourdomailname.com</a></div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
                 <!-- map  -->
