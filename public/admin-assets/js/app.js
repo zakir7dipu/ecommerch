@@ -938,4 +938,11 @@
         });
     }
 
+    // add text slider
+    $('.addTextSliderBtn').on('click',function () {
+        $('.addTextSliderBtn').parent().parent().find('.card-body').removeClass('d-none');
+        $('.addMetaContentInput').append('<label for="title">Meta Title</label>\n' +
+            '<input class="form-control" type="text" name="title[]" id="title">')
+    })
+
 })(window, document, window.jQuery);

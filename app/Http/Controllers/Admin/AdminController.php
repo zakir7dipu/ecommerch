@@ -16,6 +16,7 @@ use App\MenuSlider;
 use App\Product;
 use App\SocialShareLinks;
 use App\SubCategory;
+use App\TextSlider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -78,6 +79,16 @@ class AdminController extends Controller
             ->count();
         $company = Company::find(1);
         return view('admin.menu-slider',compact('menu_sliders','newOrderCount','company'));
+    }
+
+    public function text_slider()
+    {
+        $newOrderCount = CustomersOrders::where('status',1)
+            ->count();
+        $company = Company::find(1);
+        $metaTitleCount = TextSlider::count();
+        $metaTitles = TextSlider::all();
+        return view('admin.text-slider',compact('newOrderCount','company','metaTitleCount','metaTitles'));
     }
 
     public function contact_info()

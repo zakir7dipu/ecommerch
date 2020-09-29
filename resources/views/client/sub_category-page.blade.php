@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <ul class="social">
-                                    <li><a href="" data-tip="Buy Now"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="{{ route('client.product',$product->slag) }}" data-tip="Buy Now"><i class="fa fa-shopping-bag"></i></a></li>
                                     <li><a href="javascript:void (0)" data-tip="Add to Cart" class="addToCarthomeBtn"><i class="fa fa-shopping-cart"></i><span style="display: none !important;">{{ $product->slag }}</span></a></li>
                                 </ul>
                             </div>

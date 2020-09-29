@@ -70,7 +70,7 @@ class AddToCartController extends Controller
             Cart::add($data);
             return back();
 
-        }elseif ($request->color_code == null || $request->size == null){
+        }elseif ($request->color_code == null ){
 
             if (count($product->product_colors) > 0 && count($product->product_sizes) > 0) {
 
@@ -82,7 +82,7 @@ class AddToCartController extends Controller
                 $data['options']['slag'] = $product->slag;
                 $data['options']['color_code'] = $color->color_code;
                 $data['options']['color_name'] = $color->color_name;
-                $data['options']['size'] = $size->size;
+                $data['options']['size'] = $request->size;
 
             }elseif (count($product->product_colors) > 0){
 
@@ -94,6 +94,55 @@ class AddToCartController extends Controller
                 $data['options']['slag'] = $product->slag;
                 $data['options']['color_code'] = $color->color_code;
                 $data['options']['color_name'] = $color->color_name;
+
+            }elseif (count($product->product_sizes) > 0){
+
+                $data['id'] = $product->id;
+                $data['name'] = $product->name;
+                $data['qty'] = $qty;
+                $data['price'] = $sellsPrice;
+                $data['options']['image'] = $product->image;
+                $data['options']['slag'] = $product->slag;
+                $data['options']['size'] = $request->size;
+
+            }else{
+
+                $data['id'] = $product->id;
+                $data['name'] = $product->name;
+                $data['qty'] = $qty;
+                $data['price'] = $sellsPrice;
+                $data['options']['slag'] = $product->slag;
+                $data['options']['image'] = $product->image;
+
+            }
+
+            Cart::add($data);
+            return back();
+
+        }elseif ($request->size == null){
+
+            if (count($product->product_colors) > 0 && count($product->product_sizes) > 0) {
+
+                $data['id'] = $product->id;
+                $data['name'] = $product->name;
+                $data['qty'] = $qty;
+                $data['price'] = $sellsPrice;
+                $data['options']['image'] = $product->image;
+                $data['options']['slag'] = $product->slag;
+                $data['options']['color_code'] = $request->color_code;
+                $data['options']['color_name'] = $request->color_name;
+                $data['options']['size'] = $size->size;
+
+            }elseif (count($product->product_colors) > 0){
+
+                $data['id'] = $product->id;
+                $data['name'] = $product->name;
+                $data['qty'] = $qty;
+                $data['price'] = $sellsPrice;
+                $data['options']['image'] = $product->image;
+                $data['options']['slag'] = $product->slag;
+                $data['options']['color_code'] = $request->color_code;
+                $data['options']['color_name'] = $request->color_name;
 
             }elseif (count($product->product_sizes) > 0){
 
@@ -119,7 +168,7 @@ class AddToCartController extends Controller
             Cart::add($data);
             return back();
 
-        }else{
+        } else{
 
             $data['id'] = $product->id;
             $data['name'] = $product->name;
@@ -127,9 +176,9 @@ class AddToCartController extends Controller
             $data['price'] = $sellsPrice;
             $data['options']['image'] = $product->image;
             $data['options']['slag'] = $product->slag;
-            $data['options']['color_code'] = $color->color_code;
-            $data['options']['color_name'] = $color->color_name;
-            $data['options']['size'] = $size->size;
+            $data['options']['color_code'] = $request->color_code;
+            $data['options']['color_name'] = $request->color_name;
+            $data['options']['size'] = $request->size;
 
             Cart::add($data);
             return back();

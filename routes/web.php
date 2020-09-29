@@ -67,6 +67,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/dash-all-product','Admin\AdminController@all_products')->name('admin.all-product');
     Route::get('/dash-main-slider','Admin\AdminController@main_slider')->name('admin.main-slider');
     Route::get('/dash-menu-slider','Admin\AdminController@menu_slider')->name('admin.menu-slider');
+    Route::get('/dash-text-slider','Admin\AdminController@text_slider')->name('admin.text-slider');
+    Route::get('/destroy-text-slider/{textSlider}','TextSliderController@destroy')->name('admin.textSlider-destroy');
     Route::get('/contact-info','Admin\AdminController@contact_info')->name('admin.contact-info');
     Route::get('/navigation','Admin\AdminController@navigation')->name('admin.navigation');
     Route::get('/social-share','Admin\AdminController@setSocialShare')->name('admin.social-share');
@@ -90,6 +92,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
         'only' => ['store', 'update']
     ]);
     Route::resource('/menuSlider','MenuSliderController', [
+        'only' => ['store', 'update']
+    ]);
+    Route::resource('/textSlider','TextSliderController', [
         'only' => ['store', 'update']
     ]);
     Route::resource('/viewOrder','OrderActionController', [

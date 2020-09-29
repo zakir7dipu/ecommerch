@@ -29,7 +29,7 @@
                     <!-- begin page title -->
                     <div class="d-block d-lg-flex flex-nowrap align-items-center">
                         <div class="page-title mr-4 pr-4 border-right">
-                            <h1 class="text-capitalize">category</h1>
+                            <h1 class="text-capitalize">Advertisement</h1>
                         </div>
                         <div class="breadcrumb-bar align-items-center">
                             <nav>

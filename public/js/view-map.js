@@ -1,7 +1,7 @@
 var myLatLng;
 $.ajax({
     type: 'Get',
-    url: 'show-location',
+    url: '/show-location',
     success:function (data) {
 
         var location = data;

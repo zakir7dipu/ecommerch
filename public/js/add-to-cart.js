@@ -74,6 +74,7 @@ function addToCartItemFromSingleProductPage(event) {
     var itemColorCode = $('#colorCode').val();
     var itemSize = $('#sizeName').val();
 
+    // console.log(itemSlag,itemQty,itemColorName,itemColorCode,itemSize);
     addToCartPostFormSingleProductPage(itemSlag,itemQty,itemColorName,itemColorCode,itemSize);
 
 }

@@ -213,12 +213,11 @@
                 </div>
                 <div class="{{ request()->path() != 'add-to-cart' && request()->path() != 'checkout' ? 'col-sm-8 col-md-8 col-lg-9':'col-sm-12 col-md-12 col-lg-12' }}">
                     <div class="header-bottom-right offers">
-                        <div class="marquee"><span><i class="fa fa-circle" aria-hidden="true"></i>It's Sexual Health Week!</span>
-                            <span><i class="fa fa-circle" aria-hidden="true"></i>Our 5 Tips for a Healthy Summer</span>
-                            <span><i class="fa fa-circle" aria-hidden="true"></i>Sugar health at risk?</span>
-                            <span><i class="fa fa-circle" aria-hidden="true"></i>The Olay Ranges - What do they do?</span>
-                            <span><i class="fa fa-circle" aria-hidden="true"></i>Body fat - what is it and why do we need it?</span>
-                            <span><i class="fa fa-circle" aria-hidden="true"></i>Can a pillow help you to lose weight?</span></div>
+                        <div class="marquee">
+                            @foreach($metaTitles as $metaTitle)
+                                <span><i class="fa fa-circle" aria-hidden="true"></i>{{ $metaTitle->title }}</span>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

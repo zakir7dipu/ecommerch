@@ -41,7 +41,7 @@
                 </ul>
             </li>
 
-            <li class="{{ 'admin/dash-main-slider' == request()->path()? 'active':'' }}{{ 'admin/dash-menu-slider' == request()->path()? 'active':'' }}{{ 'admin/contact-info' == request()->path()? 'active':'' }}{{ 'admin/navigation' == request()->path()? 'active':'' }}{{ 'admin/social-share' == request()->path()? 'active':'' }}">
+            <li class="{{ 'admin/dash-main-slider' == request()->path()? 'active':'' }}{{ 'admin/dash-menu-slider' == request()->path()? 'active':'' }}{{ 'admin/contact-info' == request()->path()? 'active':'' }}{{ 'admin/navigation' == request()->path()? 'active':'' }}{{ 'admin/social-share' == request()->path()? 'active':'' }}{{ 'admin/dash-text-slider' == request()->path()? 'active':'' }}{{ 'admin/ad' == request()->path()? 'active':'' }}">
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"> <i class="nav-icon ti ti-layout-grid4-alt"></i> <span class="nav-title">Widgets</span></a>
                 <ul aria-expanded="false" class="collapse">
 
@@ -49,10 +49,11 @@
                         <a href="javascript:void(0)" class="logoInsertBtn" aria-expanded="false"> <i class="nav-icon fa fa-paint-brush"></i> <span class="nav-title">Logo</span></a>
                     </li>
 
-                    <li class="{{ 'admin/dash-main-slider' == request()->path()? 'active':'' }}{{ 'admin/dash-menu-slider' == request()->path()? 'active':'' }}"> <a href="javascript:void(0)" class="has-arrow"> <i class="nav-icon fe fe-sliders"></i> <span class="nav-title">Slider Image</span></a>
+                    <li class="{{ 'admin/dash-main-slider' == request()->path()? 'active':'' }}{{ 'admin/dash-menu-slider' == request()->path()? 'active':'' }}{{ 'admin/dash-text-slider' == request()->path()? 'active':'' }}"> <a href="javascript:void(0)" class="has-arrow"> <i class="nav-icon fe fe-sliders"></i> <span class="nav-title">Slider Image</span></a>
                         <ul>
                             <li class="{{ 'admin/dash-main-slider' == request()->path()? 'active':'' }}"><a href="{{ route('admin.main-slider') }}"> <span class="nav-title">Banner Slider</span></a></li>
                             <li class="{{ 'admin/dash-menu-slider' == request()->path()? 'active':'' }}"><a href="{{ route('admin.menu-slider') }}"> <span class="nav-title">Menu Slider</span></a></li>
+                            <li class="{{ 'admin/dash-text-slider' == request()->path()? 'active':'' }}"><a href="{{ route('admin.text-slider') }}"> <span class="nav-title">Text Slider</span></a></li>
                         </ul>
                     </li>
 

@@ -17,6 +17,7 @@ use App\MenuSlider;
 use App\Product;
 use App\SocialShareLinks;
 use App\SubCategory;
+use App\TextSlider;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -44,6 +45,7 @@ class ClientController extends Controller
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
         $ads = Advertisement::all();
 //        $cartSubTotal = Cart::subtotal($decimals, $decimalSeperator, $thousandSeperator);
         $countProducts = Product::all()
@@ -67,7 +69,7 @@ class ClientController extends Controller
         }
 
         if ($company->status == 1) {
-            return view('client.client-home', compact('categories', 'collections', 'logo', 'banners', 'menu_sliders', 'contactInfo', 'customerCare', 'cartCount', 'cartItems', 'company', 'facebook', 'instagram', 'pinterest', 'whatsapp', 'ads', 'products'));
+            return view('client.client-home', compact('categories', 'collections', 'logo', 'banners', 'menu_sliders', 'contactInfo', 'customerCare', 'cartCount', 'cartItems', 'company', 'facebook', 'instagram', 'pinterest', 'whatsapp', 'metaTitles', 'ads', 'products'));
         } else{
             return view('error-pages.404-error');
         }
@@ -94,13 +96,14 @@ class ClientController extends Controller
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
         $ads = Advertisement::all();
 //        *******
         $category_id = Category::where('category_slag',$slag)->first()->id;
         $category = Category::find($category_id);
         $subCategorise = $category->subcotegorise()->orderBy('index','asc')->get();
 
-        return view('client.category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','whatsapp', 'ads','pinterest','facebook','instagram','subCategorise','category'));
+        return view('client.category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','whatsapp', 'metaTitles', 'ads','pinterest','facebook','instagram','subCategorise','category'));
 
     }
 
@@ -125,6 +128,7 @@ class ClientController extends Controller
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
         $ads = Advertisement::all();
 //        *******
         $subCategory_id = SubCategory::where('sub_category_slag',$slag)->first()->id;
@@ -135,7 +139,7 @@ class ClientController extends Controller
             ->paginate(8);
 
 
-        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'ads','subCategory','products'));
+        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','subCategory','products'));
 
     }
 
@@ -160,13 +164,14 @@ class ClientController extends Controller
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
         $ads = Advertisement::all();
 //        *******
         $product_id = Product::where('slag',$slag)->first()->id;
         $product = Product::find($product_id);
         $subCategory = SubCategory::where('id',$product->sub_category_id)->first();
 //        dd($subcategory->category);
-        return view('client.single-product-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'ads','product','subCategory'));
+        return view('client.single-product-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','product','subCategory'));
 
     }
 
@@ -189,10 +194,11 @@ class ClientController extends Controller
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
 //        *******
         $cartItems = Cart::content();
 //        dd($cartItems);
-        return view('client.cart-page',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp'));
+        return view('client.cart-page',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles'));
     }
 
     public function checkout_page()
@@ -215,9 +221,10 @@ class ClientController extends Controller
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
 //        *******
 //        dd($cartItems);
-        return view('client.checkout-page',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp'));
+        return view('client.checkout-page',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles'));
     }
 
     public function aboutUs()
@@ -239,10 +246,11 @@ class ClientController extends Controller
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
         $ads = Advertisement::all();
         $banners = MainBannerScroll::all();
         $aboutCompany = AboutCompany::find(1)->about_us;
-        return view('client.about-company',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'ads','banners','aboutCompany'));
+        return view('client.about-company',compact('categories','collections','logo','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','banners','aboutCompany'));
     }
 
     public function contactUs()
@@ -265,9 +273,10 @@ class ClientController extends Controller
         $instagram = SocialShareLinks::where('name', 'instagram')->first();
         $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
         $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
         $ads = Advertisement::all();
         $banners = MainBannerScroll::all();
-        return view('client.for-contact',compact('categories','collections','logo','menu_sliders','contactInfo', 'customerSupport','cartCount','cartItems','company','banners','facebook','instagram','whatsapp', 'ads','pinterest'));
+        return view('client.for-contact',compact('categories','collections','logo','menu_sliders','contactInfo', 'customerSupport','cartCount','cartItems','company','banners','facebook','instagram','whatsapp', 'metaTitles', 'ads','pinterest'));
     }
 
     public function navigationLocation()
