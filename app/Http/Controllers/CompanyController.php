@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Payment;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -42,5 +43,38 @@ class CompanyController extends Controller
             $company->countries()->sync(array());
         }
         return back()->withMessage('Country Selected Successfully');
+    }
+
+    public function paymentSelect(Request $request)
+    {
+        $this->validate($request,[
+            'selected_payments' => 'required|min:1'
+        ]);
+//        dd($request);
+        $company = Company::find(1);
+        if ($request->has('selected_payments')) {
+            $company->payments()->sync($request->selected_payments);
+        }else{
+            $company->payments()->sync(array());
+        }
+        return back()->withMessage('Payment Selected Successfully');
+    }
+
+    public function paymentUpdate(Request $request, Payment $payment)
+    {
+        $this->validate($request,[
+            'number' => 'required',
+        ]);
+
+        $payment->number = $request->number;
+        $payment->type = $request->type;
+        $payment->save();
+        return back()->withMessage($payment->name . ' Updated syccessfully');
+//        dd($request);
+    }
+
+    public function payment_info(Payment $payment)
+    {
+        return response()->json($payment);
     }
 }

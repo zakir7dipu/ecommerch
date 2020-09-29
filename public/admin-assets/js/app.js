@@ -929,7 +929,7 @@
 
         $.ajax({
             type: 'Get',
-            url: 'selected-country',
+            url: '/admin/selected-country',
             success: function (data) {
                 // console.log(data);
                 var selectedCountry = data;
@@ -943,6 +943,22 @@
         $('.addTextSliderBtn').parent().parent().find('.card-body').removeClass('d-none');
         $('.addMetaContentInput').append('<label for="title">Meta Title</label>\n' +
             '<input class="form-control" type="text" name="title[]" id="title">')
-    })
+    });
+
+    // select payments
+    var pathname = window.location.pathname;
+    if (pathname == '/admin/setting') {
+        $('.multiplePaymentSelect').select2();
+
+        $.ajax({
+            type: 'Get',
+            url: '/admin/selected-payment',
+            success: function (data) {
+                // console.log(data);
+                var selectedPayment = data;
+                $('.multiplePaymentSelect').val(selectedPayment).trigger('change');
+            }
+        });
+    }
 
 })(window, document, window.jQuery);

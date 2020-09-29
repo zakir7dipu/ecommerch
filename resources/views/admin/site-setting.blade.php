@@ -96,8 +96,8 @@
                         <form action="{{ route('admin.country-select') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="companyAbout">Order Excepted Countries:</label>
-                                <select class="form-control multipleCountrySelect" name="selected_countries[]" multiple="multiple">
+                                <label for="country">Order Excepted Countries:</label>
+                                <select class="form-control multipleCountrySelect" name="selected_countries[]" multiple="multiple" id="country">
 {{--                                    <option selected disabled>Select Country</option>--}}
                                     @foreach($countries as $country)
                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
@@ -110,6 +110,54 @@
                         </form>
                     </div>
                 </div>
+
+                <div class="card col-md-8">
+                    <div class="card-header">
+                        <h4 class="text-muted font-weight-bold text-center">Payments</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('admin.payment-select') }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="companyPayment">Payments:</label>
+                                <select class="form-control multiplePaymentSelect" name="selected_payments[]" multiple="multiple" id="companyPayment">
+                                    @foreach($payments as $payment)
+                                        <option value="{{ $payment->id }}">{{ $payment->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                @foreach($company->payments as $payment)
+                    @if($payment->name != 'Cash on Delivery')
+                        <div class="card col-md-8">
+                            <div class="card-header">
+                                <h4 class="text-muted font-weight-bold text-center">{{ $payment->name }} Settings</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('admin.payment-update',$payment->id) }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="{{ $payment->name }}Number">{{ $payment->name }} Number</label>
+                                        <input class="form-control" type="tel" name="number" id="{{ $payment->name }}Number" value="{{ $payment->number }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="{{ $payment->name }}Type">{{ $payment->name }} Account Type (optional)</label>
+                                        <input class="form-control" type="text" name="type" id="{{ $payment->name }}Type" value="{{ $payment->type }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
 
                 <div class="card col-md-8">
                     <div class="card-header">

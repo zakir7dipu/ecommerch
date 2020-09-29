@@ -13,6 +13,7 @@ use App\CustomerSupport;
 use App\Http\Controllers\Controller;
 use App\MainBannerScroll;
 use App\MenuSlider;
+use App\Payment;
 use App\Product;
 use App\SocialShareLinks;
 use App\SubCategory;
@@ -129,6 +130,7 @@ class AdminController extends Controller
             $company_name = '';
         }
         $countries = AllCountries::orderBy('name','ASC')->get();
+        $payments = Payment::all();
         if (count(AboutCompany::all()) > 0) {
             $aboutCompany = AboutCompany::find(1)->about_us;
         }else{
@@ -138,7 +140,7 @@ class AdminController extends Controller
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
         $company = Company::find(1);
-        return view('admin.site-setting',compact('countries','company_name','aboutCompany','user','newOrderCount','company'));
+        return view('admin.site-setting',compact('countries', 'payments','company_name','aboutCompany','user','newOrderCount','company'));
     }
 
     public function viewSeletedCountry()
@@ -149,6 +151,16 @@ class AdminController extends Controller
             $selectedCountries[] = $country->id;
         }
         return response()->json($selectedCountries);
+    }
+
+    public function viewSeletedPayment()
+    {
+        $company = Company::find(1);
+        $selectedPayments = [];
+        foreach ($company->payments as $payment){
+            $selectedPayments[] = $payment->id;
+        }
+        return response()->json($selectedPayments);
     }
 
     public function newOrders()

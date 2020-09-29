@@ -14,4 +14,9 @@ class Company extends Model
     {
         return $this->belongsToMany('App\AllCountries');
     }
+
+    public function payments()
+    {
+        return $this->belongsToMany('App\Payment');
+    }
 }

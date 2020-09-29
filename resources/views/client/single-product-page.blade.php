@@ -81,269 +81,65 @@
                 </div>
 
                 <div class="left-special left-sidebar-widget mb_50">
-                    <div class="heading-part mb_20 ">
-                        <h2 class="main_title">Top Products</h2>
+                    <div class="heading-part mb_20">
+                        <h2 class="main_title" style="margin-bottom: 1px;">Top Products</h2>
                     </div>
                     <div id="left-special" class="owl-carousel">
                         <ul class="row ">
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product1.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product1-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                            @foreach($reviewProducts as $reviewProduct)
+                                <li class="item product-layout-left mb_20">
+                                    <div class="product-list col-xs-4">
+
+                                        <div class="product-thumb">
+                                            <div class="image product-imageblock">
+                                                <a href="{{ route('client.product',$reviewProduct->slag) }}">
+                                                    <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="{{ asset('upload/images/category_images/'.$reviewProduct->image) }}">
+                                                    <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="{{ asset('upload/images/category_images/'.$reviewProduct->image) }}">
+                                                </a>
+                                            </div>
                                         </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
+
                                     </div>
-                                </div>
-                            </li>
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product2.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product2-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                                    <div class="col-xs-8">
+                                        <div class="caption product-detail">
+                                            <h6 class="product-name">
+                                                <a href="{{ route('client.product',$reviewProduct->slag) }}">{{ $reviewProduct->name  }}</a>
+                                            </h6>
+
+                                            <div class="rating">
+                                                @php
+                                                    $review = $reviewProduct->reviews()->groupBy('id')->max('rating');
+                                                    $fullStar = $review;
+                                                    $emptyStar = 5 - $review;
+                                                @endphp
+                                                {{--                                                    {{ $emptyStar }}--}}
+                                                @for($i = 0; $i < $fullStar; $i++)
+                                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                                                @endfor
+                                                @for($i = 0; $i < $emptyStar; $i++)
+                                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                                                @endfor
+                                            </div>
+
+                                            <span class="price">
+                                                <span class="amount">
+                                                    @if($reviewProduct->discount != null)
+                                                        @php
+                                                            $price = $reviewProduct->price - ($reviewProduct->price*$reviewProduct->discount)/100;
+                                                        @endphp
+                                                        {{ str_replace('.00','',$price) }}.00৳
+                                                        <del style="color: red;">{{ str_replace('.00','',$reviewProduct->price) }}.00৳</del>
+                                                    @else
+                                                        {{ str_replace('.00','',$reviewProduct->price) }}.00৳
+                                                    @endif
+                                                    {{--                                                    {{ $reviewProduct->price }}<span class="currencySymbol">.00৳</span>--}}
+                                                </span>
+                                            </span>
+
                                         </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product3-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="row ">
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product4.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product4-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product5.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product5-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product6.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product6-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="row ">
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product7.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product7-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product8.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product8-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product9.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product9-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="row ">
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product10.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product10-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product1.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product1-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item product-layout-left mb_20">
-                                <div class="product-list col-xs-4">
-                                    <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product2.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/client-assets/images/product/product2-1.jpg"> </a> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="caption product-detail">
-                                        <h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                                        </div>
-                                        <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -504,7 +300,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="heading-part text-center">
-                            <h2 class="main_title mt_50">Related Products</h2>
+                            <h2 class="main_title mt_50" style="margin-bottom: 1px;">Related Products</h2>
                         </div>
                     </div>
                 </div>
@@ -552,7 +348,7 @@
         <div id="brand_carouse" class="ptb_30 text-center">
             <div class="type-01">
                 <div class="heading-part mb_20 ">
-                    <h2 class="main_title">Brand Logo</h2>
+                    <h2 class="main_title" style="margin-bottom: 1px;">Brand Logo</h2>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">

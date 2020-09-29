@@ -39,10 +39,10 @@ Route::post('/cart-update/{rowId}','AddToCartController@update')->name('cart.upd
 
 //checkout
 Route::get('/checkout','Client\ClientController@checkout_page')->name('client.checkout');
-
+//show payment info
+Route::get('/payment-info/{payment}','CompanyController@payment_info')->name('client.payment-info');
 //review
 Route::post('/review/{product}','ReviewController@store')->name('review.store');
-
 //adout us
 Route::get('/about-us','Client\ClientController@aboutUs')->name('client.about-us');
 //contact us
@@ -75,6 +75,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/show-map-location','GeolocationController@showLocation')->name('admin.show-map-location');
     Route::get('/setting','Admin\AdminController@setting')->name('admin.setting');
     Route::get('/selected-country','Admin\AdminController@viewSeletedCountry')->name('admin.selected-country');
+    Route::get('/selected-payment','Admin\AdminController@viewSeletedPayment')->name('admin.selected-payment');
     Route::get('/all-new-orders','Admin\AdminController@newOrders')->name('admin.new-order');
     Route::get('/all-orders','Admin\AdminController@allOrders')->name('admin.all-order');
     Route::get('/ad','Admin\AdminController@advertisement')->name('admin.ad');
@@ -114,6 +115,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::post('/add-about','AboutCompanyController@about')->name('admin.about');
     Route::put('/user-update/{user}','UserController@userEmailUpdate')->name('admin.user-update');
     Route::post('/country-select','CompanyController@countrySelect')->name('admin.country-select');
+    Route::post('/payment-select','CompanyController@paymentSelect')->name('admin.payment-select');
+    Route::post('/payment-update/{payment}','CompanyController@paymentUpdate')->name('admin.payment-update');
     Route::post('/update-status/{orderNo}','OrderActionController@updateStatus')->name('admin.order-status');
     Route::post('/set-ad','AdvertisementController@setAdvertisement')->name('admin.setAd');
 });

@@ -11,6 +11,7 @@ use App\CustomersOrders;
 use App\CustomerSupport;
 use App\Gallery;
 use App\Geolocation;
+use App\GetReviewProducts;
 use App\Http\Controllers\Controller;
 use App\MainBannerScroll;
 use App\MenuSlider;
@@ -67,9 +68,10 @@ class ClientController extends Controller
                 ->where('status', 1)
                 ->get();
         }
-
+        $reviewProducts = new GetReviewProducts();
+        $reviewProducts = $reviewProducts->getProducts();
         if ($company->status == 1) {
-            return view('client.client-home', compact('categories', 'collections', 'logo', 'banners', 'menu_sliders', 'contactInfo', 'customerCare', 'cartCount', 'cartItems', 'company', 'facebook', 'instagram', 'pinterest', 'whatsapp', 'metaTitles', 'ads', 'products'));
+            return view('client.client-home', compact('categories', 'collections', 'logo', 'banners', 'menu_sliders', 'contactInfo', 'customerCare', 'cartCount', 'cartItems', 'company', 'facebook', 'instagram', 'pinterest', 'whatsapp', 'metaTitles', 'ads', 'products', 'reviewProducts'));
         } else{
             return view('error-pages.404-error');
         }
@@ -102,8 +104,9 @@ class ClientController extends Controller
         $category_id = Category::where('category_slag',$slag)->first()->id;
         $category = Category::find($category_id);
         $subCategorise = $category->subcotegorise()->orderBy('index','asc')->get();
-
-        return view('client.category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','whatsapp', 'metaTitles', 'ads','pinterest','facebook','instagram','subCategorise','category'));
+        $reviewProducts = new GetReviewProducts();
+        $reviewProducts = $reviewProducts->getProducts();
+        return view('client.category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','whatsapp', 'metaTitles', 'ads','pinterest','facebook','instagram','subCategorise','category', 'reviewProducts'));
 
     }
 
@@ -136,10 +139,11 @@ class ClientController extends Controller
 
         $products = $subCategory->products()
             ->where('status', 1)
-            ->paginate(8);
+            ->paginate(16);
+        $reviewProducts = new GetReviewProducts();
+        $reviewProducts = $reviewProducts->getProducts();
 
-
-        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','subCategory','products'));
+        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','subCategory','products', 'reviewProducts'));
 
     }
 
@@ -170,8 +174,10 @@ class ClientController extends Controller
         $product_id = Product::where('slag',$slag)->first()->id;
         $product = Product::find($product_id);
         $subCategory = SubCategory::where('id',$product->sub_category_id)->first();
-//        dd($subcategory->category);
-        return view('client.single-product-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','product','subCategory'));
+        $reviewProducts = new GetReviewProducts();
+        $reviewProducts = $reviewProducts->getProducts();
+
+        return view('client.single-product-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','product','subCategory', 'reviewProducts'));
 
     }
 

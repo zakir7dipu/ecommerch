@@ -113,7 +113,7 @@
                 <form action="http://html.lionode.com/healthcare/hc001/index.html">
                     <input class="btn pull-left mt_30" type="submit" value="Continue Shopping" />
                 </form>
-                <form action="{{ route('client.checkout') }}" method="get">
+                <form action="{{ $cartCount > 0 ? route('client.checkout'):'javascript:void(0)' }}" method="get">
                     <input class="btn pull-right mt_30" type="submit" value="Checkout" />
                 </form>
             </div>

@@ -125,18 +125,15 @@
                             <h4 class="mb-3">Payment</h4>
 
                             <div class="d-block my-3">
-                                <div class="custom-control custom-radio">
-                                    <input id="Cash" name="paymentMethod" value="Cash" type="radio" class="custom-control-input" value="Cash" required>
-                                    <label class="custom-control-label" for="Cash">Cash on Delivery</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input id="bKash" name="paymentMethod" type="radio" class="custom-control-input" value="bKash" required>
-                                    <label class="custom-control-label" for="bKash">bKash</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input id="নগদ" name="paymentMethod" type="radio" class="custom-control-input" value="নগদ" required>
-                                    <label class="custom-control-label" for="নগদ">নগদ</label>
-                                </div>
+                                @foreach($company->payments as $payment)
+                                    <div class="custom-control custom-radio">
+                                        <input id="{{ str_replace(' ','', $payment->name) }}" name="paymentMethod" type="radio" class="custom-control-input" value="{{ $payment->name }}" required>
+                                        <label class="custom-control-label" for="{{ str_replace(' ','', $payment->name) }}" id="{{ $payment->id }}">{{ $payment->name }}</label>
+                                    </div>
+                                @endforeach
+
+                                <div class="paymetNumber my-3 p-3"></div>
+
                             </div>
 
                             <div class="row paymentInfo">

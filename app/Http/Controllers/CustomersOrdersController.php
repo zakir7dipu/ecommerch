@@ -12,7 +12,6 @@ class CustomersOrdersController extends Controller
 {
     public function storeOrder(Request $request)
     {
-//        dd($request);
         $this->validate($request, [
             'name' => 'required',
             'phone' => 'required|min:11|max:14',
@@ -23,6 +22,7 @@ class CustomersOrdersController extends Controller
             'paymentMethod' => 'required',
             'order_time' => 'required',
         ]);
+//        dd($request);
 
         if ($request->has('email')) {
             $this->validate($request, [
@@ -32,12 +32,17 @@ class CustomersOrdersController extends Controller
 
         if ($request->paymentMethod == 'bKash') {
             $this->validate($request, [
-                'payment_phone' => 'required',
-                'trxid' => 'required',
+                'payment_phone' => 'required'
             ]);
         }
 
         if ($request->paymentMethod == 'নগদ') {
+            $this->validate($request, [
+                'payment_phone' => 'required',
+            ]);
+        }
+
+        if ($request->paymentMethod == 'Roket') {
             $this->validate($request, [
                 'payment_phone' => 'required',
             ]);

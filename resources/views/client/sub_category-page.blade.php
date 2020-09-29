@@ -41,6 +41,70 @@
                     @endforeach
 {{--                    </a> --}}
                 </div>
+
+                <div class="left-special left-sidebar-widget mb_50">
+                    <div class="heading-part mb_20 ">
+                        <h2 class="main_title">Top Products</h2>
+                    </div>
+                    <div id="left-special" class="owl-carousel">
+                        <ul class="row ">
+                            @foreach($reviewProducts as $reviewProduct)
+                                <li class="item product-layout-left mb_20">
+                                    <div class="product-list col-xs-4">
+
+                                        <div class="product-thumb">
+                                            <div class="image product-imageblock">
+                                                <a href="{{ route('client.product',$reviewProduct->slag) }}">
+                                                    <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="{{ asset('upload/images/category_images/'.$reviewProduct->image) }}">
+                                                    <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="{{ asset('upload/images/category_images/'.$reviewProduct->image) }}">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div class="caption product-detail">
+                                            <h6 class="product-name">
+                                                <a href="{{ route('client.product',$reviewProduct->slag) }}">{{ $reviewProduct->name  }}</a>
+                                            </h6>
+
+                                            <div class="rating">
+                                                @php
+                                                    $review = $reviewProduct->reviews()->groupBy('id')->max('rating');
+                                                    $fullStar = $review;
+                                                    $emptyStar = 5 - $review;
+                                                @endphp
+                                                {{--                                                    {{ $emptyStar }}--}}
+                                                @for($i = 0; $i < $fullStar; $i++)
+                                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                                                @endfor
+                                                @for($i = 0; $i < $emptyStar; $i++)
+                                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                                                @endfor
+                                            </div>
+
+                                            <span class="price">
+                                                <span class="amount">
+                                                    @if($reviewProduct->discount != null)
+                                                        @php
+                                                            $price = $reviewProduct->price - ($reviewProduct->price*$reviewProduct->discount)/100;
+                                                        @endphp
+                                                        {{ str_replace('.00','',$price) }}.00৳
+                                                        <del style="color: red;">{{ str_replace('.00','',$reviewProduct->price) }}.00৳</del>
+                                                    @else
+                                                        {{ str_replace('.00','',$reviewProduct->price) }}.00৳
+                                                    @endif
+                                                    {{--                                                    {{ $reviewProduct->price }}<span class="currencySymbol">.00৳</span>--}}
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="col-sm-8 col-md-8 col-lg-9 mtb_30">

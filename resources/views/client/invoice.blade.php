@@ -47,7 +47,7 @@
                     <p>Date: {{ date("d-M-Y", strtotime($order->order_date)) }}</p>
                     <p>Total Amount: {{ $order->net_price .'/-৳' }}</p>
                     <p>Payment Type: {{ $order->payment_type }}</p>
-                    {!! $order->payment_phone !=null?'<p>Payment Type: '. $order->payment_phone .'</p>':'' !!}
+                    {!! $order->payment_phone !=null?'<p>Payment Number: '. $order->payment_phone .'</p>':'' !!}
 
                     <p>Order Status: {{ $order->status == 1? 'Pending': '' }}</p>
                 </div>

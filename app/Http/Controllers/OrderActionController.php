@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
 use App\CustomersOrders;
 use Illuminate\Http\Request;
 
@@ -23,8 +24,9 @@ class OrderActionController extends Controller
         $order = CustomersOrders::find($id);
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
+        $company = Company::find(1);
 //        dd($order);
-        return view('admin.single-order',compact('order','newOrderCount'));
+        return view('admin.single-order',compact('order','newOrderCount', 'company'));
     }
 
     public function updateStatus(Request $request, $orderNo)

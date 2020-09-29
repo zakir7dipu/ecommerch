@@ -307,6 +307,13 @@ class ProductController extends Controller
                 $size->delete();
             }
         }
+//        delete products sizes
+        if (count($product->reviews) > 0){
+            $reviews = $product->reviews;
+            foreach ($reviews as $review) {
+                $review->delete();
+            }
+        }
         $product->delete();
         return back()->withMessage('Product Deleted Successfully');
     }
