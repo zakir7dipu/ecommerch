@@ -116,6 +116,10 @@
                     <div class="col-sm-6">
                         <div class="copyright-part">&#169;<span class="copyright-part-year"></span> All Rights Reserved {{ $company->name }}</div>
                     </div>
+
+                    <div class="col-sm-6">
+                        <div class="copyright-part text-right"><strong>Build By- <a href="tel:01764470022"><span class="text-danger">DAC-Software</span></a></strong></div>
+                    </div>
                 </div>
             </div>
         </div>
