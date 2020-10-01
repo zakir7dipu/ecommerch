@@ -32,6 +32,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="/client-assets/images/apple-touch-icon-72x72.html">
     <link rel="apple-touch-icon" sizes="114x114" href="/client-assets/images/apple-touch-icon-114x114.html">
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
     @yield('page-css')
 </head>
 
@@ -133,14 +134,26 @@
 <script src="/client-assets/js/jquery.magnific-popup.js"></script>
 <script src="/client-assets/js/jquery.firstVisitPopup.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<script src="{{ asset('js/bootstrap3-typeahead.min.js ') }}"></script>
 <script src="/client-assets/js/custom.js"></script>
 <script src="{{ asset('js/view-map.js') }}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @yield('page-script')
 <script !src="">
     $(function () {
         var date = new Date();
         var year = date.getFullYear();
         document.getElementsByClassName('copyright-part-year')[0].innerText = year;
+
+        //autocomplete search
+        var path = "{{ route('client.autocomplete-search') }}";
+        $('#searchform input').typeahead({
+            source:function (terms, process) {
+                return $.get(path,{terms:terms},function (data) {
+                    return process(data);
+                })
+            }
+        });
     })
 </script>
 </body>

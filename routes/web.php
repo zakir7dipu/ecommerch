@@ -20,23 +20,23 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome'));
 //});
 
+//home page
 Route::get('/','Client\ClientController@index')->name('client.home');
+//get category page
 Route::get('/{slag}/cat','Client\ClientController@category_page')->name('client.category');
+//get subcategory page
 Route::get('/{slag}/sub','Client\ClientController@subCategory_page')->name('client.subCategory');
+//get single product page
 Route::get('/{slag}/prot','Client\ClientController@single_product_page')->name('client.product');
-
 //get product color
 Route::get('/product-color/{color}','ProductColorController@ajaxShow')->name('product.color');
-
 //get product color
 Route::get('/product-size/{size}','ProductSizeController@ajaxShow')->name('product.size');
-
 //add to cart
 Route::get('/add-to-cart','Client\ClientController@cart_page')->name('client.add-to-cart');
 Route::get('/add-to-cart/{rowId}','AddToCartController@destroy')->name('addToCart.delete');
 Route::post('/add-to-cart','AddToCartController@addToCart')->name('addToCart.store');
 Route::post('/cart-update/{rowId}','AddToCartController@update')->name('cart.update');
-
 //checkout
 Route::get('/checkout','Client\ClientController@checkout_page')->name('client.checkout');
 //show payment info
@@ -55,6 +55,13 @@ Route::post('/customers-order','CustomersOrdersController@storeOrder')->name('cl
 Route::get('/new-order/{orderNo}','MailController@sendOrderNotification')->name('mail.order-notification');
 //invoice
 Route::get('/invoice/{orderNo}','Client\ClientController@invoice')->name('client.invoice');
+//autocomplete search bar
+Route::get('/autocomplete-search','Client\ClientController@autocompleteSearch')->name('client.autocomplete-search');
+//search product
+Route::get('/search','Client\ClientController@searchProduct')->name('client.search-product');
+//price filter
+Route::get('/min-max-price','Client\ClientController@getMinMaxPrice')->name('client.min-max-price');
+Route::get('/filter','Client\ClientController@getFilteredProduct')->name('client.product-filter');
 
 Auth::routes(['verify'=>true]);
 

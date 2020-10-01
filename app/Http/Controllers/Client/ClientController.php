@@ -16,6 +16,8 @@ use App\Http\Controllers\Controller;
 use App\MainBannerScroll;
 use App\MenuSlider;
 use App\Product;
+use App\ProductFilter;
+use App\ProductSearch;
 use App\SocialShareLinks;
 use App\SubCategory;
 use App\TextSlider;
@@ -143,8 +145,56 @@ class ClientController extends Controller
         $reviewProducts = new GetReviewProducts();
         $reviewProducts = $reviewProducts->getProducts();
 
-        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','subCategory','products', 'reviewProducts'));
+        $minValue = null;
+        $maxValue = null;
 
+        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','subCategory','products', 'reviewProducts', 'minValue', 'maxValue'));
+
+    }
+
+    public function getFilteredProduct(Request $request)
+    {
+        $categories = Category::orderBy('index','asc')->get();
+        if (count( Category::all()) < 3){
+            $collections = null;
+        }else{
+            $collections = Category::all()->random(3);
+        }
+
+        $logo = Gallery::where('name','Logo')->first()->image;
+        $menu_sliders = MenuSlider::all();
+        $contactInfo = ContactInfo::find(1);
+        $customerSupport = CustomerSupport::find(1);
+        $cartCount = Cart::count();
+        $cartItems = Cart::content();
+        $company = Company::find(1);
+        $facebook = SocialShareLinks::where('name', 'facebook')->first();
+        $instagram = SocialShareLinks::where('name', 'instagram')->first();
+        $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
+        $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
+        $ads = Advertisement::all();
+        $banners = MainBannerScroll::all();
+        $reviewProducts = new GetReviewProducts();
+        $reviewProducts = $reviewProducts->getProducts();
+
+//        dd($request);
+        if ($request->price == null){
+            return back();
+        }else {
+            $value = explode(',',$request->price);
+            $minValue = $value[0];
+            $maxValue = $value[1];
+            $query = $request->all();
+            $result = new ProductSearch();
+//            $countProducts = $result->getFilteredProducts($query)->count();
+            $products = $result->getFilteredProducts($query);
+            $products = $products->all();
+            $subCategory = SubCategory::find($query['subcategory']);
+        }
+//        dd($subCategory);
+
+        return view('client.sub_category-page',compact('categories','collections','logo','banners','menu_sliders','contactInfo','cartCount','cartItems','company','facebook','instagram','pinterest','whatsapp', 'metaTitles', 'ads','subCategory','products', 'reviewProducts', 'minValue', 'maxValue'));
     }
 
     public function single_product_page($slag)
@@ -299,5 +349,55 @@ class ClientController extends Controller
         $contactInfo = ContactInfo::find(1);
 //        dd($order);
         return view('client.invoice',compact('logo','order','company','contactInfo'));
+    }
+
+    public function autocompleteSearch(Request $request)
+    {
+        $query = $request->input('q');
+        $result = new ProductSearch();
+        $products = $result->getSearchRuselt($query)->select('name')->get();
+        return response()->json($products);
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $categories = Category::orderBy('index','asc')->get();
+        if (count( Category::all()) < 3){
+            $collections = null;
+        }else{
+            $collections = Category::all()->random(3);
+        }
+
+        $logo = Gallery::where('name','Logo')->first()->image;
+        $menu_sliders = MenuSlider::all();
+        $contactInfo = ContactInfo::find(1);
+        $customerSupport = CustomerSupport::find(1);
+        $cartCount = Cart::count();
+        $cartItems = Cart::content();
+        $company = Company::find(1);
+        $facebook = SocialShareLinks::where('name', 'facebook')->first();
+        $instagram = SocialShareLinks::where('name', 'instagram')->first();
+        $pinterest = SocialShareLinks::where('name', 'pinterest')->first();
+        $whatsapp = SocialShareLinks::where('name', 'whatsapp')->first();
+        $metaTitles = TextSlider::all();
+        $ads = Advertisement::all();
+        $banners = MainBannerScroll::all();
+        $reviewProducts = new GetReviewProducts();
+        $reviewProducts = $reviewProducts->getProducts();
+
+        $query = $request->input('q');
+        $result = new ProductSearch();
+        $countProducts = $result->getSearchRuselt($query)->count();
+        $products = $result->getSearchRuselt($query)->paginate(8);
+
+        return view('client.search-product-page',compact('categories','collections','logo','menu_sliders','contactInfo', 'customerSupport','cartCount','cartItems','company','banners','facebook','instagram','whatsapp', 'metaTitles', 'ads','pinterest', 'reviewProducts', 'countProducts', 'products'));
+    }
+
+    public function getMinMaxPrice(Request $request)
+    {
+        $subCategory = SubCategory::find($request->id);
+        $minPrice = $subCategory->products->min('price');
+        $maxPrice =$subCategory->products->max('price');
+        return response()->json(['min'=>$minPrice,'max'=>$maxPrice]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Company;
 use App\CustomersOrders;
 use App\Product;
 use App\productColor;
@@ -167,7 +168,8 @@ class ProductController extends Controller
         $product_category = SubCategory::find($product->sub_category_id);
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
-        return view('admin.product-edit',compact('categories','product','product_category','newOrderCount'));
+        $company = Company::find(1);
+        return view('admin.product-edit',compact('categories','product','product_category','newOrderCount','company'));
     }
 
     /**

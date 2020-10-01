@@ -25,44 +25,7 @@
         <div class="row ">
             <div id="column-left" class="col-sm-4 col-md-4 col-lg-3 ">
                 <div id="category-menu" class="navbar collapse in  mb_40" aria-expanded="true" style="" role="button">
-                    @include('layouts.client-nav-sub-category-aside')
-                </div>
-
-                <div class="filter left-sidebar-widget mb_50">
-                    <div class="heading-part mtb_20 ">
-                        <h2 class="main_title">Refine Search</h2>
-                    </div>
-                    <div class="filter-block">
-                        <p>
-                            <label for="amount">Price range:</label>
-                            <input type="text" id="amount" readonly>
-                        </p>
-
-                        <div id="slider-range"></div>
-                    </div>
-                    <div class="list-group" style="margin-top: 8px;">
-                        <form action="{{ route('client.product-filter') }}" method="get" class="form-inline">
-                            <div class="form-group">
-                                <input type="hidden" id="getPrices" name="price">
-                                <input type="hidden" name="subcategory" value="{{ $subCategory->id }}">
-                                <button type="submit" class="btn btn-sm filterBtn">Filter</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="left_banner left-sidebar-widget mt_30 mb_50">
-                    <a href="#">
-                    @foreach($ads as $ad)
-                        @if($ad->name == 'add5')
-                            @if($ad->image != null)
-                                <img src="{{ asset('upload/images/advertise_image/'.$ad->image) }}" alt="Left Banner" class="img-responsive" />
-                            @else
-                                <p>{!! $ad->embed_code !!}</p>
-                            @endif
-                        @endif
-                    @endforeach
-                    </a>
+                    @include('layouts.client-nav-home-aside')
                 </div>
 
                 <div class="left-special left-sidebar-widget mb_50">
@@ -132,12 +95,10 @@
 
             <div class="col-sm-8 col-md-8 col-lg-9 mtb_30">
                 <!-- =====  BANNER STRAT  ===== -->
-                <div class="breadcrumb ptb_20" id="{{ $subCategory->id }}" >
-                    <h1>{{ $subCategory->name }}</h1>
+                <div class="breadcrumb ptb_20">
+                    <h1>Search Result.......</h1>
                     <ul>
-                        <li><a href="{{ route('client.home') }}">Home</a></li>
-                        <li><a href="{{ route('client.category',$subCategory->category->category_slag) }}">{{ $subCategory->category->category_name }}</a></li>
-                        <li class="active">{{ $subCategory->name }}</li>
+                        <li style="color: #FFFFFF; text-transform: capitalize;">{{ '('. $countProducts.') result\'s for ' .request()->input('q') }}</li>
                     </ul>
                 </div>
                 <!-- =====  BREADCRUMB END===== -->
@@ -175,11 +136,9 @@
                 </div>
 
 
-                @if(request()->path() == '/'.$subCategory->sub_category_slag .'/sub')
-                    <div class="pagination-nav text-center mt_50">
-                        {{ $products->links() }}
-                    </div>
-                @endif
+                <div class="pagination-nav text-center mt_50">
+                    {{ $products->links() }}
+                </div>
             </div>
         </div>
 
@@ -226,57 +185,5 @@
                 }
             });
         }
-
-        //price filter
-        $(function () {
-            var id = $('.breadcrumb').attr('id');
-            var minPrice = 0;
-            var maxPrice = 0;
-            $.ajax({
-                type:'Get',
-                url:'/min-max-price',
-                data:{
-                    'id':id
-                },
-                success:function (data) {
-                    var minPrice = data['min'];
-                    var maxPrice = data['max'];
-                    showFilter(minPrice, maxPrice)
-                }
-            });
-
-            function showFilter(minPrice, maxPrice) {
-                var minValue = "{{ $minValue }}"
-                var maxValue = "{{ $maxValue }}"
-                console.log(maxPrice)
-                if(minValue == '' || maxValue == '') {
-                    $("#slider-range").slider({
-                        range: true,
-                        min: minPrice,
-                        max: maxPrice,
-                        values: [minPrice, maxPrice],
-                        slide: function (event, ui) {
-                            $("#amount").val("৳" + ui.values[0] + " - ৳" + ui.values[1]);
-                            $('#getPrices').val(ui.values[0] + ',' + ui.values[1]);
-
-                        }
-                    });
-                }else {
-                    $("#slider-range").slider({
-                        range: true,
-                        min: minPrice,
-                        max: maxPrice,
-                        values: [minValue, maxValue],
-                        slide: function (event, ui) {
-                            $("#amount").val("৳" + ui.values[0] + " - ৳" + ui.values[1]);
-                            $('#getPrices').val(ui.values[0] + ',' + ui.values[1]);
-
-                        }
-                    });
-                }
-                $("#amount").val("৳ " + $("#slider-range").slider("values", 0) +
-                    " - ৳ " + $("#slider-range").slider("values", 1));
-            }
-        })
     </script>
 @endsection

@@ -82,23 +82,23 @@
 
 {{--                    search --}}
 
-{{--                    <div class="main-search pull-right">--}}
-{{--                        <div class="search-overlay">--}}
-{{--                            <!-- Close Icon -->--}}
-{{--                            <a href="javascript:void(0)" class="search-overlay-close"></a>--}}
-{{--                            <!-- End Close Icon -->--}}
-{{--                            <div class="container">--}}
-{{--                                <!-- Search Form -->--}}
-{{--                                <form role="search" id="searchform" action="http://html.lionode.com/search" method="get">--}}
-{{--                                    <label class="h5 normal search-input-label">Enter keywords To Search Entire Store</label>--}}
-{{--                                    <input value="" name="q" placeholder="Search here..." type="search">--}}
-{{--                                    <button type="submit"></button>--}}
-{{--                                </form>--}}
-{{--                                <!-- End Search Form -->--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="header-search"> <a id="search-overlay-btn"></a> </div>--}}
-{{--                    </div>--}}
+                    <div class="main-search pull-right">
+                        <div class="search-overlay">
+                            <!-- Close Icon -->
+                            <a href="javascript:void(0)" class="search-overlay-close"></a>
+                            <!-- End Close Icon -->
+                            <div class="container">
+                                <!-- Search Form -->
+                                <form role="search" id="searchform" action="{{ route('client.search-product') }}" method="get">
+                                    <label class="h5 normal search-input-label">Enter keywords To Search Entire Store</label>
+                                    <input value="{{ request()->input('q') }}" name="q" placeholder="Search here..." type="search">
+                                    <button type="submit"></button>
+                                </form>
+                                <!-- End Search Form -->
+                            </div>
+                        </div>
+                        <div class="header-search"> <a id="search-overlay-btn"></a> </div>
+                    </div>
 
 {{--                    search--}}
                 </div>

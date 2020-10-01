@@ -376,7 +376,7 @@ function owl_carousel () {
 /* ===== Event for windows and document =====   */
 
     $(document).ready(function(){
-        
+
         gl_active();
         gl_view();
         search();
@@ -402,6 +402,6 @@ function owl_carousel () {
     });
 });
 jQuery( window ).on("load",function() {
-     $(".loder").fadeOut("slow");    
+     $(".loder").fadeOut("slow");
 });
 
