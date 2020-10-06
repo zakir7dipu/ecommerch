@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_05_062120_create_subscribe_by_emails_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1601821422h4cnwu.DAC.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/logo-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/subscribe-by-email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin-dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin-dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/client-home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/client-home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/for-contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/for-contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-nav-head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-nav-head.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/CheckExpireDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/CheckExpireDate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/add-location.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/add-location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/view-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/view-map.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +223,7 @@
       <workItem from="1601735434057" duration="3472000" />
       <workItem from="1601788310743" duration="134000" />
       <workItem from="1601823692101" duration="2280000" />
-      <workItem from="1601949874118" duration="5204000" />
+      <workItem from="1601949874118" duration="7911000" />
     </task>
     <servers />
   </component>

@@ -25,7 +25,7 @@ $(function () {
 
 
     function showMap(myLatLng) {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiemFraXI3ZGlwdSIsImEiOiJja2UxM3Z3bGgyYWV1Mnhramd3ZGRncnc5In0.tOjaTLM2AUkKhya3t0BuOA';
+        mapboxgl.accessToken = 'pk.eyJ1IjoibG9uZG9uZHViYWlzaG9wcGluZyIsImEiOiJja2Z3dGhvbDYwbWN3MnhrMHgxZjJqNWMxIn0.u7kYN6Gg2ZiMtypJVzZiQg';
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
