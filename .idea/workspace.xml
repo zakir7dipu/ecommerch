@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/16019918576ys18d.DAC.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/CheckExpireDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/CheckExpireDate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/add-location.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/add-location.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/view-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/view-map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin-assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin-dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin-dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/contact-info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contact-info.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +146,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../order-web" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -224,6 +226,8 @@
       <workItem from="1601788310743" duration="134000" />
       <workItem from="1601823692101" duration="2280000" />
       <workItem from="1601949874118" duration="7911000" />
+      <workItem from="1601993232175" duration="282000" />
+      <workItem from="1602000168711" duration="3249000" />
     </task>
     <servers />
   </component>
@@ -254,10 +258,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1601828955472">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1602000398774">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1601828955472" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1602000398774" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1601540872230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -270,10 +274,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1601949874508">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1602000168800">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1601949874508" />
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1602000168800" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1601392195013">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

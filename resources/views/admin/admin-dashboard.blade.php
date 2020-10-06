@@ -149,7 +149,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="note">
-                                        <textarea name="" id="shortNote" style="width: 100%; height: 300px;"></textarea>
+                                        <div name="" id="shortNote" style="width: 100%; height: 300px; border: 1px solid #c1c9d0;"></div>
                                     </div>
                                 </div>
                             </div>

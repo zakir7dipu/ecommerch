@@ -67,52 +67,56 @@
                         <div class="card-header">
                             <h4 class="font-weight-bold text-muted text-center">Head Office</h4>
                         </div>
-                        <div class="card-body">
-                            <form action="{{ route('admin.modify-contact') }}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="address"><i class="fa fa-map-o"></i> Address <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="address" id="address" required value="{{ $contactInfo->address }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone"><i class="fa fa-phone"></i> Phone <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" name="phone" id="phone" required value="{{ $contactInfo->phone }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email"><i class="fa fa-envelope"></i> Email <span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control" name="email" id="email" required value="{{ $contactInfo->email }}">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary w-100 btn-lg font-weight-bold">Save</button>
-                                </div>
-                            </form>
-                        </div>
+                        @if($contactInfo != null)
+                            <div class="card-body">
+                                <form action="{{ route('admin.modify-contact') }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="address"><i class="fa fa-map-o"></i> Address <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="address" id="address" required value="{{ $contactInfo->address }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone"><i class="fa fa-phone"></i> Phone <span class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control" name="phone" id="phone" required value="{{ $contactInfo->phone }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email"><i class="fa fa-envelope"></i> Email <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" name="email" id="email" required value="{{ $contactInfo->email }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary w-100 btn-lg font-weight-bold">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        @endif
                     </div>
 
                     <div class="card col-md-6 d-inline-block float-left px-0">
                         <div class="card-header">
                             <h4 class="font-weight-bold text-muted text-center">Customer Support</h4>
                         </div>
-                        <div class="card-body">
-                            <form action="{{ route('admin.modify-customer-support') }}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="phone1"><i class="fa fa-phone"></i> Phone1</label>
-                                    <input type="tel" class="form-control" name="phone1" id="phone1" value="{{ $customerSupport->phone1 }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone2"><i class="fa fa-phone"></i> Phone2</label>
-                                    <input type="tel" class="form-control" name="phone2" id="phone2" value="{{ $customerSupport->phone2 }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email"><i class="fa fa-envelope"></i> Email <span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control" name="email" id="email" required value="{{ $customerSupport->email }}">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary w-100 btn-lg font-weight-bold">Save</button>
-                                </div>
-                            </form>
-                        </div>
+                        @if($customerSupport != null)
+                            <div class="card-body">
+                                <form action="{{ route('admin.modify-customer-support') }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="phone1"><i class="fa fa-phone"></i> Phone1</label>
+                                        <input type="tel" class="form-control" name="phone1" id="phone1" value="{{ $customerSupport->phone1 }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone2"><i class="fa fa-phone"></i> Phone2</label>
+                                        <input type="tel" class="form-control" name="phone2" id="phone2" value="{{ $customerSupport->phone2 }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email"><i class="fa fa-envelope"></i> Email <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" name="email" id="email" required value="{{ $customerSupport->email }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary w-100 btn-lg font-weight-bold">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

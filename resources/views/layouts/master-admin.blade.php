@@ -116,7 +116,7 @@
 <!-- plugins -->
 <script src="/admin-assets/js/vendors.js"></script>
 <!-- NicEditor WYSEWYG Text Editor -->
-{{--<script src="{{ asset('js/nicEdit.js') }}"></script>--}}
+<script src="{{ asset('js/nicEdit.js') }}"></script>
 <!-- Image Uploader -->
 <script src="{{ asset('js/image-uploader.min.js') }}"></script>
 <!-- custom app -->

@@ -28,9 +28,9 @@
 
                 <div class="col-sm-4 from">
                     <p class="lead marginbottom">From : <span class="companyName">{{ $company->name }}</span></p>
-                    <p>{{ $contactInfo->address }}</p>
-                    <p>Phone: {{ $contactInfo->phone }}</p>
-                    <p>Email: {{ $contactInfo->email }}</p>
+                    <p>{{ $contactInfo!=null? $contactInfo->address:'' }}</p>
+                    <p>Phone: {{ $contactInfo!=null? $contactInfo->phone:'' }}</p>
+                    <p>Email: {{ $contactInfo!=null? $contactInfo->email:'' }}</p>
                 </div>
 
                 <div class="col-sm-4 to">
