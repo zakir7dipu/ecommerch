@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_05_062120_create_subscribe_by_emails_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1601821422h4cnwu.DAC.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/logo-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/subscribe-by-email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/cart-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/cart-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin-dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin-dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/client-home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/client-home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/for-contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/for-contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-nav-aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-nav-head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-nav-head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-client.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,18 +156,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\client-assets\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\client" />
+      <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\admin" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\upload\images\defoult_image" />
+      <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\client" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\js" />
       <recent name="C:\xampp\htdocs\UKUAEBDShopping\public\css" />
-      <recent name="C:\xampp\htdocs\UKUAEBDShopping\resources\views\admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -215,7 +230,12 @@
       <workItem from="1601383424897" duration="15199000" />
       <workItem from="1601470127907" duration="1770000" />
       <workItem from="1601472822207" duration="25000" />
-      <workItem from="1601524506846" duration="18849000" />
+      <workItem from="1601524506846" duration="19048000" />
+      <workItem from="1601558613455" duration="1574000" />
+      <workItem from="1601735434057" duration="3472000" />
+      <workItem from="1601788310743" duration="134000" />
+      <workItem from="1601823692101" duration="2280000" />
+      <workItem from="1601949874118" duration="5204000" />
     </task>
     <servers />
   </component>
@@ -246,10 +266,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1601470199020">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1601828955472">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1601470199020" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1601828955472" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1601540872230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -262,10 +282,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1601524508995">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1601949874508">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1601524508995" />
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1601949874508" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1601392195013">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

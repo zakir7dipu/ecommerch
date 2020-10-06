@@ -65,6 +65,8 @@ class ClientController extends Controller
             $products = Product::all()
                 ->where('status', 1)
                 ->random(12);
+        } elseif ($countProducts >= 0){
+            $products = [];
         } else {
             $products = Product::all()
                 ->where('status', 1)

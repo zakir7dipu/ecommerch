@@ -18,6 +18,7 @@
 {{--    <meta name="rating" content="8 YEARS">--}}
 {{--    <meta name="Language" content="en-us">--}}
 {{--    <meta name="GOOGLEBOT" content="NOARCHIVE">--}}
+    <link rel="shortcut icon" href="/client-assets/images/favicon.png">
     <!-- =====  MOBILE SPECIFICATION  ===== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="viewport" content="width=device-width">
@@ -27,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="/client-assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="/client-assets/css/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="/client-assets/css/owl.carousel.css">
-    <link rel="shortcut icon" href="/client-assets/images/favicon.png">
+
     <link rel="apple-touch-icon" href="/client-assets/images/apple-touch-icon.html">
     <link rel="apple-touch-icon" sizes="72x72" href="/client-assets/images/apple-touch-icon-72x72.html">
     <link rel="apple-touch-icon" sizes="114x114" href="/client-assets/images/apple-touch-icon-114x114.html">
@@ -59,11 +60,15 @@
                                     <img alt="HealthCared" src="{{ asset('upload/images/defoult_image/'.$logo) }}" style="width: 172px; height: 45px;">
                                 </a>
                             </div>
-                            <ul>
-                                <li><i class="fa fa-home"></i> {{ $contactInfo->address }}</li>
-                                <li><i class="fa fa-phone"></i> <a href="tel:{{ $contactInfo->phone }}">{{ $contactInfo->phone }}</a></li>
-                                <li><i class="fa fa-envelope"></i> <a href="mailto:{{ $contactInfo->email }}">{{ $contactInfo->email }}</a></li>
-                            </ul>
+
+                            @if($contactInfo != null)
+                                <ul>
+                                    <li><i class="fa fa-home"></i> {{ $contactInfo->address }}</li>
+                                    <li><i class="fa fa-phone"></i> <a href="tel:{{ $contactInfo->phone }}">{{ $contactInfo->phone }}</a></li>
+                                    <li><i class="fa fa-envelope"></i> <a href="mailto:{{ $contactInfo->email }}">{{ $contactInfo->email }}</a></li>
+                                </ul>
+                            @endif
+
                             <div class="social_icon">
                                 <ul>
                                     @if($facebook->url != null)
@@ -104,10 +109,13 @@
                 <div class="col-md-3">
                     <h6 class="ptb_20">SIGN UP OUR NEWSLETTER</h6>
                     <p class="mt_10 mb_20">For get offers from our favorite brands & get 20% off for next </p>
-                    <div class="form-group">
-                        <input class="mb_20" type="text" placeholder="Enter Your Email Address">
-                        <button class="btn">Subscribe</button>
-                    </div>
+                    <form action="{{ route('client.subscribe') }}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <input class="mb_20" type="text" name="email" placeholder="Enter Your Email Address">
+                            <button type="submit" class="btn">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

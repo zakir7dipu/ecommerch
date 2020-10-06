@@ -43,36 +43,41 @@
                 <!-- contact  -->
                 <div class="row">
                     <div class="col-md-12 col-xs-12 contact">
-                        <div class="location mb_50 d-inline-block float-left col-md-4 col-xs-12">
-                            <h5 class="capitalize mb_20">Our Location</h5>
-                            <div class="address">Office address
-                                <br> {{ $contactInfo->address }}</div>
+                        @if($contactInfo != null)
+                            <div class="location mb_50 d-inline-block float-left col-md-4 col-xs-12">
+                                <h5 class="capitalize mb_20">Our Location</h5>
+                                <div class="address">Office address
+                                    <br> {{ $contactInfo->address }}</div>
 
-                            <a href="tel:{{ $contactInfo->phone }}">
-                                <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
-                            </a>
-
-                            <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{ $contactInfo->email }}" target="_top">{{ $contactInfo->email }}</a></div>
-                        </div>
-
-                        <div class="Career mb_50 d-inline-block float-left col-md-4 col-xs-12">
-                            <h5 class="capitalize mb_20">Customer Care</h5>
-                            @if($customerSupport->phone1 != null)
-                                <a href="tel:{{ $customerSupport->phone1 }}">
+                                <a href="tel:{{ $contactInfo->phone }}">
                                     <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
                                 </a>
-                            @endif
 
-                            @if($customerSupport->phone2 != null)
-                                <a href="tel:{{ $customerSupport->phone2 }}">
-                                    <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
-                                </a>
-                            @endif
+                                <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{ $contactInfo->email }}" target="_top">{{ $contactInfo->email }}</a></div>
+                            </div>
+                        @endif
 
-                            @if($customerSupport->email != null)
-                                <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{ $customerSupport->email }}" target="_top">{{ $customerSupport->email }}</a></div>
-                            @endif
-                        </div>
+                        @if($customerSupport != null)
+                            <div class="Career mb_50 d-inline-block float-left col-md-4 col-xs-12">
+                                <h5 class="capitalize mb_20">Customer Care</h5>
+                                @if($customerSupport->phone1 != null)
+                                    <a href="tel:{{ $customerSupport->phone1 }}">
+                                        <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
+                                    </a>
+                                @endif
+
+                                @if($customerSupport->phone2 != null)
+                                    <a href="tel:{{ $customerSupport->phone2 }}">
+                                        <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
+                                    </a>
+                                @endif
+
+                                @if($customerSupport->email != null)
+                                    <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{ $customerSupport->email }}" target="_top">{{ $customerSupport->email }}</a></div>
+                                @endif
+                            </div>
+                        @endif
+
 {{--                        <div class="Hello mb_50 d-inline-block float-left col-md-4 col-xs-12">--}}
 {{--                            <h5 class="capitalize mb_20">Say Hello</h5>--}}
 {{--                            <div class="address">simply dummy text of the printing and typesetting industry.</div>--}}

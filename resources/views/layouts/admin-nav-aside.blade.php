@@ -75,6 +75,10 @@
                 </ul>
             </li>
 
+            <li class="{{ 'admin/subscribe' == request()->path()? 'active':'' }}">
+                <a href="{{ route('admin.subscribe') }}" aria-expanded="false"><i class="nav-icon zmdi zmdi-shield-check"></i><span class="nav-title"> Subscribe</span></a>
+            </li>
+
             <li class="{{ 'admin/setting' == request()->path()? 'active':'' }}">
                 <a href="{{ route('admin.setting') }}" aria-expanded="false"><i class="nav-icon ion ion-ios-construct"></i><span class="nav-title"> Settings</span></a>
             </li>

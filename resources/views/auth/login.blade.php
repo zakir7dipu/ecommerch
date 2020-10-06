@@ -28,7 +28,7 @@
                 <div class="col-md-12">
                     <div class="p-4">
                         <div class="auth-logo text-center mb-4">
-                            <img src="{{ asset('admin-assets/img/logo-icon.png') }}" alt=""></div>
+                            <img src="{{ asset('upload/images/defoult_image/logo-icon.png') }}" alt=""></div>
                         <h1 class="mb-3 text-18">Sign In</h1>
                         <!-- Notification -->
                         <div class="row">

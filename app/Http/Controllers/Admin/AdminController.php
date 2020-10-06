@@ -17,7 +17,9 @@ use App\Payment;
 use App\Product;
 use App\SocialShareLinks;
 use App\SubCategory;
+use App\SubscribeByEmail;
 use App\TextSlider;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,7 +35,11 @@ class AdminController extends Controller
         $newOrderCount = CustomersOrders::where('status',1)
             ->count();
         $company = Company::find(1);
-        return view('admin.admin-dashboard',compact('newOrderCount','company'));
+        $allOrdersAmount = CustomersOrders::whereMonth('created_at', Carbon::now()->month)->sum('net_price');
+        $deliveredOrdersAmount = CustomersOrders::where('status',3)->whereMonth('created_at', Carbon::now()->month)->sum('net_price');
+        $canceledOrdersAmount = CustomersOrders::where('status',0)->whereMonth('created_at', Carbon::now()->month)->sum('net_price');
+        $pendingOrdersAmount = CustomersOrders::where('status',[1,2])->whereMonth('created_at', Carbon::now()->month)->sum('net_price');
+        return view('admin.admin-dashboard',compact('newOrderCount','company', 'allOrdersAmount', 'deliveredOrdersAmount', 'canceledOrdersAmount', 'pendingOrdersAmount'));
     }
 
     public function product_category()
@@ -192,5 +198,14 @@ class AdminController extends Controller
         $company = Company::find(1);
         $ads = Advertisement::all();
         return view('admin.advertisement',compact('company','newOrderCount','ads'));
+    }
+
+    public function subscribe()
+    {
+        $newOrderCount = CustomersOrders::where('status',1)
+            ->count();
+        $company = Company::find(1);
+        $subscribeMails = SubscribeByEmail::all();
+        return view('admin.subscribe-by-email',compact('company','newOrderCount','subscribeMails'));
     }
 }

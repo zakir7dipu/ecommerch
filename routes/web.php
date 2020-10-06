@@ -62,6 +62,8 @@ Route::get('/search','Client\ClientController@searchProduct')->name('client.sear
 //price filter
 Route::get('/min-max-price','Client\ClientController@getMinMaxPrice')->name('client.min-max-price');
 Route::get('/filter','Client\ClientController@getFilteredProduct')->name('client.product-filter');
+//subscribe by email
+Route::post('subscribe','SubscribeByEmailController@subscribe')->name('client.subscribe');
 
 Auth::routes(['verify'=>true]);
 
@@ -86,6 +88,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin','verified']],funct
     Route::get('/all-new-orders','Admin\AdminController@newOrders')->name('admin.new-order');
     Route::get('/all-orders','Admin\AdminController@allOrders')->name('admin.all-order');
     Route::get('/ad','Admin\AdminController@advertisement')->name('admin.ad');
+    Route::get('/subscribe','Admin\AdminController@subscribe')->name('admin.subscribe');
 
     Route::resource('/category','CategoryController', [
         'only' => ['store', 'edit', 'update']

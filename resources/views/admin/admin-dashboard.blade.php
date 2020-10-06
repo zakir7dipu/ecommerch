@@ -72,7 +72,25 @@
                                             <div id="analytics7"></div>
                                         </div>
                                         <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
-                                            <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>5</h3>
+                                            <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>{{ $allOrdersAmount.' ৳' }}</h3>
+                                            <p>Monthly</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-lg-3">
+                                <div class="p-20">
+                                    <div class="d-flex m-b-10">
+                                        <p class="mb-0 font-regular text-muted font-weight-bold">Total Pending Orders</p>
+                                        <a class="mb-0 ml-auto font-weight-bold" href="javascript:void (0)"><i class="ti ti-more-alt"></i> </a>
+                                    </div>
+                                    <div class="d-block d-sm-flex h-100 align-items-center">
+                                        <div class="apexchart-wrapper">
+                                            <div id="analytics7"></div>
+                                        </div>
+                                        <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
+                                            <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>{{ $pendingOrdersAmount.' ৳' }}</h3>
                                             <p>Monthly</p>
                                         </div>
                                     </div>
@@ -90,12 +108,13 @@
                                             <div id="analytics8"></div>
                                         </div>
                                         <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
-                                            <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>3</h3>
+                                            <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>{{ $deliveredOrdersAmount.' ৳' }}</h3>
                                             <p>Monthly</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-xxl-3 col-lg-3">
                                 <div class="p-20">
                                     <div class="d-flex m-b-10">
@@ -107,26 +126,8 @@
                                             <div id="analytics9"></div>
                                         </div>
                                         <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
-                                            <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>6</h3>
+                                            <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>{{ $canceledOrdersAmount.' ৳' }}</h3>
                                             <p>Monthly</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-3 col-lg-3">
-                                <div class="p-20">
-                                    <div class="d-block d-sm-flex h-100 align-items-center">
-                                        <div class="apexchart-wrapper">
-                                            <div id="analytics10"></div>
-                                        </div>
-                                        <div class="statistics ml-sm-auto mt-4 mt-sm-0 pr-sm-5">
-                                            <ul class="list-style-none p-0">
-                                                <li class="d-flex py-1">
-                                                    <span class="font-regular text-muted font-weight-bold">Business Position</span></li>
-                                                <li class="d-flex py-1"><span><i class="fa fa-circle text-success pr-2"></i> Orders</span> <span class="pl-2 font-weight-bold">34</span></li>
-                                                <li class="d-flex py-1"><span><i class="fa fa-circle text-danger pr-2"></i> Delivered</span> <span class="pl-2 font-weight-bold">15</span></li>
-                                                <li class="d-flex py-1"><span><i class="fa fa-circle text-danger pr-2"></i> Canceled</span> <span class="pl-2 font-weight-bold">15</span></li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
