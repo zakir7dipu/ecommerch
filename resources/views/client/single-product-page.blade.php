@@ -166,11 +166,17 @@
                         <h4 data-name="product_name" class="product-name"><a href="{{ route('client.product',$product->slag) }}" title="Casual Shirt With Ruffle Hem">{{ $product->name }}</a></h4>
 
                         <div class="rating">
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                            @php
+                                $product_review = $product->reviews()->groupBy('id')->max('rating');
+                                $product_fullStar = $product_review;
+                                $product_emptyStar = 5 - $product_review;
+                            @endphp
+                            @for($i = 0; $i < $product_fullStar; $i++)
+                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                            @endfor
+                            @for($i = 0; $i < $product_emptyStar; $i++)
+                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                            @endfor
                         </div>
 
                         <span class="price mb_20">
@@ -239,7 +245,7 @@
                                 <input id="productQty" min="1" value="1" type="number">
                             </div>
                             <div class="button-group mt_30">
-                                <button type="button" class="btn">Buy Now</button>
+{{--                                <button type="button" class="btn">Buy Now</button>--}}
                                 <button type="button" class="btn addTocartSingleProductBtn" style="background-color: #c5c5c5">Add to cart</button>
                             </div>
                         </div>

@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/16019918576ys18d.DAC.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin-dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin-dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/contact-info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contact-info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master-admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/single-product-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/single-product-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/sub_category-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/sub_category-page.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +142,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../order-web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -227,7 +223,8 @@
       <workItem from="1601823692101" duration="2280000" />
       <workItem from="1601949874118" duration="7911000" />
       <workItem from="1601993232175" duration="282000" />
-      <workItem from="1602000168711" duration="3249000" />
+      <workItem from="1602000168711" duration="3300000" />
+      <workItem from="1602035763552" duration="2647000" />
     </task>
     <servers />
   </component>
@@ -258,10 +255,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1602000398774">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1602036949235">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1602000398774" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1602036949235" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1601540872230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

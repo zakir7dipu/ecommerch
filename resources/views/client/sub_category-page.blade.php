@@ -28,28 +28,28 @@
                     @include('layouts.client-nav-sub-category-aside')
                 </div>
 
-                <div class="filter left-sidebar-widget mb_50">
-                    <div class="heading-part mtb_20 ">
-                        <h2 class="main_title">Refine Search</h2>
-                    </div>
-                    <div class="filter-block">
-                        <p>
-                            <label for="amount">Price range:</label>
-                            <input type="text" id="amount" readonly>
-                        </p>
+{{--                <div class="filter left-sidebar-widget mb_50">--}}
+{{--                    <div class="heading-part mtb_20 ">--}}
+{{--                        <h2 class="main_title">Refine Search</h2>--}}
+{{--                    </div>--}}
+{{--                    <div class="filter-block">--}}
+{{--                        <p>--}}
+{{--                            <label for="amount">Price range:</label>--}}
+{{--                            <input type="text" id="amount" readonly>--}}
+{{--                        </p>--}}
 
-                        <div id="slider-range"></div>
-                    </div>
-                    <div class="list-group" style="margin-top: 8px;">
-                        <form action="{{ route('client.product-filter') }}" method="get" class="form-inline">
-                            <div class="form-group">
-                                <input type="hidden" id="getPrices" name="price">
-                                <input type="hidden" name="subcategory" value="{{ $subCategory->id }}">
-                                <button type="submit" class="btn btn-sm filterBtn">Filter</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+{{--                        <div id="slider-range"></div>--}}
+{{--                    </div>--}}
+{{--                    <div class="list-group" style="margin-top: 8px;">--}}
+{{--                        <form action="{{ route('client.product-filter') }}" method="get" class="form-inline">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <input type="hidden" id="getPrices" name="price">--}}
+{{--                                <input type="hidden" name="subcategory" value="{{ $subCategory->id }}">--}}
+{{--                                <button type="submit" class="btn btn-sm filterBtn">Filter</button>--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 <div class="left_banner left-sidebar-widget mt_30 mb_50">
                     <a href="#">
@@ -228,55 +228,55 @@
         }
 
         //price filter
-        $(function () {
-            var id = $('.breadcrumb').attr('id');
-            var minPrice = 0;
-            var maxPrice = 0;
-            $.ajax({
-                type:'Get',
-                url:'/min-max-price',
-                data:{
-                    'id':id
-                },
-                success:function (data) {
-                    var minPrice = data['min'];
-                    var maxPrice = data['max'];
-                    showFilter(minPrice, maxPrice)
-                }
-            });
+        {{--$(function () {--}}
+        {{--    var id = $('.breadcrumb').attr('id');--}}
+        {{--    var minPrice = 0;--}}
+        {{--    var maxPrice = 0;--}}
+        {{--    $.ajax({--}}
+        {{--        type:'Get',--}}
+        {{--        url:'/min-max-price',--}}
+        {{--        data:{--}}
+        {{--            'id':id--}}
+        {{--        },--}}
+        {{--        success:function (data) {--}}
+        {{--            var minPrice = data['min'];--}}
+        {{--            var maxPrice = data['max'];--}}
+        {{--            showFilter(minPrice, maxPrice)--}}
+        {{--        }--}}
+        {{--    });--}}
 
-            function showFilter(minPrice, maxPrice) {
-                var minValue = "{{ $minValue }}"
-                var maxValue = "{{ $maxValue }}"
-                console.log(maxPrice)
-                if(minValue == '' || maxValue == '') {
-                    $("#slider-range").slider({
-                        range: true,
-                        min: minPrice,
-                        max: maxPrice,
-                        values: [minPrice, maxPrice],
-                        slide: function (event, ui) {
-                            $("#amount").val("৳" + ui.values[0] + " - ৳" + ui.values[1]);
-                            $('#getPrices').val(ui.values[0] + ',' + ui.values[1]);
+        {{--    function showFilter(minPrice, maxPrice) {--}}
+        {{--        var minValue = "{{ $minValue }}"--}}
+        {{--        var maxValue = "{{ $maxValue }}"--}}
+        {{--        console.log(maxPrice)--}}
+        {{--        if(minValue == '' || maxValue == '') {--}}
+        {{--            $("#slider-range").slider({--}}
+        {{--                range: true,--}}
+        {{--                min: minPrice,--}}
+        {{--                max: maxPrice,--}}
+        {{--                values: [minPrice, maxPrice],--}}
+        {{--                slide: function (event, ui) {--}}
+        {{--                    $("#amount").val("৳" + ui.values[0] + " - ৳" + ui.values[1]);--}}
+        {{--                    $('#getPrices').val(ui.values[0] + ',' + ui.values[1]);--}}
 
-                        }
-                    });
-                }else {
-                    $("#slider-range").slider({
-                        range: true,
-                        min: minPrice,
-                        max: maxPrice,
-                        values: [minValue, maxValue],
-                        slide: function (event, ui) {
-                            $("#amount").val("৳" + ui.values[0] + " - ৳" + ui.values[1]);
-                            $('#getPrices').val(ui.values[0] + ',' + ui.values[1]);
+        {{--                }--}}
+        {{--            });--}}
+        {{--        }else {--}}
+        {{--            $("#slider-range").slider({--}}
+        {{--                range: true,--}}
+        {{--                min: minPrice,--}}
+        {{--                max: maxPrice,--}}
+        {{--                values: [minValue, maxValue],--}}
+        {{--                slide: function (event, ui) {--}}
+        {{--                    $("#amount").val("৳" + ui.values[0] + " - ৳" + ui.values[1]);--}}
+        {{--                    $('#getPrices').val(ui.values[0] + ',' + ui.values[1]);--}}
 
-                        }
-                    });
-                }
-                $("#amount").val("৳ " + $("#slider-range").slider("values", 0) +
-                    " - ৳ " + $("#slider-range").slider("values", 1));
-            }
-        })
+        {{--                }--}}
+        {{--            });--}}
+        {{--        }--}}
+        {{--        $("#amount").val("৳ " + $("#slider-range").slider("values", 0) +--}}
+        {{--            " - ৳ " + $("#slider-range").slider("values", 1));--}}
+        {{--    }--}}
+        {{--})--}}
     </script>
 @endsection
