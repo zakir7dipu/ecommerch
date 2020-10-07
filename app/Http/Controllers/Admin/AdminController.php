@@ -38,7 +38,7 @@ class AdminController extends Controller
         $allOrdersAmount = CustomersOrders::whereMonth('created_at', Carbon::now()->month)->sum('net_price');
         $deliveredOrdersAmount = CustomersOrders::where('status',3)->whereMonth('created_at', Carbon::now()->month)->sum('net_price');
         $canceledOrdersAmount = CustomersOrders::where('status',0)->whereMonth('created_at', Carbon::now()->month)->sum('net_price');
-        $pendingOrdersAmount = CustomersOrders::where('status',[1,2])->whereMonth('created_at', Carbon::now()->month)->sum('net_price');
+        $pendingOrdersAmount = CustomersOrders::where('status',1,2)->whereMonth('created_at', Carbon::now()->month)->sum('net_price');
         return view('admin.admin-dashboard',compact('newOrderCount','company', 'allOrdersAmount', 'deliveredOrdersAmount', 'canceledOrdersAmount', 'pendingOrdersAmount'));
     }
 

@@ -961,7 +961,4 @@
         });
     }
 
-    // nicEditor
-    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-
 })(window, document, window.jQuery);

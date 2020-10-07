@@ -41,7 +41,7 @@
 <!-- =====  LODER  ===== -->
 <div class="loder"></div>
 <div class="wrapper">
-    @include('client.popup-adverts')
+{{--    @include('client.popup-adverts')--}}
     <!-- =====  HEADER START  ===== -->
     @include('layouts.client-nav-head')
     <!-- =====  HEADER END  ===== -->

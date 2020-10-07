@@ -72,9 +72,9 @@ class CustomersOrdersController extends Controller
             'payment_type' => $request->paymentMethod,
             'payment_phone' => $request->payment_phone,
             'payment_ref' => $request->trxid,
-            'subtotal' => $cartSubtotal,
-            'tax' => $cartTax,
-            'net_price' => $cartNet,
+            'subtotal' => str_replace(',','',$cartSubtotal),
+            'tax' =>  str_replace(',','',$cartTax),
+            'net_price' => str_replace(',','',$cartNet),
             'order_time' => $request->order_time,
             'order_date' => date('Y/m/d', time()),
         ];

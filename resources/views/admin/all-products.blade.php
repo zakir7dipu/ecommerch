@@ -95,7 +95,7 @@
                                 <td>{{ $i }}</td>
                                 <td>{{ $subcotegory->name }}</td>
                                 <td><img src="{{ asset('upload/images/category_images/'.$product->image) }}" alt="{{ $product->name }}" style="width: 60px; height: 40px;" class="img-fluid"></td>
-                                <td>{{ $product->price }}.00/-৳</td>
+                                <td>{{ $product->price }}/-৳</td>
                                 <td>{{ $product->discount }}{{ $product->discount != null? '%':'Not Added' }}</td>
                                 <td>
                                     {{ substr($product->name,0,20) }}

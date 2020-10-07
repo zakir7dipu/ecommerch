@@ -2,6 +2,20 @@
 
 @section('page-css')
     <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
+    <style>
+        .tox-notifications-container {display: none !important;}
+    </style>
+    <script src="{{ asset('js/tinymce.min.js') }}" referrerpolicy="origin"></script>
+
+    <script>
+        tinymce.init({
+            selector:'textarea',
+            plugins: "code link lists preview emoticons",
+            menubar: 'edit',
+            toolbar: 'bold italic underline | forecolor emoticons | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
+                // | code link preview'
+        });
+    </script>
 @endsection
 
 @section('content')
