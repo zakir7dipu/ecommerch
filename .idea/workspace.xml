@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/cart-page-calculation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomersOrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomersOrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/cart-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/cart-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/client-nav-head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/client-nav-head.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +147,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../order-web" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -224,7 +231,13 @@
       <workItem from="1602000168711" duration="3300000" />
       <workItem from="1602035763552" duration="2909000" />
       <workItem from="1602074580899" duration="723000" />
-      <workItem from="1602076271247" duration="4819000" />
+      <workItem from="1602076271247" duration="5242000" />
+      <workItem from="1602152303420" duration="600000" />
+      <workItem from="1602154091230" duration="88000" />
+      <workItem from="1602157056131" duration="558000" />
+      <workItem from="1602157725567" duration="15000" />
+      <workItem from="1602157899957" duration="151000" />
+      <workItem from="1602214327550" duration="9204000" />
     </task>
     <servers />
   </component>
@@ -255,14 +268,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1602081379173">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1602216476988">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1602081379173" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1602216476988" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1601540872230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="594" y="264" key="NewPhpClassDialog/0.0.1600.860@0.0.1600.860" timestamp="1601540872230" />
+    <state x="303" y="75" key="SettingsEditor" timestamp="1602220514183">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="303" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1602220514183" />
     <state width="567" height="446" key="SwitcherDM" timestamp="1600613799571">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -271,14 +288,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1602076271687">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1602214347408">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1602076271687" />
-    <state x="456" y="195" key="run.anything.popup" timestamp="1601392195013">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1602214347408" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1602218962123">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1601392195013" />
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1602218962123" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1601391350561">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

@@ -88,7 +88,7 @@ class CustomersOrdersController extends Controller
                 'name' => $cart->name,
                 'qty' => $cart->qty,
                 'image' => $cart->options->image,
-                'price' => $cart->price * $cart->qty,
+                'price' => $cart->price,
             ];
             $orderedProductId = OrderedProduct::create($orderedProduct)->id;
 

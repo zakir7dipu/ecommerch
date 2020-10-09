@@ -25,7 +25,6 @@
             </div>
             <hr>
             <div class="row">
-
                 <div class="col-sm-4 from">
                     <p class="lead marginbottom">From : <span class="companyName">{{ $company->name }}</span></p>
                     <p>{{ $contactInfo!=null? $contactInfo->address:'' }}</p>
@@ -74,6 +73,7 @@
                             $i++;
                         @endphp
                         @if($i < count($order->ordered_products))
+                            {{ $item }}
                         <tr>
                             <td class="text-center">{{ $i }}</td>
                             <td>{{ $item->name }}
@@ -86,6 +86,7 @@
                                 @endforeach
                             </td>
                             <td class="text-right">{{ $item->qty }}</td>
+
                             <td class="text-right">{{ $item->price . '/-৳' }}</td>
                             <td class="text-right">{{ $item->price*$item->qty . '/-৳' }}</td>
                         </tr>

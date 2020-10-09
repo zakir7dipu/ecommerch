@@ -62,7 +62,7 @@
 
                                         <td class="text-left">
                                             <div style="max-width: 200px;" class="input-group btn-block">
-                                                <input type="text" class="form-control quantity" size="1" value="{{ $cartItem->qty }}" name="quantity">
+                                                <input type="number" class="form-control quantity" value="{{ $cartItem->qty }}" name="quantity">
                                                 <span class="input-group-btn">
                                             <button type="submit" class="btn" title="" data-toggle="tooltip" type="submit" data-original-title="Update"><i class="fa fa-refresh"></i></button>
 
@@ -72,8 +72,8 @@
                                         </span>
                                             </div>
                                         </td>
-                                        <td class="text-right">{{ $cartItem->price }}.00৳</td>
-                                        <td class="text-right">{{ $cartItem->price*$cartItem->qty }}.00৳</td>
+                                        <td class="text-right unitPrice">{{ $cartItem->price }}.00৳</td>
+                                        <td class="text-right totalPrice">{{ $cartItem->price*$cartItem->qty }}.00৳</td>
                                     </tr>
                                 </form>
                             @endforeach
@@ -88,7 +88,7 @@
                             <tbody>
                             <tr>
                                 <td class="text-right"><strong>Sub-Total:</strong></td>
-                                <td class="text-right">{{ Cart::subtotal() }}৳</td>
+                                <td class="text-right subTotal">{{ Cart::subtotal() }}৳</td>
                             </tr>
 
 {{--                            <tr>--}}
@@ -97,13 +97,13 @@
 {{--                            </tr>--}}
 
                             <tr>
-                                <td class="text-right"><strong>VAT (15%):</strong></td>
-                                <td class="text-right">{{ Cart::tax() }}৳</td>
+                                <td class="text-right"><strong>VAT (<span class="textRet">15</span>%):</strong></td>
+                                <td class="text-right taxTotal">{{ Cart::tax() }}৳</td>
                             </tr>
 
                             <tr>
                                 <td class="text-right"><strong>Total:</strong></td>
-                                <td class="text-right">{{ Cart::total() }}৳</td>
+                                <td class="text-right netTotal">{{ Cart::total() }}৳</td>
                             </tr>
                             </tbody>
                         </table>
@@ -144,5 +144,5 @@
 @endsection
 
 @section('page-script')
-
+    <script src="{{ asset('js/cart-page-calculation.js') }}"></script>
 @endsection

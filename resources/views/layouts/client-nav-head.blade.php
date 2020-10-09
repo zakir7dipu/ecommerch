@@ -32,7 +32,8 @@
 
                                                         <span class="text-left price">{{ $cartItem->price*$cartItem->qty }}.00৳</span>
 
-                                                        <input class="cart-qty" name="product_quantity" min="1" value="{{ $cartItem->qty }}" type="number">
+                                                        <h6 class="text-left font-weight-bold">{{ 'QTY: '. $cartItem->qty }}</h6>
+{{--                                                        <input class="cart-qty" name="product_quantity" min="1" value="{{ $cartItem->qty }}" type="number">--}}
                                                     </td>
                                                     <td class="text-center">
                                                         <a href="{{ route('addToCart.delete',$cartItem->rowId) }}" class="close-cart">
