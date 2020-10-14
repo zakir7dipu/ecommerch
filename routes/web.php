@@ -40,7 +40,7 @@ Route::post('/cart-update/{rowId}','AddToCartController@update')->name('cart.upd
 //checkout
 Route::get('/checkout','Client\ClientController@checkout_page')->name('client.checkout');
 //show payment info
-Route::get('/payment-info/{payment}','CompanyController@payment_info')->name('client.payment-info');
+Route::get('/payment-info/{payment}','Client\ClientController@payment_info')->name('client.payment-info');
 //review
 Route::post('/review/{product}','ReviewController@store')->name('review.store');
 //adout us

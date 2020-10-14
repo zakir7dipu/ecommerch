@@ -50,7 +50,7 @@
                                     <br> {{ $contactInfo->address }}</div>
 
                                 <a href="tel:{{ $contactInfo->phone }}">
-                                    <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
+                                    <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $contactInfo->phone }}</div>
                                 </a>
 
                                 <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:{{ $contactInfo->email }}" target="_top">{{ $contactInfo->email }}</a></div>
@@ -62,7 +62,7 @@
                                 <h5 class="capitalize mb_20">Customer Care</h5>
                                 @if($customerSupport->phone1 != null)
                                     <a href="tel:{{ $customerSupport->phone1 }}">
-                                        <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone2 }}</div>
+                                        <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>{{ $customerSupport->phone1 }}</div>
                                     </a>
                                 @endif
 

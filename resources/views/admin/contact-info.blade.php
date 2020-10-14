@@ -104,7 +104,7 @@
                                         <input type="tel" class="form-control" name="phone1" id="phone1" value="{{ $customerSupport->phone1 }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="phone2"><i class="fa fa-phone"></i> Phone2</label>
+                                        <label for="phone2"><i class="fa fa-phone"></i> Phone2 <span class="text-muted">(Optional)</span></label>
                                         <input type="tel" class="form-control" name="phone2" id="phone2" value="{{ $customerSupport->phone2 }}">
                                     </div>
                                     <div class="form-group">

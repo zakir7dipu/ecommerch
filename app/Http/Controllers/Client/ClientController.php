@@ -15,6 +15,7 @@ use App\GetReviewProducts;
 use App\Http\Controllers\Controller;
 use App\MainBannerScroll;
 use App\MenuSlider;
+use App\Payment;
 use App\Product;
 use App\ProductFilter;
 use App\ProductSearch;
@@ -393,6 +394,11 @@ class ClientController extends Controller
         $products = $result->getSearchRuselt($query)->paginate(8);
 
         return view('client.search-product-page',compact('categories','collections','logo','menu_sliders','contactInfo', 'customerSupport','cartCount','cartItems','company','banners','facebook','instagram','whatsapp', 'metaTitles', 'ads','pinterest', 'reviewProducts', 'countProducts', 'products'));
+    }
+
+    public function payment_info(Payment $payment)
+    {
+        return response()->json($payment);
     }
 
     public function getMinMaxPrice(Request $request)

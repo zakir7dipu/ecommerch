@@ -70,11 +70,10 @@ class CompanyController extends Controller
         $payment->type = $request->type;
         $payment->save();
         return back()->withMessage($payment->name . ' Updated syccessfully');
-//        dd($request);
     }
 
-    public function payment_info(Payment $payment)
-    {
-        return response()->json($payment);
-    }
+//    public function payment_info(Payment $payment)
+//    {
+//        return response()->json($payment);
+//    }
 }

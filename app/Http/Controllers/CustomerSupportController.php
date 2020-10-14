@@ -23,9 +23,11 @@ class CustomerSupportController extends Controller
             ]);
         }
         if ($request->has('phone2')){
-            $this->validate($request,[
-                'phone2' => ['required', 'string', 'min:11', 'max:14'],
-            ]);
+            if ($request->phone2 != null){
+                $this->validate($request,[
+                    'phone2' => ['required', 'string', 'min:11', 'max:14'],
+                ]);
+            }
         }
 
         $customerSupport = CustomerSupport::all();
@@ -44,7 +46,5 @@ class CustomerSupportController extends Controller
             $info->save();
         }
         return back()->withMessage('Customer Support Info Saved Successfully');
-
-//        dd($request);
     }
 }
