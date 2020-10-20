@@ -30,7 +30,7 @@
                                                     <td class="text-left product-name">
                                                         <a href="{{ route('client.product',$cartItem->options->slag) }}">{{ substr($cartItem->name,0,10) }}....</a>
 
-                                                        <span class="text-left price">{{ $cartItem->price*$cartItem->qty }}.00৳</span>
+                                                        <span class="text-left price">{{ number_format($cartItem->price*$cartItem->qty, '2', '.', ','). '৳' }}</span>
 
                                                         <h6 class="text-left font-weight-bold">{{ 'QTY: '. $cartItem->qty }}</h6>
 {{--                                                        <input class="cart-qty" name="product_quantity" min="1" value="{{ $cartItem->qty }}" type="number">--}}

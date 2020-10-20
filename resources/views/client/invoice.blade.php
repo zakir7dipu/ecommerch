@@ -73,7 +73,7 @@
                             $i++;
                         @endphp
                         @if($i < count($order->ordered_products))
-                            {{ $item }}
+{{--                            {{ $item }}--}}
                         <tr>
                             <td class="text-center">{{ $i }}</td>
                             <td>{{ $item->name }}
@@ -87,16 +87,16 @@
                             </td>
                             <td class="text-right">{{ $item->qty }}</td>
 
-                            <td class="text-right">{{ $item->price . '/-৳' }}</td>
-                            <td class="text-right">{{ $item->price*$item->qty . '/-৳' }}</td>
+                            <td class="text-right">{{ number_format($item->price, 2, '.', ','). '৳' }}</td>
+                            <td class="text-right">{{ number_format( $item->price*$item->qty, 2, '.', ','). '৳' }}</td>
                         </tr>
                         @else
                         <tr class="last-row">
                             <td class="text-center">{{ $i }}</td>
                             <td>{{ $item->name }}</td>
                             <td class="text-right">{{ $item->qty }}</td>
-                            <td class="text-right">{{ $item->price . '/-৳' }}</td>
-                            <td class="text-right">{{ $item->price*$item->qty . '/-৳' }}</td>
+                            <td class="text-right">{{ number_format($item->price, 2, '.', ','). '৳' }}</td>
+                            <td class="text-right">{{ number_format( $item->price*$item->qty, 2, '.', ','). '৳' }}</td>
                         </tr>
                         @endif
                     @endforeach
@@ -116,8 +116,8 @@
                 <div class="col-xs-6 text-right pull-right invoice-total">
                     <p>Subtotal : {{ $order->subtotal . '/-৳' }}</p>
 {{--                    <p>Discount (10%) : {{ '৳'. $order->subtotal }} </p>--}}
-                    <p>VAT (15%) : {{ $order->tax . '/-৳' }} </p>
-                    <p>Total : {{ $order->net_price . '/-৳' }} </p>
+                    <p>VAT (15%) : {{ number_format( $order->tax, 2, '.', ','). '/-৳' }}</p>
+                    <p>Total : {{ number_format($order->net_price, 2, '.', ',') . '/-৳' }} </p>
                 </div>
             </div>
 

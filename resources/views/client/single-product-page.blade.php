@@ -81,8 +81,8 @@
                 </div>
 
                 <div class="left-special left-sidebar-widget mb_50">
-                    <div class="heading-part mb_20">
-                        <h2 class="main_title" style="margin-bottom: 1px;">Top Products</h2>
+                    <div class="heading-part mb_20 ">
+                        <h2 class="main_title">Top Products</h2>
                     </div>
                     <div id="left-special" class="owl-carousel">
                         <ul class="row ">
@@ -127,10 +127,13 @@
                                                         @php
                                                             $price = $reviewProduct->price - ($reviewProduct->price*$reviewProduct->discount)/100;
                                                         @endphp
-                                                        {{ str_replace('.00','',$price) }}.00৳
-                                                        <del style="color: red;">{{ str_replace('.00','',$reviewProduct->price) }}.00৳</del>
+                                                        {{--                                                        {{ str_replace('.00','',$price) }}.00৳--}}
+                                                        {{ number_format($price, 2, '.', ','). '৳' }}
+                                                        {{--                                                        <del style="color: red;">{{ str_replace('.00','',$reviewProduct->price) }}.00৳</del>--}}
+                                                        <del style="color: red;">{{ number_format($reviewProduct->price, 2, '.', ','). '৳' }}</del>
                                                     @else
-                                                        {{ str_replace('.00','',$reviewProduct->price) }}.00৳
+                                                        {{--                                                        {{ str_replace('.00','',$reviewProduct->price) }}.00৳--}}
+                                                        {{ number_format($reviewProduct->price, 2, '.', ','). '৳' }}
                                                     @endif
                                                     {{--                                                    {{ $reviewProduct->price }}<span class="currencySymbol">.00৳</span>--}}
                                                 </span>
@@ -185,10 +188,10 @@
                                     @php
                                         $price = $product->price - ($product->price*$product->discount)/100;
                                     @endphp
-                                    <span>{{ str_replace('.00','',$price) }}.00৳</span>
-                                    <span class="cross">{{ str_replace('.00','',$product->price) }}.00৳</span>
+                                    <span>{{ number_format($price, 2, '.', ','). '৳' }}</span>
+                                    <span class="cross">{{ number_format($product->price, 2, '.', ','). '৳' }}</span>
                                 @else
-                                    <span>{{ str_replace('.00','',$product->price) }}.00৳</span>
+                                    <span>{{ number_format($product->price, 2, '.', ','). '৳' }}</span>
                                 @endif
                             </span>
                         </span>
@@ -332,10 +335,10 @@
                                             @php
                                                 $price = $row->price - ($row->price*$row->discount)/100;
                                             @endphp
-                                            {{ str_replace('.00','',$price) }}.00৳
-                                            <span>{{ str_replace('.00','',$row->price) }}.00৳</span>
+                                            {{ number_format($price, 2, '.', ','). '৳' }}
+                                            <span>{{ number_format($row->price, 2, '.', ','). '৳' }}</span>
                                         @else
-                                            {{ str_replace('.00','',$row->price) }}.00৳
+                                            {{ number_format($row->price, 2, '.', ','). '৳' }}
                                         @endif
                                     </div>
                                 </div>

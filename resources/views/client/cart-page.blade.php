@@ -72,8 +72,8 @@
                                         </span>
                                             </div>
                                         </td>
-                                        <td class="text-right unitPrice">{{ $cartItem->price }}.00৳</td>
-                                        <td class="text-right totalPrice">{{ $cartItem->price*$cartItem->qty }}.00৳</td>
+                                        <td class="text-right unitPrice">{{ number_format($cartItem->price, '2', '.', ',')  }}৳</td>
+                                        <td class="text-right totalPrice">{{ number_format($cartItem->price*$cartItem->qty, '2', '.', ',')  }}৳</td>
                                     </tr>
                                 </form>
                             @endforeach

@@ -164,7 +164,7 @@
                                 </div>
                                 <span class="text-muted">QTY: {{ $cartItem->qty }}</span>
                                 <br>
-                                <span class="text-muted">Price: {{ $cartItem->price*$cartItem->qty }}.00৳</span>
+                                <span class="text-muted">Price: {{ number_format($cartItem->price*$cartItem->qty, '2', '.', ',') }}৳</span>
                             </li>
                             @endforeach
 

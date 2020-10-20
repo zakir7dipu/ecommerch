@@ -75,10 +75,13 @@
                                                         @php
                                                             $price = $reviewProduct->price - ($reviewProduct->price*$reviewProduct->discount)/100;
                                                         @endphp
-                                                        {{ str_replace('.00','',$price) }}.00৳
-                                                        <del style="color: red;">{{ str_replace('.00','',$reviewProduct->price) }}.00৳</del>
+                                                        {{--                                                        {{ str_replace('.00','',$price) }}.00৳--}}
+                                                        {{ number_format($price, 2, '.', ','). '৳' }}
+                                                        {{--                                                        <del style="color: red;">{{ str_replace('.00','',$reviewProduct->price) }}.00৳</del>--}}
+                                                        <del style="color: red;">{{ number_format($reviewProduct->price, 2, '.', ','). '৳' }}</del>
                                                     @else
-                                                        {{ str_replace('.00','',$reviewProduct->price) }}.00৳
+                                                        {{--                                                        {{ str_replace('.00','',$reviewProduct->price) }}.00৳--}}
+                                                        {{ number_format($reviewProduct->price, 2, '.', ','). '৳' }}
                                                     @endif
                                                     {{--                                                    {{ $reviewProduct->price }}<span class="currencySymbol">.00৳</span>--}}
                                                 </span>
@@ -119,10 +122,13 @@
                                             @php
                                                 $price = $product->price - ($product->price*$product->discount)/100;
                                             @endphp
-                                            {{ str_replace('.00','',$price) }}.00৳
-                                            <span>{{ str_replace('.00','',$product->price) }}.00৳</span>
+                                            {{--                                                {{ str_replace('.00','',$price) }}.00৳--}}
+                                            {{ number_format($price, 2, '.', ','). '৳' }}
+                                            {{--                                                <span>{{ str_replace('.00','',$product->price) }}.00৳</span>--}}
+                                            <span>{{ number_format($product->price, 2, '.', ','). '৳' }}</span>
                                         @else
-                                            {{ str_replace('.00','',$product->price) }}.00৳
+                                            {{--                                                {{ str_replace('.00','',$product->price) }}.00৳--}}
+                                            {{ number_format($product->price, 2, '.', ','). '৳' }}
                                         @endif
                                     </div>
                                 </div>
