@@ -64,6 +64,10 @@ Route::get('/min-max-price','Client\ClientController@getMinMaxPrice')->name('cli
 Route::get('/filter','Client\ClientController@getFilteredProduct')->name('client.product-filter');
 //subscribe by email
 Route::post('subscribe','SubscribeByEmailController@subscribe')->name('client.subscribe');
+// ads.txr
+Route::get('/ads.txt',function (){
+    return view('ads-txt');
+});
 
 Auth::routes(['verify'=>true]);
 

@@ -2,173 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/upload/images/advertise_image/1602489119mknv6u.DAC-ad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/advertise_image/1602489388bjwhgr.DAC-ad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/advertise_image/16024899241qlvp3.DAC-ad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/advertise_image/1602492121fcylmw.DAC-ad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/advertise_image/16024923307x3zmh.DAC-ad.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/advertise_image/1602492453imfdea.DAC-ad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/advertise_image/1602492757ib9rpu.DAC-ad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/15985919150wvf2d.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598592279bt0ckf.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598592417514963.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598592548s9lahx.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598592840ltj1nf.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598593191ri1wxn.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598593540sqeojw.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598593612g2trvj.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/15985937640gbdlv.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598593855rb8im0.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598594063l4mepo.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598594169h8andl.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598594319ug6wyt.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/15985944376q530k.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598594570byzjfn.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598594713t893l6.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598595375toq2ka.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/15985954742t3gsh.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598595587rylemo.DAC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598595681t6y5i9.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598684490dnubwa.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1598808046xaj749.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1601013509c295in.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1601089120qx3ywj.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1601821422h4cnwu.DAC.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1601985409b0pqaz.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602126907x93hoq.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602127176mytnre.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602253420vex0hc.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602266055qnedki.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602269922u34h5n.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602271895gabsl3.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602493467efnzq2.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602493586i6fqha.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602494633pxe9w1.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1602495026qd09h2.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603038619b3vzi0.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603039431eak8xg.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603039742jahszv.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603040087rgin3s.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603040342jv94as.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/160304298075320v.DAC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603044145x5fst6.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603044413o7ur21.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603044637jucoya.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603044938l2u0tw.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603045206u716bn.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603045968dca1xz.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603046220atdnv5.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603047265w9vbt8.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603047535movgfn.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603047693gvnzo6.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603048195a7umyp.DAC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603048919ps5ctl.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603049246t1ngj3.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603049556uszwc7.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603049812uaes6g.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/160314999979tzua.DAC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603165658tednvj.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/1603176271ktx1fo.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/category_images/16031777748lmchg.DAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/1601297474hypc40.banner-image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/16012974877i182a.banner-image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/1601297509t5pbhu.Menu-Slider1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/1602491803s2izbf.banner-image3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/16024919574r7deg.Menu-Slider2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/160249202828cyru.Menu-Slider3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/1602915757w20xij.logo-image.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/ads-txt.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/advertise_image/16013134167i90cy.DAC-ad.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/advertise_image/1601998686djaypv.DAC-ad.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020008357vxdpg.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020065927xkzyp.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602007533legvfb.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602007795086jts.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602007958edli5c.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020081018a3v72.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602008419e1qhzj.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020090033udthb.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602009751o04bys.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020100833fxq5o.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602010264d8g1yu.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602010375lpzr42.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602010423ou18lj.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602010707uy95qa.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602010962o8q4h0.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602011442edl2bv.DAC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020627133hegyn.DAC.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602063609qnmo3i.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602063679ge3yan.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020637517gen1b.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602064049ci36ef.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020641126v1jh7.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602064228in7yr4.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020642711ytox2.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602064547jl4f2o.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602064736irw4ve.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065079o7p4qx.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065196b253v9.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065261hpaluw.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065397d5jrha.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065468if29ec.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065526b1crep.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065580na1072.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065637dg7oa3.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065703f4mcpb.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602065791d1vihz.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020660706r4v8u.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602066155tx2dy1.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602066372531cbx.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602066454vrb8tc.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602066702sfbkir.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602067028bxiagh.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020671749enfiv.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602067311xpvtjs.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602067493e03skq.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020675931o5g9m.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020677388klh2j.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/160206786432zat6.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16020680645m7zvb.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602068154wg2e96.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602076913zh8qt4.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602099478qt0wfx.DAC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602099653usj3ov.DAC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602100053jbam6t.DAC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602100271vs63q0.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602100374vr40t8.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602100441wjzhc1.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602100521i862u4.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602101073onkygr.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16021012029cn1as.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602101887nz08ij.DAC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16021030239fv07t.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602103389ha9yem.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16021034963njdxc.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602103663myihqn.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602103924vpu5b1.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602104407ipmkl0.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602105726o2gn5a.DAC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16021058593iegdu.DAC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/16021060562ikeql.DAC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/category_images/1602106688jp4exs.DAC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1601998539oedasn.banner-image1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/16019987248bkq9a.banner-image2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1601998791zpj0ed.banner-image3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1601998835flp6tw.Menu-Slider1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1601998859etlo6k.Menu-Slider2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1601998922b3q8x2.logo-image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/1601998947okrub3.Menu-Slider3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/images/defoult_image/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/images/defoult_image/importexport_logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/cart-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/cart-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/category-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/category-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/checkout-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/checkout-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/client-home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/client-home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/invoice.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/search-product-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/search-product-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/single-product-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/single-product-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/sub_category-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/sub_category-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/client-nav-head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/client-nav-head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +142,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../order-web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
@@ -408,7 +244,17 @@
       <workItem from="1602966796670" duration="2196000" />
       <workItem from="1602994675527" duration="429000" />
       <workItem from="1603165545067" duration="635000" />
-      <workItem from="1603210612963" duration="5966000" />
+      <workItem from="1603210612963" duration="6032000" />
+      <workItem from="1603286257384" duration="101000" />
+      <workItem from="1603375884665" duration="676000" />
+      <workItem from="1604992369242" duration="225000" />
+      <workItem from="1605024595202" duration="10000" />
+      <workItem from="1605273722867" duration="403000" />
+      <workItem from="1605274277606" duration="631000" />
+      <workItem from="1605499694682" duration="2728000" />
+      <workItem from="1605712136912" duration="46000" />
+      <workItem from="1607321276761" duration="95000" />
+      <workItem from="1607431065689" duration="166000" />
     </task>
     <servers />
   </component>
@@ -439,10 +285,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1603211729455">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1605024603761">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1603211729455" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1605024603761" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1601540872230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -459,10 +305,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1602994676661">
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1605024596446">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1602994676661" />
+    <state x="523" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1605024596446" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1602218962123">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
