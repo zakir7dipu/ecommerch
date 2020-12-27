@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2020 at 08:14 PM
+-- Generation Time: Dec 27, 2020 at 05:48 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -61,14 +61,14 @@ CREATE TABLE `advertisements` (
 --
 
 INSERT INTO `advertisements` (`id`, `name`, `image`, `embed_code`, `created_at`, `updated_at`) VALUES
-(1, 'add1', '16013134167i90cy.DAC-ad.jpg', NULL, '2020-09-28 10:33:30', '2020-09-28 11:16:56'),
-(9, 'add2', NULL, '<iframe width=\"300\" height=\"400\" src=\"https://www.youtube.com/embed/NFnmfsNe_nk\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', NULL, '2020-09-28 11:34:43'),
-(10, 'add3', '1601313592deh1t6.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:19:52'),
-(11, 'add4', '1601313617boz9kx.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:20:17'),
-(12, 'add5', '1601313689y1pebv.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:21:30'),
-(13, 'add6', '160131375409kr4a.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:22:34'),
+(1, 'add1', NULL, '<iframe width=\"300\" height=\"400\" src=\"https://www.youtube.com/embed/7FA84Ms9eIE\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '2020-09-28 10:33:30', '2020-10-12 12:07:54'),
+(9, 'add2', '16024899241qlvp3.DAC-ad.png', NULL, NULL, '2020-10-12 12:05:24'),
+(10, 'add3', '1602489388bjwhgr.DAC-ad.jpg', NULL, NULL, '2020-10-12 11:56:28'),
+(11, 'add4', '1602492121fcylmw.DAC-ad.jpg', NULL, NULL, '2020-10-12 12:42:02'),
+(12, 'add5', '16024923307x3zmh.DAC-ad.jpeg', NULL, NULL, '2020-10-12 12:45:30'),
+(13, 'add6', '1602492453imfdea.DAC-ad.jpg', NULL, NULL, '2020-10-12 12:47:33'),
 (14, 'add7', '16013138058gtc0v.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:23:26'),
-(15, 'add8', '1601313869gz86xy.DAC-ad.jpg', NULL, NULL, '2020-09-28 11:24:29');
+(15, 'add8', '1602492757ib9rpu.DAC-ad.jpg', NULL, NULL, '2020-10-12 12:52:37');
 
 -- --------------------------------------------------------
 
@@ -129,8 +129,7 @@ CREATE TABLE `all_countries_company` (
 --
 
 INSERT INTO `all_countries_company` (`id`, `company_id`, `all_countries_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, NULL, NULL),
-(6, 1, 4, NULL, NULL);
+(1, 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -152,11 +151,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `index`, `category_slag`, `created_at`, `updated_at`) VALUES
-(1, 'Cosmetics', 1, '1598542157CosmeticsODHEu', '2020-08-27 09:29:17', '2020-09-28 06:32:08'),
-(2, 'Health Care', 4, '1598542194Health_CareqmITH', '2020-08-27 09:29:54', '2020-09-15 10:27:46'),
-(3, 'Men\'s Cloths', 2, '1598542234Men\'s_Cloths0Lly5', '2020-08-27 09:30:34', '2020-09-28 06:32:08'),
-(4, 'Women\'s Cloths', 5, '1598542270Women\'s_ClothsIwU6V', '2020-08-27 09:31:10', '2020-09-15 10:27:46'),
-(5, 'Kids', 3, '1598542293Kids3Q0e4', '2020-08-27 09:31:33', '2020-09-28 06:32:08');
+(2, 'Cosmetics', 1, '1601984854Cosmetics8JIdb', '2020-10-06 15:47:34', '2020-10-20 03:35:30'),
+(4, 'Health Care', 2, '1602126252Health_CareS96Ue', '2020-10-08 07:04:12', '2020-10-08 07:04:12'),
+(5, 'Fashion', 3, '1602127374FashiontYkij', '2020-10-08 07:22:54', '2020-10-08 07:22:54'),
+(6, 'Electronics', 4, '1602488610ElectronicsRGH84', '2020-10-12 11:43:30', '2020-10-12 11:43:30'),
+(7, 'Food & Beverage', 5, '1602488773Food_&_BeveragehkCzl', '2020-10-12 11:46:13', '2020-10-12 11:46:13');
 
 -- --------------------------------------------------------
 
@@ -178,7 +177,30 @@ CREATE TABLE `companies` (
 --
 
 INSERT INTO `companies` (`id`, `name`, `expire_date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'HealthCare', '2020/10/28', 1, '2020-09-20 01:53:47', '2020-09-28 08:29:54');
+(1, 'London Dubai Shopping.', '2021/04/05', 1, '2020-09-20 01:53:47', '2020-10-06 22:00:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company_payment`
+--
+
+CREATE TABLE `company_payment` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `payment_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `company_payment`
+--
+
+INSERT INTO `company_payment` (`id`, `company_id`, `payment_id`, `created_at`, `updated_at`) VALUES
+(5, 1, 2, NULL, NULL),
+(7, 1, 1, NULL, NULL),
+(8, 1, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -200,7 +222,7 @@ CREATE TABLE `contact_infos` (
 --
 
 INSERT INTO `contact_infos` (`id`, `address`, `phone`, `email`, `created_at`, `updated_at`) VALUES
-(1, '58/6, Dogormura', '01764470022', 'zakir_dipu@yahoo.com', '2020-09-17 23:37:28', '2020-09-17 23:40:15');
+(1, 'কারকন রোড (ইলিয়াস ব্রাদাস), রাহাত্তার পুল, 6 নং পূর্ব ষোল শহর, চট্টগ্রাম।                                        Suite 4, 2nd floor,  108 whitechapel road, London, E1 1JD', '+8801767911397', 'rasel.md.bd@gmail.com', '2020-10-06 15:35:57', '2020-10-16 10:17:20');
 
 -- --------------------------------------------------------
 
@@ -239,9 +261,12 @@ CREATE TABLE `customers_orders` (
 --
 
 INSERT INTO `customers_orders` (`id`, `order_no`, `name`, `email`, `phone`, `address_line1`, `address_line2`, `country`, `city`, `zip`, `payment_type`, `payment_phone`, `payment_ref`, `subtotal`, `tax`, `net_price`, `order_time`, `order_date`, `action_date`, `delivery_day`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'g700mo', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'bKash', '01764470022', 'Text', 600.00, 90.00, 690.00, '22:09:21', '2020/09/21', NULL, NULL, '1', '2020-09-21 10:09:30', '2020-09-21 10:09:30'),
-(2, '0o0ba7', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'নগদ', NULL, NULL, 280.00, 42.00, 322.00, '22:36:30', '2020/09/21', NULL, NULL, '0', '2020-09-21 10:36:36', '2020-09-22 09:34:18'),
-(3, '7uhp00', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'নগদ', '01764470022', NULL, 390.00, 58.50, 448.50, '22:52:44', '2020/09/21', '2020/09/22', '3', '3', '2020-09-21 10:52:53', '2020-09-22 09:58:09');
+(1, 'mj1984', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'Cash on Delivery', NULL, NULL, 760.00, 114.00, 874.00, '17:58:47', '2020/10/06', NULL, NULL, '0', '2020-10-06 15:59:44', '2020-10-06 16:03:14'),
+(2, 'l1xs89', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'bKash', '01764470022', NULL, 760.00, 114.00, 874.00, '18:03:55', '2020/10/06', '2020/10/06', '3', '3', '2020-10-06 16:04:20', '2020-10-06 16:06:02'),
+(3, 'u207z4', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'bKash', '01764470022', NULL, 760.00, 114.00, 874.00, '19:38:47', '2020/10/07', NULL, NULL, '0', '2020-10-07 17:38:48', '2020-10-09 09:23:04'),
+(4, 'lzo212', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'Cash on Delivery', NULL, NULL, 2460.00, 369.00, 2829.00, '11:03:18', '2020/10/09', NULL, NULL, '0', '2020-10-09 09:04:45', '2020-10-09 09:22:48'),
+(5, '5c2v22', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'Cash on Delivery', NULL, NULL, 5450.00, 817.50, 6267.50, '11:28:01', '2020/10/09', '2020/10/12', '7', '3', '2020-10-09 09:28:05', '2020-10-12 12:56:37'),
+(6, 'xl12k3', 'zakir Hossain', 'zakir7dipu@gmail.com', '01764470022', '58/6, Dogormura', NULL, 'Bangladesh', 'Savar', '1340', 'bKash', '01764470022', 'Text', 0.49, 0.07, 0.56, '23:03:48', '2020/10/20', NULL, NULL, '1', '2020-10-20 11:04:02', '2020-10-20 11:04:02');
 
 -- --------------------------------------------------------
 
@@ -263,7 +288,7 @@ CREATE TABLE `customer_supports` (
 --
 
 INSERT INTO `customer_supports` (`id`, `phone1`, `phone2`, `email`, `created_at`, `updated_at`) VALUES
-(1, '01764470022', '01764470012', 'zakir7dipu@gmail.com', '2020-09-17 23:52:54', '2020-09-17 23:53:08');
+(1, '+8801767911397', '+8801845352549', 'rasel.md.bd@gmail.com', '2020-10-06 15:36:54', '2020-10-14 09:30:19');
 
 -- --------------------------------------------------------
 
@@ -299,7 +324,7 @@ CREATE TABLE `galleries` (
 --
 
 INSERT INTO `galleries` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Logo', '15986348782nl5b4.logo-image.png', '2020-08-27 10:39:27', '2020-08-28 11:14:38'),
+(1, 'Logo', '1602915757w20xij.logo-image.jpeg', '2020-08-27 10:39:27', '2020-10-17 10:22:37'),
 (2, 'Banner', '159854812806j1z8.banner-image.jpg', '2020-08-27 11:07:41', '2020-08-27 11:08:48');
 
 -- --------------------------------------------------------
@@ -321,7 +346,7 @@ CREATE TABLE `geolocations` (
 --
 
 INSERT INTO `geolocations` (`id`, `lng`, `lat`, `created_at`, `updated_at`) VALUES
-(1, '-0.041716', '51.447501', '2020-09-19 23:48:05', '2020-09-21 09:59:24');
+(1, '-76.385765', '40.032248', '2020-10-06 15:40:12', '2020-10-06 15:40:12');
 
 -- --------------------------------------------------------
 
@@ -344,7 +369,7 @@ CREATE TABLE `main_banner_scrolls` (
 INSERT INTO `main_banner_scrolls` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
 (1, 'Banner1', '1601297474hypc40.banner-image1.jpg', NULL, '2020-09-28 06:51:15'),
 (2, 'Banner2', '16012974877i182a.banner-image2.jpg', NULL, '2020-09-28 06:51:27'),
-(3, 'Banner3', '16012974956cuwj9.banner-image3.jpg', NULL, '2020-09-28 06:51:35');
+(3, 'Banner3', '1602491803s2izbf.banner-image3.jpg', NULL, '2020-10-12 12:36:43');
 
 -- --------------------------------------------------------
 
@@ -366,8 +391,8 @@ CREATE TABLE `menu_sliders` (
 
 INSERT INTO `menu_sliders` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
 (1, 'Menu-Slider1', '1601297509t5pbhu.Menu-Slider1.jpg', NULL, '2020-09-28 06:51:51'),
-(2, 'Menu-Slider2', '16005827767oi0ku.Menu-Slider2.jpg', NULL, '2020-09-20 00:19:36'),
-(3, 'Menu-Slider3', '1600582686vgsp6d.Menu-Slider3.jpeg', NULL, '2020-09-20 00:18:06');
+(2, 'Menu-Slider2', '16024919574r7deg.Menu-Slider2.jpg', NULL, '2020-10-12 12:39:17'),
+(3, 'Menu-Slider3', '160249202828cyru.Menu-Slider3.jpg', NULL, '2020-10-12 12:40:28');
 
 -- --------------------------------------------------------
 
@@ -411,7 +436,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (61, '2020_09_20_142521_create_customers_orders_table', 20),
 (62, '2020_09_20_142630_create_ordered_products_table', 20),
 (63, '2020_09_20_143845_create_ordered_product_attributes_table', 20),
-(65, '2020_09_28_155550_create_advertisements_table', 21);
+(65, '2020_09_28_155550_create_advertisements_table', 21),
+(66, '2020_09_29_055449_create_text_sliders_table', 22),
+(67, '2020_09_29_124601_create_payments_table', 23),
+(68, '2020_09_29_131403_create_company_payment_table', 24),
+(69, '2020_10_05_062311_create_subscribe_by_emails_table', 25);
 
 -- --------------------------------------------------------
 
@@ -435,14 +464,14 @@ CREATE TABLE `ordered_products` (
 --
 
 INSERT INTO `ordered_products` (`id`, `customers_orders_id`, `name`, `qty`, `image`, `price`, `created_at`, `updated_at`) VALUES
-(1, 1, 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*302', 2, '1598592417514963.DAC.jpg', 320.00, '2020-09-21 10:09:30', '2020-09-21 10:09:30'),
-(2, 1, 'Makeup Lipstick Professional Matte Lipsticks Waterproof Long Lasting Sexy Red Lips Gloss', 1, '1598593540sqeojw.DAC.jpg', 210.00, '2020-09-21 10:09:30', '2020-09-21 10:09:30'),
-(3, 1, 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 1, '1598594713t893l6.DAC.jpg', 70.00, '2020-09-21 10:09:30', '2020-09-21 10:09:30'),
-(4, 2, 'RtopR Lip Makeup Non-stick Cup Lipstick Lip Gloss', 1, '1598592279bt0ckf.DAC.jpg', 150.00, '2020-09-21 10:36:36', '2020-09-21 10:36:36'),
-(5, 2, 'Lipstick Temperature Color Change Lady Lip Moisturizer Jelly Balm Cream Aloe Moisturizing Long Lasting Lip stick makeup TSLM1', 1, '1598593191ri1wxn.DAC.jpg', 130.00, '2020-09-21 10:36:36', '2020-09-21 10:36:36'),
-(6, 3, 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 1, '1598594063l4mepo.DAC.jpg', 100.00, '2020-09-21 10:52:53', '2020-09-21 10:52:53'),
-(7, 3, 'Black Eyeliner Waterproof Liquid Eye Liner', 1, '1598594570byzjfn.DAC.jpg', 150.00, '2020-09-21 10:52:53', '2020-09-21 10:52:53'),
-(8, 3, 'HANDAIYAN Moisturize Matte Lipstick', 1, '1598593855rb8im0.DAC.jpg', 140.00, '2020-09-21 10:52:53', '2020-09-21 10:52:53');
+(1, 1, 'Dove Shop (Lowest Order QTY 4pcs)', 1, '1601985409b0pqaz.DAC.jpg', 760.00, '2020-10-06 15:59:44', '2020-10-06 15:59:44'),
+(2, 2, 'Dove Shop (Lowest Order QTY 4pcs)', 1, '1601985409b0pqaz.DAC.jpg', 760.00, '2020-10-06 16:04:20', '2020-10-06 16:04:20'),
+(3, 3, 'Dove Shop (Lowest Order QTY 4pcs)', 1, '1601985409b0pqaz.DAC.jpg', 760.00, '2020-10-07 17:38:49', '2020-10-07 17:38:49'),
+(4, 4, 'ORAL-B GUM & ENAMEL REPAIR ORIGINAL TOOTHPASTE', 4, '1602126907x93hoq.DAC.jpg', 1960.00, '2020-10-09 09:04:45', '2020-10-09 09:04:45'),
+(5, 4, 'Sensodyne Pronamel Toothpaste for Tooth Enamel Strengthening, Daily Protection, Mint Essence', 1, '1602127176mytnre.DAC.jpg', 500.00, '2020-10-09 09:04:45', '2020-10-09 09:04:45'),
+(6, 5, 'ORAL-B GUM & ENAMEL REPAIR ORIGINAL TOOTHPASTE', 5, '1602126907x93hoq.DAC.jpg', 490.00, '2020-10-09 09:28:05', '2020-10-09 09:28:05'),
+(7, 5, 'Sensodyne Pronamel Toothpaste for Tooth Enamel Strengthening, Daily Protection, Mint Essence', 6, '1602127176mytnre.DAC.jpg', 500.00, '2020-10-09 09:28:05', '2020-10-09 09:28:05'),
+(8, 6, 'Bettina Barty', 1, '1603039431eak8xg.DAC.jpg', 0.48, '2020-10-20 11:04:02', '2020-10-20 11:04:02');
 
 -- --------------------------------------------------------
 
@@ -465,14 +494,14 @@ CREATE TABLE `ordered_product_attributes` (
 --
 
 INSERT INTO `ordered_product_attributes` (`id`, `ordered_product_id`, `color_code`, `color_name`, `size`, `created_at`, `updated_at`) VALUES
-(1, 1, '#e40c0c', '302', NULL, NULL, NULL),
-(2, 2, '#c85656', '301', NULL, NULL, NULL),
+(1, 1, NULL, NULL, NULL, NULL, NULL),
+(2, 2, NULL, NULL, NULL, NULL, NULL),
 (3, 3, NULL, NULL, NULL, NULL, NULL),
-(4, 4, '#880c0c', 'Caramel R01', NULL, NULL, NULL),
-(5, 5, '#125917', 'Green', NULL, NULL, NULL),
+(4, 4, NULL, NULL, NULL, NULL, NULL),
+(5, 5, NULL, NULL, NULL, NULL, NULL),
 (6, 6, NULL, NULL, NULL, NULL, NULL),
 (7, 7, NULL, NULL, NULL, NULL, NULL),
-(8, 8, '#e11414', '120', NULL, NULL, NULL);
+(8, 8, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -485,6 +514,31 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE `payments` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `name`, `number`, `type`, `created_at`, `updated_at`) VALUES
+(1, 'Cash on Delivery', NULL, NULL, '2020-09-29 12:54:20', '2020-09-29 14:56:34'),
+(2, 'bKash', '+8801767911397', 'Merchant', NULL, '2020-10-12 12:29:13'),
+(3, 'নগদ', '+8801845352549', 'Personal', '2020-09-29 12:53:09', '2020-10-12 12:29:49'),
+(4, 'Roket', NULL, NULL, '2020-09-29 12:53:09', '2020-09-29 07:35:55');
 
 -- --------------------------------------------------------
 
@@ -513,28 +567,41 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `sub_category_id`, `image`, `name`, `description`, `price`, `discount`, `status`, `slag`, `sku`, `tag_id`, `created_at`, `updated_at`) VALUES
-(1, 1, '15985919150wvf2d.DAC.jpg', 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*301', 'The texture is luxury with forging lights, it is soft and silky. Showing rich colors with creative and leading color technology. It has lasting coloring, which is refreshing and non-sticky, creating rich and attractive lip.', 160.00, 10.00, 1, '1598591915.DAC.gGi4QeVtja', 'ZEES28082020', NULL, NULL, '2020-09-20 00:50:07'),
-(2, 1, '1598592279bt0ckf.DAC.jpg', 'RtopR Lip Makeup Non-stick Cup Lipstick Lip Gloss', 'Rich color lock, outline the lip contour in one stroke, release the color with a touch, velvety smooth, melt on the lips, showing rich color, delicate and delicate, matte texture, light and silky, moisturizing and moisturizing light makeup.', 150.00, NULL, 1, '1598592279.DAC.a1Sl0CG2VZ', 'Rtop28082020', NULL, NULL, '2020-08-27 23:24:39'),
-(3, 1, '1598592417514963.DAC.jpg', 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*302', 'The texture is luxury with forging lights, it is soft and silky. Showing rich colors with creative and leading color technology. It has lasting coloring, which is refreshing and non-sticky, creating rich and attractive lips.', 160.00, NULL, 1, '1598592417.DAC.ke1yQ2Suws', 'ZEES27082020', NULL, NULL, '2020-08-27 23:26:57'),
-(4, 1, '1598592548s9lahx.DAC.jpg', 'RtopR Lip Makeup Non-stick Cup Lipstick Lip Gloss', 'Rich color lock, outline the lip contour in one stroke, release the color with a touch, velvety smooth, melt on the lips, showing rich color, delicate and delicate, matte texture, light and silky, moisturizing and moisturizing light makeup.', 150.00, NULL, 1, '1598592548.DAC.M2AeuvkPRq', 'RtopR28082020', NULL, NULL, '2020-08-27 23:29:08'),
-(5, 1, '1598592840ltj1nf.DAC.jpg', 'MISS ROSE Matte Lipstick Lip Liner Pencil Waterproof Long Lasting', '100% brand new and high quality.\r\nPortable size, easy to carry.\r\nWaterproof,easy to wear, and natural.\r\nSuitable for professional use or home use.\r\nLong period of moisturizing and holding color\r\nGood adhesion, can be maintained for a long time bright colors.\r\nHigh concentration of color factor, highlight the three-dimensional lip.\r\nSpecification\r\nQuantity:1pc\r\nWeight:0.02kg', 70.00, NULL, 1, '1598592840.DAC.NoqzvVJHyU', 'MISS28082020', NULL, NULL, '2020-08-27 23:34:00'),
-(6, 1, '1598593191ri1wxn.DAC.jpg', 'Lipstick Temperature Color Change Lady Lip Moisturizer Jelly Balm Cream Aloe Moisturizing Long Lasting Lip stick makeup TSLM1', '100% new high quality.\r\nNatural aloe vera gel moisturizing lip balm.\r\nTemperature changes lasting moisturizing jelly lipstick.\r\nLong-lasting lip makeup, not easy to fade, waterproof and sweat-proof, full color, bright color.\r\nSpecification:\r\nItem: Color Changing Lipstick\r\n    Net weight: 3.5g\r\n    Appearance Color: Green\r\n    Condition: New\r\n    With Aloe Vera, long-lasting moisturizing your lip.\r\n    Available Length: 2.5cm/0.98inch\r\n    Overall Dimensions: L7 x D2cm/2.7 x 0.78inch\r\n    Quantity: 1pcs\r\n    Shell Material: Plastic', 130.00, NULL, 1, '1598593191.DAC.vjHmKQF9tf', 'TSLM128082020', NULL, NULL, '2020-08-27 23:39:51'),
-(7, 1, '1598593540sqeojw.DAC.jpg', 'Makeup Lipstick Professional Matte Lipsticks Waterproof Long Lasting Sexy Red Lips Gloss', 'A nice Product', 210.00, NULL, 1, '1598593540.DAC.3fWtmjakP1', 'Makeup20082020', NULL, NULL, '2020-08-27 23:45:40'),
-(8, 1, '1598593612g2trvj.DAC.jpg', 'Makeup Lipstick Professional Matte Lipsticks Waterproof Long Lasting Sexy Red Lips Gloss', 'A nice Product', 210.00, NULL, 1, '1598593612.DAC.Grzoeh1Tb2', 'M-662020912', NULL, NULL, '2020-08-27 23:46:52'),
-(9, 1, '15985937640gbdlv.DAC.jpg', 'HANDAIYAN Moisturize Matte Lipstick', 'Rose Essence Lip Balm\r\nNatural rose essence lip balm moisturizing repair relieve dry chapped lip lines.\r\nBefore use:lips are dry and lusterless\r\nAfter use:lips are tender and bright in color\r\nBrand: HANDAIYAN\r\nSize:17mm wide*84mm high\r\nNet weight:3.2g/0.11oz\r\nColer:8 Colers for choose\r\nEfficacy: Lasting color, moisturizing and moisturizing downplaying lip lines.\r\nShelf life:3 years\r\nOrigin: Made in China', 140.00, NULL, 1, '1598593764.DAC.uCijKk9OGY', 'P-672020129', NULL, NULL, '2020-08-27 23:49:24'),
-(10, 1, '1598593855rb8im0.DAC.jpg', 'HANDAIYAN Moisturize Matte Lipstick', 'Rose Essence Lip Balm\r\nNatural rose essence lip balm moisturizing repair relieve dry chapped lip lines.\r\nBefore use:lips are dry and lusterless\r\nAfter use:lips are tender and bright in color\r\nBrand: HANDAIYAN\r\nSize:17mm wide*84mm high\r\nNet weight:3.2g/0.11oz\r\nColer:8 Colers for choose\r\nEfficacy: Lasting color, moisturizing and moisturizing downplaying lip lines.\r\nShelf life:3 years\r\nOrigin: Made in China', 140.00, NULL, 1, '1598593855.DAC.eXL1IqiyQD', 'B-672020133', NULL, NULL, '2020-08-27 23:50:55'),
-(11, 2, '1598594063l4mepo.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 100.00, NULL, 1, '1598594063.DAC.Bbi7uWNcSQ', 'eye20802020', NULL, NULL, '2020-08-27 23:54:24'),
-(12, 2, '1598594169h8andl.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 110.00, NULL, 1, '1598594169.DAC.3G7zc0ENYw', 'ZEES28082021', NULL, NULL, '2020-08-27 23:56:10'),
-(13, 2, '1598594319ug6wyt.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 120.00, NULL, 1, '1598594319.DAC.jHlkranVfT', 'ZEES28082022', NULL, NULL, '2020-08-27 23:58:39'),
-(14, 2, '15985944376q530k.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 120.00, NULL, 1, '1598594437.DAC.stAZFOR0hl', 'High2820202020', NULL, NULL, '2020-08-28 00:00:37'),
-(15, 2, '1598594570byzjfn.DAC.jpg', 'Black Eyeliner Waterproof Liquid Eye Liner', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 150.00, NULL, 1, '1598594570.DAC.w9RITxGkEF', 'M-662022658932', NULL, NULL, '2020-08-28 00:02:51'),
-(16, 2, '1598594713t893l6.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 70.00, NULL, 1, '1598594713.DAC.R7iGrd2yWe', 'new12021452', NULL, NULL, '2020-08-28 00:05:43'),
-(17, 2, '1598595375toq2ka.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 130.00, NULL, 1, '1598595375.DAC.oNe4LUlu6q', 'P-678945621', NULL, NULL, '2020-08-28 00:16:15'),
-(18, 2, '15985954742t3gsh.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 80.00, NULL, 1, '1598595474.DAC.YadC0K4VME', 'M-6720201238asdasd', NULL, NULL, '2020-08-28 00:17:54'),
-(19, 2, '1598595587rylemo.DAC.png', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 300.00, NULL, 1, '1598595587.DAC.dU0IKxhVsP', 'Eyrsdf1233456', NULL, NULL, '2020-08-28 00:19:48'),
-(20, 2, '1598595681t6y5i9.DAC.jpg', 'High Quality Eyes Makeup Liquid Eyeliner Waterproof 24 Hours Long-lasting', 'Top Quality 24 Hours Long lasting water-proof and smudge-proof formula that resists sweat, tears, and water.\r\nIncludes the oil share.\r\nPrevents around the eye dry.', 250.00, NULL, 1, '1598595681.DAC.V5lYxHcnk3', 'ZEES280822222', NULL, NULL, '2020-08-28 00:21:21'),
-(21, 1, '1598684490dnubwa.DAC.jpg', 'ZEESEA New Egypt косметика  Long Lasting Waterproof Nutritious Lipstick*301', 'The texture is luxury with forging lights, it is soft and silky. Showing rich colors with creative and leading color technology. It has lasting coloring, which is refreshing and non-sticky, creating rich and attractive lip.', 160.00, NULL, 1, '1598684490.DAC.3RsKSt7Def', 'ZEESEA29802020', NULL, NULL, '2020-08-29 09:16:11'),
-(22, 1, '1598808046xaj749.DAC.jpg', 'jashkjahsdkjsadljasd asdaskldjalskjdasdas', 'jashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdasjashkjahsdkjsadljasd asdaskldjalskjdasdas', 150.00, NULL, 1, '1598808046.DAC.xNP8cmV2TX', 'zasd24587368479', NULL, NULL, '2020-08-30 11:21:53');
+(1, 1, '1601985409b0pqaz.DAC.jpg', 'Dove Shop 4x1pcs', 'This is a beauty cram bur.', 800.00, 5.00, 1, '1601985409.DAC.fscxZuJSC0', '061020201253-Dove', NULL, NULL, '2020-10-12 13:13:15'),
+(2, 3, '1602126907x93hoq.DAC.jpg', 'ORAL-B GUM & ENAMEL REPAIR ORIGINAL TOOTHPASTE', 'ActivRepair™ technology targets the gumline area:\r\nIt defends teeth against acid erosion and strengthens enamel.\r\nIt provides antibacterial action actively protects gums.\r\nFor sensitive teeth – clinically proven.\r\nOral-B Gum & Repair Original toothpaste comes with a mild flavour and a smoother texture.', 500.00, 2.00, 1, '1602126907.DAC.81YF3odl4p', '081020200911-O', NULL, NULL, '2020-10-08 07:15:07'),
+(3, 3, '1602127176mytnre.DAC.jpg', 'Sensodyne Pronamel Toothpaste for Tooth Enamel Strengthening, Daily Protection, Mint Essence', 'Ingredients:\r\nActive Ingredients - Purpose. Potassium Nitrate 5% - Antihypersensitivity. Sodium Fluoride 0.15% W/V Fluoride Ion - Anticavity.Inactive Ingredients: Water, Sorbitol, Hydrated Silica, Glycerin, PEG-8, Cocamidopropyl Betaine, Flavor, Xanthan Gum, Sodium Saccharin, Titanium Dioxide, Sodium Hydroxide.\r\nAbout this item:\r\nPronamel toothpaste for enamel protects against the effects of acid erosion from daily acidic foods and drinks\r\nProvides cavity protection and freshens breath\r\nOffers lasting sensitivity relief and enamel strengthening (with twice daily brushing)\r\nNumber 1 Dentist Recommended Brand for strengthening and protecting tooth enamel\r\nSensodyne Pronamel Daily Protection toothpaste is clinically proven to help rebuild enamel strength for strong, healthy teeth', 500.00, NULL, 1, '1602127176.DAC.qzFsRac7dG', '081020200919-S', NULL, NULL, '2020-10-08 07:19:36'),
+(4, 1, '1602253420vex0hc.DAC.jpg', 'Radox  Men Shower Gel', 'Radox Feel Awake 2in1 mens shower gel is UK\'s no.1 shower gel with mood changing fragrance of fennel and sea minerals.', 520.00, NULL, 1, '1602253420.DAC.dxsTuZpNYB', '091020201523-R', NULL, NULL, '2020-10-20 11:34:45'),
+(5, 2, '1602266055qnedki.DAC.jpg', 'Cien SENSITIVE SKIN MOISTURISING LOTION', 'This Cien SENSITIVE LOTION if used daily, you will surely see significant difference from the texture of your skin when ever you feel it. It makes it moisture and silky and adds more beauty in your look. Just try one and a trial will convince you.', 755.00, NULL, 1, '1602266055.DAC.0kjX9mIlJ3', '091020201843-C', NULL, NULL, '2020-10-20 02:51:19'),
+(6, 1, '1602269922u34h5n.DAC.jpg', 'SPORT BLAST 3 IN 1 BODY WASH', 'Lynx Sports Blast men\'s shower gel is a energising and fresh fragrance with a masculine mix of citrus, pepper and ginger. Enjoy a super-charged clean to help you look, feel and smell your best .\r\n\r\nA great day starts with a great shower and there’s no greater shower than a Lynx shower. You might not conquer the world after it but you’ll feel like you can.', 475.00, 0.00, 1, '1602269922.DAC.palcXVAsrJ', '091020201957-L', NULL, NULL, '2020-10-20 02:50:05'),
+(7, 2, '1602271895gabsl3.DAC.jpg', 'Herbal Essences Dazzling Shine', 'Herbal Essences Daily Detox Shine shampoo with white tea and mint gently cleans everyday impurities\r\n100% recyclable bottle (our cap not yet) depending on recycling facilities\r\nShampoo 0% colourants, 0% paraffin, 0% silicones\r\nRecognised by Peta Org for our commitment to always stand for cruelty free', 775.00, NULL, 1, '1602271895.DAC.PEHKfQmurx', '091020202028-h', NULL, NULL, '2020-10-20 02:52:32'),
+(8, 1, '1602493467efnzq2.DAC.jpg', 'Cien Moisturising lotion', 'An extremely common multitasker ingredient that gives your skin a nice soft feel (emollient) and gives body to creams and lotions. It also helps to stabilize oil-water mixes (emulsions), though it does not function as an emulsifier in itself.', 755.00, NULL, 1, '1602493467.DAC.MEjNuir6AS', '121020200303-C', NULL, NULL, '2020-10-12 13:04:27'),
+(9, 2, '1602493586i6fqha.DAC.jpg', 'Cien Moisturising lotion', 'An extremely common multitasker ingredient that gives your skin a nice soft feel (emollient) and gives body to creams and lotions. It also helps to stabilize oil-water mixes (emulsions), though it does not function as an emulsifier in itself.', 755.00, NULL, 1, '1602493586.DAC.vViuDUFJpm', '1210202000304-C', NULL, NULL, '2020-10-12 13:06:26'),
+(10, 10, '1602494633pxe9w1.DAC.jpg', 'Nescafe Orginal', 'With its comforting aroma and distinctive full-flavour taste, NESCAFÉ 3in1 Original conveniently turns our medium-dark roast signature blend into a sweet white coffee in an instant. Made with high quality Robusta coffee beans and sealed in single-serve sachets.', 700.00, 3.00, 1, '1602494632.DAC.L7Wcq80dsa', '1210202000322-N', NULL, NULL, '2020-10-12 13:23:53'),
+(11, 3, '1602495026qd09h2.DAC.jpg', 'Dentalux', 'Dentalux is an ideal fresh & clean WordPress Theme for dental clinics, dentist & tooth rreatment & repair business. ... This WordPress theme has firm corporate design in calming shades and colors which definitely inspires confidence in the premium quality of your medical services.', 650.00, NULL, 1, '1602495026.DAC.QiulwAcfZh', '1210202000330-D', NULL, NULL, '2020-10-12 13:30:26'),
+(12, 2, '1603038619b3vzi0.DAC.jpg', 'Pond\'s White Beauty', 'Pond\'s White Beauty Anti-spot fairness SPF 15 PA++ Fairness Cream, It cleanses deeply to reduce to reduce dullness of your skin wirh pro vitamin B3.\r\nAll our products directly imported from UK and UAE.', 100.00, 3.00, 1, '1603038619.DAC.gaHMwANbts', '181020201727-p', NULL, NULL, '2020-10-18 20:30:20'),
+(13, 2, '1603039431eak8xg.DAC.jpg', 'Bettina Barty', 'Bettina Barty, It nourishes both skin and skin with hands plenty.It prevents from drying out and makes it smooth\r\nAll of our products directly imported from UK and UAE.', 0.50, 3.00, 1, '1603039431.DAC.mLipS9Pdb0', '181020201743-b', NULL, NULL, '2020-10-18 20:43:51'),
+(14, 2, '1603039742jahszv.DAC.jpg', 'Maybelline - Fit Me', 'Fit me +pore less liquid foundation make up is ideal for normal to oily skin. Maybelline Fit Me foundation is moisturizing and smoothing. Foundation blends for natural, brilliant result. Foundation. Maybelline - Make it happen Maybelline New York is one of the world\'s leading cosmetics brand', 1124.30, NULL, 1, '1603039742.DAC.RcM6l1ekfD', '181020201748-m', NULL, NULL, '2020-10-20 03:15:39'),
+(15, 2, '1603040087rgin3s.DAC.jpg', 'miss shireena perfume', 'A beautiful female scent .If you like Miss Dior You will love Miss Shireena\r\nAll of our products directly imported from UK and UAE.', 2450.50, NULL, 1, '1603040087.DAC.M1gnho2peD', '181020201754-m', NULL, NULL, '2020-10-20 02:54:31'),
+(16, 2, '1603040342jv94as.DAC.jpg', 'fair and lovely', 'It is the worlds first fairness cream with 100% safe ingredients It is good skin fairness', 529.50, 3.00, 1, '1603040342.DAC.FAYLEnHMrx', '181020201758-f', NULL, NULL, '2020-10-20 11:01:47'),
+(17, 11, '160304298075320v.DAC.png', 'nido milk powder', 'Full cream nestle nido milk powder is obtained by spray drying process, and officially controlled, pasteurized and homogenized full cream cows milk. With natural vitamins, proteins and minerals, it makes perfectly delicious and nutritious milk for growing children and adults. it is also ideal for ice cream and desserts.', 1094.50, NULL, 1, '1603042980.DAC.ngJMKN8pZT', '181020201842-n', NULL, NULL, '2020-10-20 03:11:33'),
+(18, 11, '1603044145x5fst6.DAC.jpg', 'nestle nan 2', 'Nestle NAN Optipro 2 is a follow-on milk suitable for babies from six months of age. Does your baby proteins and nutrients for proper development and growth.', 1194.70, NULL, 1, '1603044145.DAC.2Acy1tPD5K', '181020201901-n', NULL, NULL, '2020-10-20 03:12:40'),
+(19, 1, '1603044413o7ur21.DAC.jpg', 'NIVEA MEN', 'Nivea men fresh active deo secures a feeling of all day freshness and offers trustworthy - long lasting protection.', 350.50, 0.00, 1, '1603044413.DAC.Q6RW3vuys2', '181020201905-m', NULL, NULL, '2020-10-19 13:47:10'),
+(20, 10, '1603044637jucoya.DAC.jpg', 'carrefour drink power', 'Different flavours drink powder of tang of renowned brand\r\nAll of our products directly imported from UK and UAE.', 549.50, NULL, 1, '1603044637.DAC.05nOejuqxf', '181020201910-c', NULL, NULL, '2020-10-20 03:08:25'),
+(21, 2, '1603044938l2u0tw.DAC.jpg', 'rexona motionsense', 'Rexona Women Antibacterial Antiperspirant Deodorant Will Help you to fight body odor with its MotionSense Technology and its clean scent will keep you fresh.', 369.70, NULL, 1, '1603044938.DAC.of1Xqja6bu', '181020201915-r', NULL, NULL, '2020-10-20 02:56:55'),
+(22, 2, '1603045206u716bn.DAC.jpg', 'BOURJOIS Ultra black Mascara', 'BOURJOIS Ultra black Mascara is long lasting volume to your lashes and let your look speak louder than words\r\nAll of our products directly imported from UK and UAE.', 495.70, NULL, 1, '1603045206.DAC.ezQ0oHUCwd', '181020201919-b', NULL, NULL, '2020-10-20 02:58:08'),
+(23, 2, '1603045968dca1xz.DAC.jpg', 'Elizabeth Helen', 'It has a smooth and creamy texture with a full coverage that gives you long lasting wear without the drying', 584.70, NULL, 1, '1603045968.DAC.JL13H0b6O8', '181020201932-e', NULL, NULL, '2020-10-20 02:59:10'),
+(24, 2, '1603046220atdnv5.DAC.jpg', 'over 2 matte lip gloss', 'Non sticky, Long lasting clean and pink lip gloss that delivers softer glossy lips\r\nAll of our products directly imported from UK and UAE.', 749.70, NULL, 1, '1603046220.DAC.xolPWZpHCO', '181020201936-o', NULL, NULL, '2020-10-20 03:00:20'),
+(25, 2, '1603047265w9vbt8.DAC.jpg', 'carla nail polish remover', 'Alcohal free nail polish strong remover\r\nAll of our products directly imported from UK and UAE.', 374.70, NULL, 1, '1603047265.DAC.jYhdb7SQBW', '181020201954-c', NULL, NULL, '2020-10-20 11:03:15'),
+(26, 2, '1603047535movgfn.DAC.jpg', 'garnier ultra doux', 'Excellent shampoo for shining hair made in Egypt\r\nAll of our products directly imported from UK and UAE.', 559.70, NULL, 1, '1603047535.DAC.sp6mEblYW1', '181020201958-g', NULL, NULL, '2020-10-20 03:02:15'),
+(27, 2, '1603047693gvnzo6.DAC.jpg', 'tresemme', 'It helps reinforce your hair strength and prevents hair falls due to breakage for longer and stronger hair from UAE', 694.90, NULL, 1, '1603047693.DAC.V3RBFNJ8md', '181020202001-t', NULL, NULL, '2020-10-20 03:20:59'),
+(28, 1, '1603048195a7umyp.DAC.png', 'pantene shampoo', 'Pantene Pro-V Smooth & Sleek shampoo gently cleanses, while giving hair active Pro-V nutrients. Provides silky smoothness & frizz control for hair prone to frizz or dryness.', 525.20, 0.00, 1, '1603048195.DAC.i4RqXxYBQy', '181020202008-p', NULL, NULL, '2020-10-18 23:17:12'),
+(29, 5, '1603048919ps5ctl.DAC.jpg', 'floralays', 'It is lightly moistened soft gentle and thick from United kingdom\r\nAll our products directly imported from UK and UAE.', 375.02, 0.00, 1, '1603048919.DAC.jqSKY9E52p', '181020202020-f', NULL, NULL, '2020-10-18 23:21:59'),
+(30, 5, '1603049246t1ngj3.DAC.jpg', 'tango', 'It is powderd beverage brand , is fresh ans food flavourd drink from United Arab Emirates\r\nAll our products directly imported from UK and UAE.', 1995.20, 0.00, 1, '1603049246.DAC.K9BUyFIQv1', '181020202025', NULL, NULL, '2020-10-20 03:04:24'),
+(31, 10, '1603049556uszwc7.DAC.jpg', 'quality street', 'Each pack contains a variety of rich intense chocolate and toffees in iconic shapes tightly wrapped like sparkling jewels from United kingdom\r\nAll our products directly imported from UK and UAE.', 1194.50, NULL, 1, '1603049556.DAC.GuZ5CDoEnR', '181020202031', NULL, NULL, '2020-10-20 03:09:35'),
+(32, 5, '1603049812uaes6g.DAC.jpg', 'lupilu nappies', '4 in one baby wipes from United kingdom\r\nAll our products directly imported from UK and UAE.', 425.02, 0.00, 1, '1603049812.DAC.GamDPBYz21', '181020202036', NULL, NULL, '2020-10-18 23:36:52'),
+(33, 1, '160314999979tzua.DAC.png', 'Original Source Mint & Tea Tree', 'Original Source Tea Tree and Mint Shower Gel is inspired by Ellen Waksman, famous for her herbal cures and bush remedies. Original Source Tea Tree and Mint Shower Gel gives a tingly feeling from essential mint oil derived from real mint leaves. Original Source Tea Tree and Mint Shower Gel gently cleanses away dirt with its non-greasy and non-sticky formula leaving skin clean, fresh and lightly scented.', 520.00, NULL, 1, '1603149999.DAC.NzbsS83w59', '201020200025-o', NULL, NULL, '2020-10-20 03:26:39'),
+(35, 12, '1603176271ktx1fo.DAC.jpg', 'Johnson\'s Baby Oil', 't\'s a silky soft moisturiser for silky soft skin. Johnson\'s Baby Oil locks in up to 10 times more moisture on wet skin than an ordinary lotion can on dry skin, leaving your baby\'s skin soft and smooth. This gentle oil is also easy to spread, so it\'s ideal for baby massage.', 695.00, NULL, 1, '1603176271.DAC.qJi3RPkxHM', '201020200741-j', NULL, NULL, '2020-10-20 10:44:31'),
+(36, 12, '16031777748lmchg.DAC.jpg', 'johnson baby soap', 'Mild & Gentle for Delicate Baby Skin\r\nClinically Proven - Mildness\r\nNo Parabens, Phthalates or Dyes\r\nFor over 125 years Johnson\'s formulas have been specially designed for baby\'s unique and delicate skin. Great for kids and adults too!\r\n\r\nContains mild moisturizers & delicately cleanses baby\'s skin\r\nHypoallergenic & tested with dermatologists\r\nFormulated to be gentle, never harsh', 875.00, NULL, 1, '1603177774.DAC.OdJeuGUmxy', '201020200808-j', NULL, NULL, '2020-10-20 11:09:34');
 
 -- --------------------------------------------------------
 
@@ -551,25 +618,6 @@ CREATE TABLE `product_colors` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `product_colors`
---
-
-INSERT INTO `product_colors` (`id`, `product_id`, `color_code`, `color_name`, `color_price`, `created_at`, `updated_at`) VALUES
-(12, 2, '#880c0c', 'Caramel R01', NULL, NULL, NULL),
-(13, 3, '#e40c0c', '302', NULL, NULL, NULL),
-(14, 4, '#d96868', 'Caramel R02', NULL, NULL, NULL),
-(15, 5, '#f38686', '01', NULL, NULL, NULL),
-(16, 6, '#125917', 'Green', NULL, NULL, NULL),
-(17, 7, '#c85656', '301', NULL, NULL, NULL),
-(18, 8, '#e14747', '310', NULL, NULL, NULL),
-(19, 9, '#c84141', '302', NULL, NULL, NULL),
-(20, 10, '#e11414', '120', NULL, NULL, NULL),
-(42, 21, '#cc3333', '301', NULL, NULL, NULL),
-(54, 22, '#9d3939', '02', NULL, NULL, NULL),
-(57, 1, '#a13a3a', '301', NULL, NULL, NULL),
-(58, 1, '#392fc6', 'blue', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -591,11 +639,17 @@ CREATE TABLE `product_sizes` (
 --
 
 INSERT INTO `product_sizes` (`id`, `product_id`, `size`, `size_price`, `created_at`, `updated_at`) VALUES
-(21, 22, 'M', NULL, NULL, NULL),
-(22, 22, 'L', NULL, NULL, NULL),
-(26, 1, 's', NULL, NULL, NULL),
-(27, 1, 'M', NULL, NULL, NULL),
-(28, 1, 'L', NULL, NULL, NULL);
+(1, 8, '500ml', NULL, NULL, NULL),
+(2, 9, '500ml', NULL, NULL, NULL),
+(5, 10, '185 gm', NULL, NULL, NULL),
+(6, 11, '500ml', NULL, NULL, NULL),
+(8, 6, '250ml', NULL, NULL, NULL),
+(10, 20, '500Mg', NULL, NULL, NULL),
+(11, 17, '400mg', NULL, NULL, NULL),
+(12, 18, '400mg', NULL, NULL, NULL),
+(13, 33, '250mg', NULL, NULL, NULL),
+(16, 35, '500ml', NULL, NULL, NULL),
+(17, 4, '250ml', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -618,14 +672,9 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `product_id`, `rating`, `comment`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 5, NULL, 0, '2020-08-29 11:06:44', '2020-08-29 11:06:44'),
-(2, 1, 4, 'nice', 0, '2020-08-29 11:07:25', '2020-08-29 11:07:25'),
-(3, 1, 4, NULL, 0, '2020-08-29 11:07:54', '2020-08-29 11:07:54'),
-(4, 1, 4, NULL, 0, '2020-08-29 11:08:04', '2020-08-29 11:08:04'),
-(5, 1, 4, NULL, 0, '2020-08-29 11:08:16', '2020-08-29 11:08:16'),
-(6, 1, 3, NULL, 0, '2020-08-29 11:08:39', '2020-08-29 11:08:39'),
-(7, 1, 4, 'nice product', 0, '2020-08-30 11:22:51', '2020-08-30 11:22:51'),
-(8, 3, 4, 'nice', 0, '2020-09-15 10:31:47', '2020-09-15 10:31:47');
+(1, 2, 4, 'This is a nice product.', 0, '2020-10-08 07:26:10', '2020-10-08 07:26:10'),
+(2, 6, 4, 'fchfgchgc', 0, '2020-10-12 13:14:45', '2020-10-12 13:14:45'),
+(3, 1, 5, 'Fantastic', 0, '2020-10-12 13:17:06', '2020-10-12 13:17:06');
 
 -- --------------------------------------------------------
 
@@ -680,10 +729,30 @@ CREATE TABLE `social_share_links` (
 --
 
 INSERT INTO `social_share_links` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
-(1, 'facebook', 'https://www.facebook.com/', '2020-09-19 20:48:11', '2020-09-19 20:57:34'),
-(2, 'instagram', 'https://www.instagram.com/', '2020-09-19 20:48:11', '2020-09-19 20:57:34'),
-(3, 'pinterest', 'https://www.pinterest.com/', '2020-09-19 20:48:11', '2020-09-19 20:57:34'),
-(4, 'whatsapp', '01764470022', '2020-09-19 20:48:11', '2020-09-19 20:57:34');
+(1, 'facebook', 'https://www.facebook.com/London-Dubai-Shopping-Zone-104634518081882', '2020-09-19 20:48:11', '2020-10-06 15:42:18'),
+(2, 'instagram', NULL, '2020-09-19 20:48:11', '2020-09-19 20:57:34'),
+(3, 'pinterest', NULL, '2020-09-19 20:48:11', '2020-09-19 20:57:34'),
+(4, 'whatsapp', '+8801767911397', '2020-09-19 20:48:11', '2020-10-06 15:42:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribe_by_emails`
+--
+
+CREATE TABLE `subscribe_by_emails` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `subscribe_by_emails`
+--
+
+INSERT INTO `subscribe_by_emails` (`id`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'bdshopping7@gmail.com', '2020-10-05 20:28:51', '2020-10-05 20:28:51');
 
 -- --------------------------------------------------------
 
@@ -706,28 +775,47 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `category_id`, `name`, `index`, `sub_category_slag`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Lipstick', 1, '1598542655Lipstick1xn4A', '2020-08-27 09:37:35', '2020-09-15 10:35:59'),
-(2, 1, 'Eyeliner', 4, '1598542708EyelinerlN5of', '2020-08-27 09:38:28', '2020-09-10 09:37:56'),
-(3, 1, 'Mascara', 3, '1598542730MascaradQ1y7', '2020-08-27 09:38:50', '2020-09-28 06:32:20'),
-(4, 1, 'Beauty Essentials', 5, '1598542780Beauty_EssentialsGkuIt', '2020-08-27 09:39:40', '2020-08-30 11:11:21'),
-(5, 2, 'Home Use Beauty Devices', 14, '1598542941Home_Use_Beauty_DevicesAsI3h', '2020-08-27 09:42:21', '2020-09-15 10:35:47'),
-(6, 2, 'Braces & Supports', 15, '1598542955Braces_&_SupportslKSrH', '2020-08-27 09:42:35', '2020-09-15 10:35:47'),
-(7, 2, 'Patches', 16, '1598542971PatchesbO8MH', '2020-08-27 09:42:51', '2020-09-15 10:35:47'),
-(8, 2, 'Slimming Product', 17, '1598542993Slimming_ProductT0Q5X', '2020-08-27 09:43:13', '2020-09-15 10:35:47'),
-(9, 2, 'Relaxation Treatments', 18, '1598543008Relaxation_TreatmentsIJQ2u', '2020-08-27 09:43:28', '2020-09-15 10:35:47'),
-(10, 3, 'T-Shirts', 6, '1598543143T-ShirtsTxFik', '2020-08-27 09:45:43', '2020-09-15 10:35:47'),
-(11, 3, 'Shirts', 7, '1598543155Shirts2XWK9', '2020-08-27 09:45:55', '2020-09-15 10:35:47'),
-(12, 3, 'Jeans', 8, '1598543166JeansTkLd2', '2020-08-27 09:46:06', '2020-09-15 10:35:47'),
-(13, 3, 'Casual Pants', 9, '1598543180Casual_PantspjKD3', '2020-08-27 09:46:20', '2020-09-15 10:35:47'),
-(14, 5, 'Mother & Kids', 10, '1598543258Mother_&_KidsZJlKz', '2020-08-27 09:47:38', '2020-09-15 10:35:47'),
-(15, 5, 'Baby Clothing', 11, '1598543275Baby_ClothingPM2bN', '2020-08-27 09:47:55', '2020-09-15 10:35:47'),
-(16, 5, 'Kids Food', 12, '1598543341Kids_FoodIsLGd', '2020-08-27 09:49:01', '2020-09-15 10:35:47'),
-(17, 5, 'Toys & Hobbies', 13, '1598543366Toys_&_HobbiesXlYCb', '2020-08-27 09:49:26', '2020-09-15 10:35:47'),
-(18, 4, 'Saree', 20, '1598543588SareeQjHz0', '2020-08-27 09:53:08', '2020-09-15 10:35:47'),
-(19, 4, 'SHALWAR KAMEEZ', 19, '1598543608SHALWAR_KAMEEZ2kbAY', '2020-08-27 09:53:28', '2020-09-15 10:35:47'),
-(20, 4, 'Hijab', 21, '1598543651HijabskDb6', '2020-08-27 09:54:11', '2020-09-15 10:35:47'),
-(21, 4, 'Kaftan', 22, '1598543673KaftanHaZfT', '2020-08-27 09:54:33', '2020-09-15 10:35:47'),
-(22, 1, 'XYZ', 2, '1598807470XYZGctbV', '2020-08-30 11:11:10', '2020-09-28 06:32:20');
+(1, 2, 'Men\'s Cosmetics', 1, '1601984877Men\'s_Cosmetics6DAHs', '2020-10-06 15:47:57', '2020-10-06 15:47:57'),
+(2, 2, 'Women\'s Cosmetics', 2, '1601984897Women\'s_CosmeticsUcWRZ', '2020-10-06 15:48:17', '2020-10-06 15:48:17'),
+(3, 4, 'Teeth Care Products', 3, '1602126323Teeth_Care_ProductswhW5z', '2020-10-08 07:05:23', '2020-10-08 07:05:23'),
+(4, 5, 'Women\'s Fashion', 4, '1602127399Women\'s_FashionlS8Tv', '2020-10-08 07:23:19', '2020-10-08 07:23:19'),
+(5, 4, 'Health & Body Fitness', 5, '1602488539Health_&_Body_Fitness3oIh6', '2020-10-12 11:42:19', '2020-10-12 11:42:19'),
+(6, 5, 'Men\'s Fashion', 6, '1602488562Men\'s_FashionzBD8x', '2020-10-12 11:42:42', '2020-10-12 11:42:42'),
+(7, 5, 'junior Fashion', 7, '1602488578junior_Fashionbpvqf', '2020-10-12 11:42:58', '2020-10-12 11:42:58'),
+(8, 6, 'Computer & Accessories', 8, '1602488704Computer_&_AccessoriestgkTV', '2020-10-12 11:45:04', '2020-10-12 11:45:04'),
+(9, 6, 'Mobile & Accessories', 9, '1602488745Mobile_&_AccessorieshO8eU', '2020-10-12 11:45:45', '2020-10-12 11:45:45'),
+(10, 7, 'Adult Food', 10, '1602488824Adult_Food9oh0B', '2020-10-12 11:47:04', '2020-10-12 11:47:04'),
+(11, 7, 'Baby Food', 11, '1602488834Baby_FoodgPUXR', '2020-10-12 11:47:14', '2020-10-12 11:47:14'),
+(12, 2, 'baby cosmetics', 12, '1603150824baby_cosmeticsZg9qf', '2020-10-20 03:40:24', '2020-10-20 03:40:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `text_sliders`
+--
+
+CREATE TABLE `text_sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `text_sliders`
+--
+
+INSERT INTO `text_sliders` (`id`, `title`, `created_at`, `updated_at`) VALUES
+(1, 'Beauty', NULL, '2020-10-12 12:53:32'),
+(2, 'Spa', NULL, '2020-10-12 12:32:19'),
+(3, ',Fashion', NULL, '2020-10-12 12:32:29'),
+(4, 'Style', NULL, '2020-10-12 12:32:39'),
+(5, 'Trendy', NULL, '2020-10-12 12:32:57'),
+(6, 'Imported', NULL, '2020-10-12 12:33:32'),
+(7, 'Original', NULL, '2020-10-12 12:33:38'),
+(8, 'Exclusive', NULL, '2020-10-12 12:33:47'),
+(9, 'Exceptional', NULL, '2020-10-12 12:33:59'),
+(10, 'Genuine', NULL, '2020-10-12 12:34:39');
 
 -- --------------------------------------------------------
 
@@ -752,7 +840,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `role_id`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'zakir Hossain', 1, 'zakir7dipu@gmail.com', '2020-09-20 06:55:29', '$2y$10$8RLqmhWecg/sIbMiXZU7legXLXnLJSwmAkY0mw0wKfkb9QOvilwh.', NULL, '2020-08-24 22:49:25', '2020-09-20 06:55:29');
+(1, 'Russel', 1, 'rasel.md.bd@gmail.com', '2020-10-06 09:53:46', '$2y$10$8RLqmhWecg/sIbMiXZU7legXLXnLJSwmAkY0mw0wKfkb9QOvilwh.', NULL, '2020-08-24 22:49:25', '2020-10-06 09:53:46');
 
 --
 -- Indexes for dumped tables
@@ -794,6 +882,12 @@ ALTER TABLE `categories`
 -- Indexes for table `companies`
 --
 ALTER TABLE `companies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `company_payment`
+--
+ALTER TABLE `company_payment`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -870,6 +964,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -913,9 +1013,22 @@ ALTER TABLE `social_share_links`
   ADD UNIQUE KEY `social_share_links_name_unique` (`name`);
 
 --
+-- Indexes for table `subscribe_by_emails`
+--
+ALTER TABLE `subscribe_by_emails`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `subscribe_by_emails_email_unique` (`email`);
+
+--
 -- Indexes for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `text_sliders`
+--
+ALTER TABLE `text_sliders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -957,13 +1070,19 @@ ALTER TABLE `all_countries_company`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `company_payment`
+--
+ALTER TABLE `company_payment`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `contact_infos`
@@ -975,7 +1094,7 @@ ALTER TABLE `contact_infos`
 -- AUTO_INCREMENT for table `customers_orders`
 --
 ALTER TABLE `customers_orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `customer_supports`
@@ -1017,7 +1136,7 @@ ALTER TABLE `menu_sliders`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `ordered_products`
@@ -1032,28 +1151,34 @@ ALTER TABLE `ordered_product_attributes`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `product_colors`
 --
 ALTER TABLE `product_colors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -1068,10 +1193,22 @@ ALTER TABLE `social_share_links`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `subscribe_by_emails`
+--
+ALTER TABLE `subscribe_by_emails`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `text_sliders`
+--
+ALTER TABLE `text_sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`

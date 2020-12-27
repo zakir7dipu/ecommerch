@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/ads-txt.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="0f2df30c-d570-4d95-b106-ccc1ba2a9366" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +138,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../order-web" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
@@ -254,7 +250,7 @@
       <workItem from="1605499694682" duration="2728000" />
       <workItem from="1605712136912" duration="46000" />
       <workItem from="1607321276761" duration="95000" />
-      <workItem from="1607431065689" duration="166000" />
+      <workItem from="1607431065689" duration="890000" />
     </task>
     <servers />
   </component>
@@ -265,10 +261,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="392" y="91" key="#Composer" timestamp="1598327312925">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="392" y="91" key="#Composer/0.0.1600.860@0.0.1600.860" timestamp="1598327312925" />
     <state x="570" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600869031775">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -281,14 +273,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1602654333109" />
-    <state x="526" y="32" key="#guzzle/Dockerfile" timestamp="1598327341981">
+    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1607433472439">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="526" y="32" key="#guzzle/Dockerfile/0.0.1600.860@0.0.1600.860" timestamp="1598327341981" />
-    <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1605024603761">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1605024603761" />
+    <state x="580" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1607433472439" />
     <state x="594" y="264" key="NewPhpClassDialog" timestamp="1601540872230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -301,10 +289,6 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="567" height="446" key="SwitcherDM/0.0.1600.860@0.0.1600.860" timestamp="1600613799571" />
-    <state x="555" y="277" key="cloudConfig.SelfSettingsDialog" timestamp="1598590122318">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="555" y="277" key="cloudConfig.SelfSettingsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598590122318" />
     <state x="523" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1605024596446">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
